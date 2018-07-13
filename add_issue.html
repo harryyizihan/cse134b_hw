@@ -20,7 +20,7 @@
 </head>
 <body>
 	<h1>Add issue</h1>
-	<form action="" method="get" onsubmit="return (a.valueAsNumber==5);dialog1.show()" oninput="o.value=(a.valueAsNumber==5)">
+	<form action="" method="get" onsubmit="return (a.valueAsNumber==5);dialog1.show()">
 		<label>Issue Name: <input type="text" name="issueName" required></label><br/>
 		<label>Issue Type:<label>
 		<select name="issuetype" required>
@@ -94,10 +94,42 @@
   			</details>
 		</div>
 		</noscript>
-		<label>Verification: 2+3=<input name=a type=number min=0 max=1000 step=any>
+		<label>Verification: 2+3=<input name=a type=number min=0 max=1000 step=any oninput="o.value=(a.valueAsNumber==5)">
 			<output name=o for="a"></output><br/>
 		<input type=submit></input>
 	</form>
+	<h1>Close Issues</h1>
+	<label>Choose issue to close:</label>
+	<select id="closeselect" required>
+		<option value="">Please choose an issue you want to close</option>
+		<option value="0">Issue #3: Lags out upon internet connectivity change</option>
+		<option value="1">Issue #8: Image does not resize</option>
+		<option value="2">Issue #17: gif support</option>
+	</select>
+	<template id="selecttemplate">
+		<div>Category:</div>
+		<div>Scope:</div>
+		<div>Importance:</div>
+	</template>
+	<div id='container'>
+	</div>
+	<script type="text/javascript">
+		var data=[{category:"fundamental",scope:"entire",importance:"95"},{category:"visual",scope:"part3",importance:"30"},{category:"suggestion",scope:"part2",importance:"15"}];//This should be data retreived from the Internet
+		var selectioner=document.getElementById('closeselect');
+		selectioner.addEventListener('change',function(){
+		var chosen=selectioner.value;
+		var fragment=document.getElementsByTagName('template')[0];
+		var item=fragment.content.querySelector("div");
+		var editing1=document.importNode(item,true);
+		editing1.textContent+=data[chosen].category;
+		var item2=item.nextElementSibling;
+		var editing2=document.importNode(item2,true);
+		editing2.textContent+=data[chosen].scope;
+		var item3=item2.nextElementSibling;
+		var editing3=document.importNode(item3,true);
+		editing3.textContent+=data[chosen].importance;
+		container.innerHTML=editing1.textContent+"<br/>"+editing2.textContent+"<br/>"+editing3.textContent;});
+	</script>
 	<h1>Delete Issues</h1>
 	<dialog open>
 		<label for="which">Which of your issues do you want to delete? (can only delete issues that are submitted in the past 24 hours; please use "close issue" otherwise)</label>
