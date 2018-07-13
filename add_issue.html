@@ -21,7 +21,7 @@
 </head>
 <body>
 	<h1>Add issue</h1>
-	<form action="" method="get">
+	<form action="" method="get" onsubmit="return (a.valueAsNumber==5)" oninput="o.value=(a.valueAsNumber==5)">
 		<label>Issue Name: <input type="text" name="issueName" required></label><br/>
 		<label>Issue Type:<label>
 		<select name="issuetype" required>
@@ -48,16 +48,18 @@
 		</label><br/>
 		<label>Issue Description: 
 		<textarea cols=100 name="issuedesc" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000></textarea></label><br/>
-		<label>Issue Importance:
-			<input type="range" min=0 max=100 value=50 step=5 name="importance"></label><br/>
+		<div class="range">
+			<label>Issue Importance:
+				<small>Low priority</small><input type="range" min=0 max=100 value=50 step=5 name="importance"><small>High priority</small></label>
+		</div>
 		<label>Issue Attachments:
 			<input type="file" accept=".doc,.docx,.pdf"</input></label><br/>
 		<fieldset>
 			<legend>Contact Info(optional):</legend>
 			Name: <input type="text"><br/>
-			Email: <input type="text"><br/>
-			Phone: <input type="text"><br/>
-			Twitter: <input type="text"><br/>
+			Email: <input type="email"><br/>
+			Phone: <input type="tel"><br/>
+			Twitter: <input type="URL"><br/>
 		</fieldset><br/>
 		<div id="initbutton">
 			<button onclick="javascript:detailstoggle1();" type=button>Show developer details</button>
@@ -66,13 +68,19 @@
 			<button onclick="javascript:detailstoggle2();" type=button>Hide developer details</button>
 		</div>
 		<div id="detailspart">
-			<p><label>Developer Responsiveness: </label><br/>
-  			<meter min=0 max=47 value=19></meter> This developer has resolved or closed 19 out of 47 reported issues</p>
-  			<p><label>Developer Issue History: </label><br/>
+			<details><summary><label>Developer Responsiveness: </label></summary>
+  			<meter min=0 max=47 value=9></meter> This developer has resolved 9 out of 47 reported issues</p>
+  			<meter min=0 max=47 value=3></meter> This developer has closed or merged 3 out of 47 reported issues</p>
+  			<meter min=0 max=47 value=7></meter> Submitters has resolved or closed 7 out of 47 reported issues</p>
+  			</details>
+  			<details><summary><label>Developer Issue History: </label></summary>
   			Fundamental Issues: <progress id='FI' value=13 max=47></progress> 13 out of 47<br/>
   			Missing Functionality: <progress id='FI' value=22 max=47></progress> 22 out of 47<br/>
   			Suggestions: <progress id='FI' value=12 max=47></progress> 12 out of 47</p>
+  			</details>
 		</div>
+		<label>Verification: 2+3=<input name=a type=number step=any>
+			<output name=o for="a"></output><br/>
 		<input type=submit></input>
 	</form>
 </body>
