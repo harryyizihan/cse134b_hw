@@ -4,8 +4,7 @@
 	<title>Add Issue</title>
 	<script type="text/javascript">
 		window.onload=function(){
-			document.getElementById('secondarybutton').style.display='none';
-			document.getElementById('detailspart').style.display='none';
+			document.getElementById('initbutton').style.display="block";
 		}
 		function detailstoggle1(){
 			document.getElementById('detailspart').style.display='block';
@@ -61,13 +60,14 @@
 			Phone: <input type="tel"><br/>
 			Twitter: <input type="URL"><br/>
 		</fieldset><br/>
-		<div id="initbutton">
+		<!--When javascript is enabled, users can toggle between showing and not showing details-->
+		<div id="initbutton" style="display:none;">
 			<button onclick="javascript:detailstoggle1();" type=button>Show developer details</button>
 		</div>
-		<div id="secondarybutton">
+		<div id="secondarybutton" style="display:none;">
 			<button onclick="javascript:detailstoggle2();" type=button>Hide developer details</button>
 		</div>
-		<div id="detailspart">
+		<div id="detailspart" style="display:none;">
 			<details><summary><label>Developer Responsiveness: </label></summary>
   			<meter min=0 max=47 value=9></meter> This developer has resolved 9 out of 47 reported issues</p>
   			<meter min=0 max=47 value=3></meter> This developer has closed or merged 3 out of 47 reported issues</p>
@@ -79,6 +79,21 @@
   			Suggestions: <progress id='FI' value=12 max=47></progress> 12 out of 47</p>
   			</details>
 		</div>
+		<!--When javascript is disabled, the details would just show by default instead.-->
+		<noscript>
+			<div id="detailspart">
+			<details><summary><label>Developer Responsiveness: </label></summary>
+  			<meter min=0 max=47 value=9></meter> This developer has resolved 9 out of 47 reported issues</p>
+  			<meter min=0 max=47 value=3></meter> This developer has closed or merged 3 out of 47 reported issues</p>
+  			<meter min=0 max=47 value=7></meter> Submitters has resolved or closed 7 out of 47 reported issues</p>
+  			</details>
+  			<details><summary><label>Developer Issue History: </label></summary>
+  			Fundamental Issues: <progress id='FI' value=13 max=47></progress> 13 out of 47<br/>
+  			Missing Functionality: <progress id='FI' value=22 max=47></progress> 22 out of 47<br/>
+  			Suggestions: <progress id='FI' value=12 max=47></progress> 12 out of 47</p>
+  			</details>
+		</div>
+		</noscript>
 		<label>Verification: 2+3=<input name=a type=number min=0 max=1000 step=any>
 			<output name=o for="a"></output><br/>
 		<input type=submit></input>
