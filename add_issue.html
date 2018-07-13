@@ -21,7 +21,7 @@
 </head>
 <body>
 	<h1>Add issue</h1>
-	<form action="" method="get" onsubmit="return (a.valueAsNumber==5)" oninput="o.value=(a.valueAsNumber==5)">
+	<form action="" method="get" onsubmit="return (a.valueAsNumber==5);dialog1.show()" oninput="o.value=(a.valueAsNumber==5)">
 		<label>Issue Name: <input type="text" name="issueName" required></label><br/>
 		<label>Issue Type:<label>
 		<select name="issuetype" required>
@@ -79,8 +79,21 @@
   			Suggestions: <progress id='FI' value=12 max=47></progress> 12 out of 47</p>
   			</details>
 		</div>
-		<label>Verification: 2+3=<input name=a type=number step=any>
+		<label>Verification: 2+3=<input name=a type=number min=0 max=1000 step=any>
 			<output name=o for="a"></output><br/>
 		<input type=submit></input>
 	</form>
+	<h1>Delete Issues</h1>
+	<dialog open>
+		<label for="which">Which of your issues do you want to delete? (can only delete issues that are submitted in the past 24 hours; please use "close issue" otherwise)</label>
+		<div><input name=which id="which" list="whichlist" required>
+		<datalist id="whichlist">
+			<option value="Issue #42: Poor alignment near edge (Visual)">
+			<option value="Issue #44: Crashes upon repeatedly clicking button (Fundamental)">
+			<option value="Issue #45: Add Linux Support (Suggestion)"></div>
+		</datalist>
+		<p><strong>Deleted issues cannot be reopened or recovered.</strong></p>
+		<div><label><input name=check type=checkbox>I confirm that I want to delete the above issue</input>
+		<div><input type=button value="Delete"></div>
+	</dialog>
 </body>
