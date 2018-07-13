@@ -1,19 +1,82 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Form</title>
-    <!--This is a login form page-->
 </head>
 
 <body>
-    <h1>Welcome to Login Page!</h1>
-
     <form>
-        Username or email address <br>
-        <input type="text" name="username" value="Your UserName"> Password <a>Forgot password?</a> <br>
-        <br>
-        <input>
+        <div class="imgcontainer">
+            <h1>picture, source, img demo</h1>
+
+            <picture>
+                <source media="(min-width: 600px)" srcset="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=300">
+                <source media="(min-width: 400px)" srcset="https://images.pexels.com/photos/161675/abstract-barbeque-bbq-beauty-161675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=300">
+                <img src="https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200" alt="hotdog pic" style="width:auto;">
+            </picture>
+
+        </div>
+
+        <div class="frame-website">
+            <h1>iframe demo</h1>
+            <iframe src="https://ucsd.edu" height="500" width="700"></iframe>
+        </div>
+
+        <div class="embed">
+            <h1>embed demo</h1>
+            <embed src="https://media.giphy.com/media/ukMiDlCmdv2og/giphy.gif" width="300" height="200">
+        </div>
+
+        <div>
+            <h1>object, param demo</h1>
+            <object data="https://www.thesoundarchive.com/simpsons/homer/boring.mp3" width="300" height="50">
+            <param name="autoplay" value="true">
+            </object>
+        </div>
+
+        <div>
+            <h1>video demo</h1>
+            <video width="320" height="240" controls>
+                <source src="https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div>
+            <h1>audio demo</h1>
+            <audio src="https://www.thesoundarchive.com/simpsons/bart/bartlaf3.mp3" controls></audio>
+        </div>
+
+        <div>
+            <h1></h1>
+        </div>
+
+
+
+
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
     </form>
+
+
 
 
 </body>
