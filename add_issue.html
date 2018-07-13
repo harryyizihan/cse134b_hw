@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Add Issue</title>
-	<script type="text/javascript">
+	<script>
 		window.onload=function(){
 			document.getElementById('initbutton').style.display="block";
 		}
@@ -33,9 +34,9 @@
 		titleContext.strokeText("Manage your issues",50,50);
 	</script>
 	<h2>Add issue</h2>
-	<form action="" method="get" onsubmit="return (a.valueAsNumber==5);dialog1.show()">
+	<form method="get" onsubmit="return (a.valueAsNumber==5);dialog1.show()">
 		<label>Issue Name: <input type="text" name="issueName" required></label><br/>
-		<label>Issue Type:<label>
+		<label>Issue Type:</label>
 		<select name="issuetype" required>
 			<option value=""> Select issue category</option>
 			<optgroup label="Fundamental issues"></optgroup>
@@ -49,7 +50,7 @@
 			<option value="3.1"> Visual Suggestions</option>
 			<option value="3.2"> Functionality Suggestions</option>
 		</select><br/>
-		<label>Issue Scope:
+		<label>Issue Scope:	</label>
 			<input name=scope list=scopes required>
 			<datalist id=scopes>
 				<option value="Entire project">
@@ -57,7 +58,7 @@
 				<option value="Part 2">
 				<option value="Part 3">
 			</datalist>
-		</label><br/>
+		<br/>
 		<label>Issue Description: 
 		<textarea cols=100 name="issuedesc" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000></textarea></label><br/>
 		<div class="range">
@@ -65,7 +66,7 @@
 				<small>Low priority</small><input type="range" min=0 max=100 value=50 step=5 name="importance"><small>High priority</small></label>
 		</div>
 		<label>Issue Attachments:
-			<input type="file" accept=".doc,.docx,.pdf"</input></label><br/>
+			<input type="file" accept=".doc,.docx,.pdf"></label><br/>
 		<fieldset>
 			<legend>Contact Info(optional):</legend>
 			Name: <input type="text"><br/>
@@ -82,34 +83,34 @@
 		</div>
 		<div id="detailspart" style="display:none;">
 			<details><summary><label>Developer Responsiveness: </label></summary>
-  			<meter min=0 max=47 value=9></meter> This developer has resolved 9 out of 47 reported issues</p>
-  			<meter min=0 max=47 value=3></meter> This developer has closed or merged 3 out of 47 reported issues</p>
-  			<meter min=0 max=47 value=7></meter> Submitters has resolved or closed 7 out of 47 reported issues</p>
+  			<meter min=0 max=47 value=9></meter> This developer has resolved 9 out of 47 reported issues<br/>
+  			<meter min=0 max=47 value=3></meter> This developer has closed or merged 3 out of 47 reported issues<br/>
+  			<meter min=0 max=47 value=7></meter> Submitters has resolved or closed 7 out of 47 reported issues
   			</details>
   			<details><summary><label>Developer Issue History: </label></summary>
   			Fundamental Issues: <progress id='FI' value=13 max=47></progress> 13 out of 47<br/>
-  			Missing Functionality: <progress id='FI' value=22 max=47></progress> 22 out of 47<br/>
-  			Suggestions: <progress id='FI' value=12 max=47></progress> 12 out of 47</p>
+  			Missing Functionality: <progress id='MF' value=22 max=47></progress> 22 out of 47<br/>
+  			Suggestions: <progress id='S' value=12 max=47></progress> 12 out of 47
   			</details>
 		</div>
 		<!--When javascript is disabled, the details would just show by default instead.-->
 		<noscript>
-			<div id="detailspart">
+			<div id="detailspartns">
 			<details><summary><label>Developer Responsiveness: </label></summary>
-  			<meter min=0 max=47 value=9></meter> This developer has resolved 9 out of 47 reported issues</p>
-  			<meter min=0 max=47 value=3></meter> This developer has closed or merged 3 out of 47 reported issues</p>
-  			<meter min=0 max=47 value=7></meter> Submitters has resolved or closed 7 out of 47 reported issues</p>
+  			<meter min=0 max=47 value=9></meter> This developer has resolved 9 out of 47 reported issues<br/>
+  			<meter min=0 max=47 value=3></meter> This developer has closed or merged 3 out of 47 reported issues<br/>
+  			<meter min=0 max=47 value=7></meter> Submitters has resolved or closed 7 out of 47 reported issues
   			</details>
   			<details><summary><label>Developer Issue History: </label></summary>
-  			Fundamental Issues: <progress id='FI' value=13 max=47></progress> 13 out of 47<br/>
-  			Missing Functionality: <progress id='FI' value=22 max=47></progress> 22 out of 47<br/>
-  			Suggestions: <progress id='FI' value=12 max=47></progress> 12 out of 47</p>
+  			Fundamental Issues: <progress id='FIns' value=13 max=47></progress> 13 out of 47<br/>
+  			Missing Functionality: <progress id='MFns' value=22 max=47></progress> 22 out of 47<br/>
+  			Suggestions: <progress id='Sns' value=12 max=47></progress> 12 out of 47
   			</details>
 		</div>
 		</noscript>
-		<label>Verification: 2+3=<input name=a type=number min=0 max=1000 step=any oninput="o.value=(a.valueAsNumber==5)">
+		<label>Verification: 2+3=<input name=a type=number min=0 max=1000 step=any oninput="o.value=(a.valueAsNumber==5)"></label>
 			<output name=o for="a"></output><br/>
-		<input type=submit></input>
+		<input type=submit>
 	</form>
 	<h2>Close Issues</h2>
 	<label>Choose issue to close:</label>
@@ -127,7 +128,7 @@
 	<div id='container'>
 	</div>
 	<input type=button value="Close Issue"/><small>Note: They can be reopened by you, other users or the developer later</small>
-	<script type="text/javascript">
+	<script>
 		var data=[{category:"fundamental",scope:"entire",importance:"95"},{category:"visual",scope:"part3",importance:"30"},{category:"suggestion",scope:"part2",importance:"15"}];//This should be data retreived from the Internet
 		var selectioner=document.getElementById('closeselect');
 		selectioner.addEventListener('change',function(){
@@ -151,10 +152,10 @@
 		<datalist id="whichlist">
 			<option value="Issue #42: Poor alignment near edge (Visual)">
 			<option value="Issue #44: Crashes upon repeatedly clicking button (Fundamental)">
-			<option value="Issue #45: Add Linux Support (Suggestion)"></div>
-		</datalist>
+			<option value="Issue #45: Add Linux Support (Suggestion)">
+		</datalist></div>
 		<p><strong>Deleted issues cannot be reopened or recovered.</strong></p>
-		<div><label><input name=check type=checkbox>I confirm that I want to delete the above issue</input>
+		<div><label><input name=check type=checkbox>I confirm that I want to delete the above issue</label></div>
 		<div><input type=button value="Delete"></div>
 	</dialog>
 </body>
