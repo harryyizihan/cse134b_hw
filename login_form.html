@@ -14,6 +14,29 @@
         <h1> Welcome to the multi-media Login Page!</h1>
     </header>
     <form>
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit">Login</button>
+            <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                      </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+
+
+
+
+
+
         <div class="imgcontainer">
             <h1>picture, source, img demo</h1>
 
@@ -60,31 +83,17 @@
             <h1></h1>
         </div>
 
-
-
-
-        <div class="container">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-
-            <button type="submit">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
+        <div>
+            <h1>map demo</h1>
+            <div id="image_map">
+                <map name="map_example"> <area href="https://facebook.com" alt="Facebook" target="_blank" shape=default > </map>
+                <img src="https://images.pexels.com/photos/262545/pexels-photo-262545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="image map example" width=500 height=332 usemap="#map_example"> </div>
         </div>
 
-        <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
+
+
+
     </form>
-
-
-
-
 </body>
 
 </html>
