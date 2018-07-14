@@ -1,12 +1,18 @@
+<!--This page includes the following elements: html, head, link, meta, title, script, body, canvas, h1, h2, form, label, select,
+option, optgroup, input, datalist, textarea, div, fieldset, legend, meter, progress, details, summary, noscript, output, template, small, footer, dialog, p, a, option and strong-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="license" href="https://www.opensource.org/licenses/mit-license.php">
 	<meta charset="UTF-8">
 	<title>Add Issue</title>
+	<!-- script usage to demonstrate the interaction between script, noscript and onclink attribute of buttons -->
 	<script>
+		//All buttons were contextually initialized to not show due to noscript concerns; thus an onload js function is needed to show the button to user agents who do enable javascript
 		window.onload=function(){
 			document.getElementById('initbutton').style.display="block";
 		}
+		//These are onclick triggers that would hide/show detail divs and change which button would be active
 		function detailstoggle1(){
 			document.getElementById('detailspart').style.display='block';
 			document.getElementById('initbutton').style.display='none';
@@ -20,8 +26,10 @@
 	</script>
 </head>
 <body>
+	<!-- When js is disabled a plain title in h1 would display -->
 	<canvas id="titleCanvas" width="500" height="70"><h1>Manage your issues</h1>
 	</canvas>
+	<!-- script usage to demonstrate canvas live-drawing; gradient color filling and stroke texts were employed to construct a "good-looking" title. -->
 	<script>
 		var titleCanvas=document.getElementById("titleCanvas");
 		var titleContext=titleCanvas.getContext("2d");
@@ -33,6 +41,7 @@
 		titleContext.font="45px Calibri";
 		titleContext.strokeText("Manage your issues",50,50);
 	</script>
+	<applet code="DemoApplet.class" width="400" height="200"></applet>
 	<h2>Add issue</h2>
 	<form method="get" onsubmit="return (a.valueAsNumber==5);dialog1.show()">
 		<label>Issue Name: <input type="text" name="issueName" required></label><br/>
@@ -128,6 +137,7 @@
 	<div id='container'>
 	</div>
 	<input type=button value="Close Issue"/><small>Note: They can be reopened by you, other users or the developer later</small>
+	<!-- Script usage is vital to demonstrate some basic proper use of template -->
 	<script>
 		var data=[{category:"fundamental",scope:"entire",importance:"95"},{category:"visual",scope:"part3",importance:"30"},{category:"suggestion",scope:"part2",importance:"15"}];//This should be data retreived from the Internet
 		var selectioner=document.getElementById('closeselect');
@@ -145,7 +155,11 @@
 		editing3.textContent+=data[chosen].importance;
 		container.innerHTML=editing1.textContent+"<br/>"+editing2.textContent+"<br/>"+editing3.textContent;});
 	</script>
+	<footer>
+		<marquee>This page is <a rel="license" href="https://www.opensource.org/licenses/mit-license.php">MIT Licensed</a>. © Copyright 2018 Langtian Qin & other involved editing parties. All rights reserved.</marquee>
+	</footer>
 	<h2>Delete Issues</h2>
+	<!-- An open dialog was employed due to the unwillingness to use more javascript on this page -->
 	<dialog open>
 		<label for="which">Which of your issues do you want to delete? (can only delete issues that are submitted in the past 24 hours; please use "close issue" otherwise)</label>
 		<div><input name=which id="which" list="whichlist" required>
