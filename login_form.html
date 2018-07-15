@@ -1,5 +1,5 @@
 <!--This page includes the following elements: html, head, body, meta, title, header, form,
-div, label, input, button, h1, a, picture, soruce, img, iframe, embed, object, param, video
+div, label, input, button, h1, a, figure, picture, soruce, img, iframe, embed, object, param, video
 audio, track, map, area-->
 
 <!DOCTYPE html>
@@ -26,24 +26,26 @@ audio, track, map, area-->
 
             <button type="submit">Login</button>
             <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                      </label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
         </div>
-
+    
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
-
+    </form>
+    <main>
         <div class="imgcontainer">
             <h1>picture, source, img demo</h1>
-
-            <picture>
-                <source media="(min-width: 600px)" srcset="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=300">
-                <source media="(min-width: 400px)" srcset="https://images.pexels.com/photos/161675/abstract-barbeque-bbq-beauty-161675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=300">
-                <img src="https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200" alt="hotdog pic" style="width:auto;">
-            </picture>
-
+            <figure>
+                <picture>
+                    <source media="(min-width: 600px)" srcset="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=300">
+                    <source media="(min-width: 400px)" srcset="https://images.pexels.com/photos/161675/abstract-barbeque-bbq-beauty-161675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=300">
+                    <img src="https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200" alt="hotdog pic" style="width:auto;">
+                </picture>
+                <figcaption>HTML picture: different image shown for different width of browser.</figcaption>
+            </figure>
         </div>
 
         <div class="frame-website">
@@ -66,10 +68,13 @@ audio, track, map, area-->
         <!--VTT file credits: http://brenopolanski.com/html5-video-webvtt-example/MIB2-subtitles-pt-BR.vtt-->
         <div>
             <h1>video demo</h1>
-            <video width="300" height="200" controls>
-                <source src="http://brenopolanski.com/html5-video-webvtt-example/MIB2.mp4" type="video/mp4">
-                <track src="./MIB2-subtitles-pt-BR.vtt" kind="subtitles" srclang="pt" label="English" default/>
-            </video>
+            <figure>
+                <video width="300" height="200" controls>
+                    <source src="http://brenopolanski.com/html5-video-webvtt-example/MIB2.mp4" type="video/mp4">
+                    <track src="./MIB2-subtitles-pt-BR.vtt" kind="subtitles" srclang="pt" label="English" default/>
+                </video>
+                <figcaption>HTML Viedo Example: Men in Black II</figcaption>
+            </figure>
         </div>
 
         <div>
@@ -83,7 +88,7 @@ audio, track, map, area-->
                 <map name="map_example"> <area href="https://facebook.com" alt="Facebook" target="_blank" shape=default > </map>
                 <img src="https://images.pexels.com/photos/262545/pexels-photo-262545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="image map example" width=500 height=332 usemap="#map_example"> </div>
         </div>
-    </form>
+    </main>
 </body>
 
 </html>
