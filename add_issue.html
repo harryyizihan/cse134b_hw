@@ -41,6 +41,8 @@ option, optgroup, input, datalist, textarea, div, fieldset, legend, meter, progr
 		titleContext.font="45px Calibri";
 		titleContext.strokeText("Manage your issues",50,50);
 	</script>
+	<!-- Applet would not run unless in Firefox/Safari and with low security specifications -->
+	<applet code="DemoApplet.class" width="400" height="200"></applet>
 	<h2>Add issue</h2>
 	<form method="get" onsubmit="return (a.valueAsNumber==5);dialog1.show()">
 		<label>Issue Name: <input type="text" name="issueName" required></label><br/>
@@ -155,7 +157,7 @@ option, optgroup, input, datalist, textarea, div, fieldset, legend, meter, progr
 		container.innerHTML=editing1.textContent+"<br/>"+editing2.textContent+"<br/>"+editing3.textContent;});
 	</script>
 	<footer>
-		<small>This page is <a rel="license" href="https://www.opensource.org/licenses/mit-license.php">MIT Licensed</a>. © Copyright 2018 Langtian Qin & other involved editing parties. All rights reserved.</small>
+		<marquee>This page is <a rel="license" href="https://www.opensource.org/licenses/mit-license.php">MIT Licensed</a>. © Copyright 2018 Langtian Qin & other involved editing parties. All rights reserved.</marquee>
 	</footer>
 	<h2>Delete Issues</h2>
 	<!-- An open dialog was employed due to the unwillingness to use more javascript on this page -->
