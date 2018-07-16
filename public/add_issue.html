@@ -1,5 +1,5 @@
 <!--This page includes the following elements: html, head, link, meta, title, script, body, canvas, h1, h2, form, label, select,
-option, optgroup, input, datalist, textarea, div, fieldset, legend, meter, progress, details, summary, noscript, output, template, small, footer, dialog, p, a, option and strong-->
+option, optgroup, input, datalist, textarea, div, fieldset, legend, meter, progress, details, summary, noscript, output, template, small, footer, dialog, p, a, option, strong, applet and marquee-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +41,7 @@ option, optgroup, input, datalist, textarea, div, fieldset, legend, meter, progr
 		titleContext.font="45px Calibri";
 		titleContext.strokeText("Manage your issues",50,50);
 	</script>
+	<!-- Applet would not run unless in Firefox/Safari and with low security specifications -->
 	<applet code="DemoApplet.class" width="400" height="200"></applet>
 	<h2>Add issue</h2>
 	<form method="get" onsubmit="return (a.valueAsNumber==5);dialog1.show()">

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Media</title>
+</head>
+<body>
+    <header>
+        <h1> Welcome to the media demo Page!</h1>
+    </header>
+    <main>
+        <div class="embed">
+            <h1>embed demo</h1>
+            <embed src="https://media.giphy.com/media/ukMiDlCmdv2og/giphy.gif" width="300" height="200">
+        </div>
+        <div>
+            <h1>object, param demo</h1>
+            <object data="https://www.thesoundarchive.com/simpsons/homer/boring.mp3" width="300" height="50">
+            <param name="autoplay" value="true">
+            </object>
+        </div>
+        <!--VTT file credits: http://brenopolanski.com/html5-video-webvtt-example/MIB2-subtitles-pt-BR.vtt-->
+        <div>
+            <h1>video demo</h1>
+            <figure>
+                <video width="300" height="200" controls>
+                    <source src="http://brenopolanski.com/html5-video-webvtt-example/MIB2.mp4" type="video/mp4">
+                    <track src="./MIB2-subtitles-pt-BR.vtt" kind="subtitles" srclang="pt" label="English" default/>
+                </video>
+                <figcaption>HTML Viedo Example: Men in Black II</figcaption>
+            </figure>
+        </div>
+        <div>
+            <h1>audio demo</h1>
+            <audio src="https://www.thesoundarchive.com/simpsons/bart/bartlaf3.mp3" controls></audio>
+        </div>
+    </main>
+</body>
+</html>

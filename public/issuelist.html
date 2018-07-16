@@ -1,3 +1,5 @@
+<!--This page includes the following elements: table, caption, colgroup, col, tbody,
+thead, tfoot, tr, td and th-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,72 +10,77 @@
     <style>
         table, th, td {
             border: 1px solid black;
-            border-collapse: collapse;
         }
     </style>
 </head>
 <body>
-    <h1>Issue List</h1>
+    <header>
+        <h1>Issue List</h1>
+    </header>
     <hr>
     <table>
-      <caption>#The list of known issue</caption>
-      <thead>
-        <tr>
-            <th>Issue Id</th>
-            <th>Issue Name</th>
-            <th>Issue Type</th>
-            <th>Issue Description</th>
-        </tr>
-      </thead>
-      <tfoot>
-          <tr>
-              <td>List End</td>
-          </tr>
-      </tfoot>
-      <tbody>
-        <tr>
-            <td>1</td>
-            <td>Heading and section</td>
-            <td>Heading and section type tags</td>
-            <td>Tags like &lt;h1&gt; and &lt;section&gt; should be explored.</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Boiler Plate Text</td>
-            <td>&lt;p&gt; &lt;aside&gt; tags</td>
-            <td>Try all the various semantic block and inline tags with Lorem ipsum style text as content. Don't foreget all the lists!</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Images</td>
-            <td>&lt;img&gt; &lt;picture&gt; tags</td>
-            <td>Tags with different types of images. Since the Internet likes cats use pictures of cats and dogs for visual fun.</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Media</td>
-            <td>&lt;viedo&gt; &lt;audio&gt; tags</td>
-            <td>Tags with media contents</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Iframe</td>
-            <td>&lt;Iframe&gt; tag</td>
-            <td>Iframe the UCSD sites + webpagetest performance report</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>Forms</td>
-            <td>&lt;input type="test"&gt;, etc</td>
-            <td>Test the form and all types of input tags</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>Old Tags</td>
-            <td>&lt;marquee&gt;, etc</td>
-            <td>Tags from ancient time</td>
-        </tr>
-      </tbody>
+        <caption>#The list of known issue</caption>
+        <colgroup> <col> <col> <col> <col>
+        <thead>
+            <tr>
+                <th>Issue Id</th>
+                <th>Issue Name</th>
+                <th>Issue Type</th>
+                <th>Issue Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="./headings&sections.html">Heading and section</a></td>
+                <td>Heading and section type tags</td>
+                <td>Tags like &lt;h1&gt; and &lt;section&gt; should be explored.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="./boilerplate.html">Boiler Plate Text</a></td>
+                <td>Grouping, Text-level semantics and Edits elements</td>
+                <td>Try all the various semantic block and inline tags with Lorem ipsum style text as content. Don't foreget all the lists!</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="./image.html">Images</a></td>
+                <td>&lt;img&gt; &lt;picture&gt; &lt;map&gt; &lt;area&gt;tags</td>
+                <td>Tags with different types of images. Since the Internet likes cats use pictures of cats and dogs for visual fun.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="./media.html">Media</a></td>
+                <td>&lt;embed&gt; &lt;object&gt; &lt;viedo&gt; &lt;audio&gt; tags</td>
+                <td>Tags with media contents</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="./iframe.html">Iframe</a></td>
+                <td>&lt;Iframe&gt; tag</td>
+                <td>Iframe the UCSD sites + webpagetest performance report</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="./login_form.html">Forms</a></td>
+                <td>&lt;input type="test"&gt;, etc</td>
+                <td>Test the form and all types of input tags</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Old Tags</td>
+                <td>&lt;marquee&gt;, etc</td>
+                <td>Tags from ancient time, tags demo been include in <a href="./add_issue.html">add issue page</a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><a href="./add_issue.html">+</a></td>
+                <td><a href="./add_issue.html">Add Issue*</a></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
     </table>
 </body>
 </html>

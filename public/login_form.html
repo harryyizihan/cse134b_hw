@@ -1,3 +1,7 @@
+<!--This page includes the following elements: html, head, body, meta, title, header, form,
+div, label, input, button, h1, a, figure, picture, soruce, img, iframe, embed, object, param, video
+audio, track, map, area-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,59 +9,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Form</title>
+    <title>Login Form!</title>
 </head>
 
 <body>
+    <header>
+        <h1> Welcome to the Login demo Page!</h1>
+    </header>
     <form>
-        <div class="imgcontainer">
-            <h1>picture, source, img demo</h1>
-
-            <picture>
-                <source media="(min-width: 600px)" srcset="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=300">
-                <source media="(min-width: 400px)" srcset="https://images.pexels.com/photos/161675/abstract-barbeque-bbq-beauty-161675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=300">
-                <img src="https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=200" alt="hotdog pic" style="width:auto;">
-            </picture>
-
-        </div>
-
-        <div class="frame-website">
-            <h1>iframe demo</h1>
-            <iframe src="https://ucsd.edu" height="500" width="700"></iframe>
-        </div>
-
-        <div class="embed">
-            <h1>embed demo</h1>
-            <embed src="https://media.giphy.com/media/ukMiDlCmdv2og/giphy.gif" width="300" height="200">
-        </div>
-
-        <div>
-            <h1>object, param demo</h1>
-            <object data="https://www.thesoundarchive.com/simpsons/homer/boring.mp3" width="300" height="50">
-            <param name="autoplay" value="true">
-            </object>
-        </div>
-
-        <div>
-            <h1>video demo</h1>
-            <video width="300" height="200" controls>
-                <source src="http://brenopolanski.com/html5-video-webvtt-example/MIB2.mp4" type="video/mp4">
-                <track src="./MIB2-subtitles-pt-BR.vtt" kind="subtitles" srclang="pt" label="English" default/>
-            </video>
-        </div>
-
-        <div>
-            <h1>audio demo</h1>
-            <audio src="https://www.thesoundarchive.com/simpsons/bart/bartlaf3.mp3" controls></audio>
-        </div>
-
-        <div>
-            <h1></h1>
-        </div>
-
-
-
-
         <div class="container">
             <label><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="username" required>
@@ -68,18 +27,14 @@
             <button type="submit">Login</button>
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
+            </label>
         </div>
-
+    
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
     </form>
-
-
-
-
 </body>
 
 </html>

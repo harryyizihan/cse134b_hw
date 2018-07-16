@@ -1,0 +1,161 @@
+<!--This page includes the following elements: a, em, strong, small, s, cite, q, dfn, abbr, 
+ruby, rb, rt, rtc, rp, data, time, code, car, samp, kbd, sub, sup, i, b, u, mark, bdi, bdo,
+span, br, wbr, p, address, hr, pre, blockquote, ol, ul, li, dl, dt, dd, main, ins, del-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boiler Plate Text</title>
+</head>
+<body>
+    <main>
+        <a href="www.ucsd.edu">Here is a link to UCSD.edu</a>
+        <h4>Following are lorem text in &lt;p&gt;; tag: </h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, tempore aperiam dicta eos laboriosam debitis iure. Quos modi quasi ullam itaque fugiat odit animi! Libero debitis cupiditate voluptatibus itaque rem.</p>
+        <hr>
+        <h4>Following are various of special text: </h4>
+        <p>&lt;em&gt; tag: <em>This is "emphasis" text.</em></p>
+        <p>&lt;strong&gt; tag: <strong>This is "strong" text.</strong></p>
+        <p>&lt;small&gt; tag: <small>This is "small" text.</small></p>
+        <p>&lt;s&gt; tag: <s>This is "no longer accurate or relevant" text.</s></p>
+        <p>&lt;cite&gt; tag: <cite>This is "cited" text.</cite></p>
+        <p>&lt;q&gt; tag: <q>This is "phrasing content" text.</q></p>
+        <p>&lt;dfn&gt; tag: <dfn>This is "defining instance" text.</dfn></p>
+        <p>&lt;abbr&gt; tag: <abbr>This is "abbreviation" text.</abbr></p>
+        <p>&lt;ruby&gt; tag: <ruby><rb>网</rb><rp>(</rp><rt>wāng</rt><rp>)</rp><rb>页</rb><rp>(</rp><rt>yè</rt><rp>)</rp><rtc>(Webpage)</rtc></ruby></p>
+        <p>&lt;data&gt; tag: <data value="911">emergency telephone number</data> is associated with value 911.</p>
+        <p>&lt;time&gt; tag: CSE 134B HW2 due on <time>2018-07-15 22:00Z</time></p>
+        <p>&lt;code&gt; tag: This is piece of Javascript code: <code>alert('CSE 134B Summer 2018');</code></p>
+        <p>&lt;var&gt; tag: <var>var1</var> is a variable.</p>
+        <p>&lt;samp&gt; tag: <samp>This is sample output from another computer program.</samp></p>
+        <p>&lt;kbd&gt; tag: To copy a file, press <kbd><kbd>Ctrl</kbd> + <kbd>C</kbd></kbd> (User Input)</p>
+        <p>&lt;sub&gt; tag: <sub>This is "subscript" text.</sub></p>
+        <p>&lt;sup&gt; tag: <sup>This is "superscript" text.</sup></p>
+        <p>&lt;i&gt; tag: <i>This is a span of text in an alternate voice or mood.</i></p>
+        <p>&lt;b&gt; tag: <b>This is a span of utilitarian text (bold) without extra importance.</b></p>
+        <p>&lt;u&gt; tag: <u>This is a span of unarticulated text, such as labeling proper name in Chinese, or misspelt text.</u></p>
+        <p>&lt;mark&gt; tag: <mark>This is marked (or highlighted) text.</mark></p>
+        <p>&lt;bdi&gt; tag: The Chinese text <bdi>"文字"</bdi> is isolated from its surroundings to support bidirectional text formatting.</p>
+        <!--The bdi element is not supported in all browsers. We need to testing before publish.-->
+        <p>&lt;bdo&gt; tag: <bdo dir="rtl">This text is right-to-left override.</bdo></p>
+        <p>&lt;span&gt; tag: <span style="color:red">This is span of text with inline style attribute.</span></p>
+        <hr>
+        <h4>Following paragraph/longword demo the usage of &lt;br&gt; and &lt;wbr&gt;</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. /&lt;br&gt; tag used here/ <br> Officiis sed iusto vel sequi porro tempore error corporis alias quibusdam velit, esse incidunt ex, dolorum, necessitatibus voluptatem nam molestias ea quaerat?</p>
+        <p>longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong /&lt;wbr&gt; tag used here/ <wbr>longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongword</p>
+        <hr>
+        <h4>Following text demo the usage of editing</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <ins cite="demoedit">Itaque, nobis laboriosam minima labore neque voluptatum quaerat ratione excepturi quasi earum voluptatibus enim tenetur</ins> repellendus quia cupiditate saepe repellat unde animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. <del cite="demoedit">Explicabo tenetur debitis voluptatem molestiae voluptatum, ea nisi. Assumenda dolore sed doloremque natus, </del>veritatis perferendis iure at inventore sapiente libero quis saepe.</p>
+        <hr>
+        <h4>Following is address and info of UCSD (in &lt;address&gt; tag using RDFa):</h4>
+        <div vocab="http://schema.org/" typeof="LocalBusiness">
+            <h4><span property="name">University of California San Diego.</span></h4>
+            <span property="description"> The University California, San Diego is one of the world's leading public research universities, located in beautiful La Jolla, California.</span>
+            <address property="address" typeof="PostalAddress">
+            <span property="streetAddress">9500 Gilman Drive</span>
+            <span property="addressLocality">La Jolla</span>,
+            <span property="addressRegion">CA</span>
+            <span property="postalCode">92093-0021</span>
+            </address>
+            Phone: <span property="telephone">(850)534-2230</span>
+        </div>
+        <hr>
+        <h4>Following is preformatted text (in &lt;pre&gt; tag):</h4>
+        <pre>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Culpa, laudantium accusantium dolorum quia dolorem, vel ad soluta earum molestiae 
+        accusamus voluptas deserunt corporis ipsum, fugit architecto blanditiis autem consequuntur rerum.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quos, blanditiis provident iste maiores 
+        cum qui rerum tempore laborum perspiciatis? Excepturi modi velit quia! Nam expedita dolorum doloremque illum repellendus?
+        </pre>
+        <h4>Using preformatted text to show program code:</h4>
+        <pre><code>
+        #include &lt;stdio.h&gt;
+        int main() {
+            printf("Hello, World\n");
+            return 0;
+        }
+        </code></pre>
+        <hr>
+        <h4>Following is citaion text (in &lt;blockquote&gt; tag):</h4>
+        <blockquote>
+            <p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a footer or cite element, and optionally with in-line changes such as annotations and abbreviations.</p>
+            <footer>— <cite>World Wide Web Consortium (W3C)</cite></footer>
+        </blockquote>
+        <hr>
+        <h4>Following is demo of list:</h4>
+        <p>(ordered list) UCSD Jacobs School of Engineering has six department: </p>
+        <ol>
+            <li>Bioengineering</li>
+            <li>Computer Science & Engineering</li>
+            <li>Electrical & Computer Engineering</li>
+            <li>Mechanical & Aerospace Engineering</li>
+            <li>NanoEngineering</li>
+            <li>Structural Engineering</li>
+        </ol>
+        <p>(ordered list, start from 10) UCSD Jacobs School of Engineering has six department: </p>
+        <ol start="10">
+            <li>Bioengineering</li>
+            <li>Computer Science & Engineering</li>
+            <li>Electrical & Computer Engineering</li>
+            <li>Mechanical & Aerospace Engineering</li>
+            <li>NanoEngineering</li>
+            <li>Structural Engineering</li>
+        </ol>
+        <p>(ordered list, reverse) UCSD Jacobs School of Engineering has six department: </p>
+        <ol reversed>
+            <li>Bioengineering</li>
+            <li>Computer Science & Engineering</li>
+            <li>Electrical & Computer Engineering</li>
+            <li>Mechanical & Aerospace Engineering</li>
+            <li>NanoEngineering</li>
+            <li>Structural Engineering</li>
+        </ol>
+        <p>(ordered list, custom define number) UCSD Jacobs School of Engineering has six department: </p>
+        <ol>
+            <li value="1">Bioengineering</li>
+            <li value="2">Computer Science & Engineering</li>
+            <li value="33">Electrical & Computer Engineering</li>
+            <li value="44">Mechanical & Aerospace Engineering</li>
+            <li value="555">NanoEngineering</li>
+            <li value="666">Structural Engineering</li>
+        </ol>
+        <p>(ordered list, using letter) UCSD Jacobs School of Engineering has six department: </p>
+        <ol type="a">
+            <li>Bioengineering</li>
+            <li>Computer Science & Engineering</li>
+            <li>Electrical & Computer Engineering</li>
+            <li>Mechanical & Aerospace Engineering</li>
+            <li>NanoEngineering</li>
+            <li>Structural Engineering</li>
+        </ol>
+        <p>(unordered list) UCSD Jacobs School of Engineering has six department: </p>
+        <ul>
+            <li>Bioengineering</li>
+            <li>Computer Science & Engineering</li>
+            <li>Electrical & Computer Engineering</li>
+            <li>Mechanical & Aerospace Engineering</li>
+            <li>NanoEngineering</li>
+            <li>Structural Engineering</li>
+        </ul>
+        <p>(description list, URL as description) UCSD Jacobs School of Engineering has six department: </p>
+        <dl>
+            <dt>Bioengineering</dt>
+            <dd>http://be.ucsd.edu/</dd>
+            <dt>Computer Science & Engineering</dt>
+            <dd>http://cse.ucsd.edu/</dd>
+            <dt>Electrical & Computer Engineering</dt>
+            <dd>http://ece.ucsd.edu/</dd>
+            <dt>Mechanical & Aerospace Engineering</dt>
+            <dd>http://maeweb.ucsd.edu/</dd>
+            <dt>NanoEngineering</dt>
+            <dd>http://nanoengineering.ucsd.edu/</dd>
+            <dt>Structural Engineering</dt>
+            <dd>http://structures.ucsd.edu/</dd>
+        </dl>
+    </main>
+</body>
+</html>
