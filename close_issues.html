@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Close/Resolve Issues</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			text-decoration: none;
+		}
+		.site-header{
+			display: flex;
+			background-color:MidnightBlue;
+			color:Beige;
+			overflow: hidden;
+			width:100%;
+			box-sizing:border-box;
+		}
+		.site-header a.site-name{
+			font-weight:600;
+			font-color:white;
+			font-size:30px;
+			font:Calibri;
+			padding:10px;
+		}
+		.site-header nav.site-header-links{
+			margin-left:auto;
+			margin-right:0;
+		}
+		.site-header nav.site-header-links a{
+			float:right;
+			text-align: center;
+			font-size: 22px;
+			line-height: 30px;
+			padding:15px;
+			border-radius: 5px;
+			color:Linen;
+		}
+		.site-header nav.site-header-links a.now{
+			background-color: CornflowerBlue;
+		}
+		.site-header nav.site-header-links a:hover{
+			background-color: Linen;
+			color:DarkSlateGrey;
+		}
+		.site-header-2nd{
+			background-color: WhiteSmoke;
+			min-height: 100px;
+		}
+		.site-header-2nd-container{
+			width:1000px;
+			margin-left:250px;
+		}
+		.site-header-2nd-container h3{
+			height:40px;
+			width:1000px;
+			margin-left:250px;
+		}
+		.site-header-2nd-container table{
+			margin-left: 250px;
+			border-spacing: 0;
+		}
+		.site-header-2nd-container table td{
+			border-radius: 10px 10px 0px 0px;
+			text-align: center;
+			font-size: 18px;
+			padding:10px;
+			border-bottom-style: solid;
+			border-color: LightGray;
+			border-width: 1px;
+		}
+		.site-header-2nd-container table a{
+			color:black;
+		}
+		.site-header-2nd-container table td.now{
+			border-top-style: solid;
+			border-top-width: 3px;
+			border-left-style: solid;
+			border-right-style: solid; 
+			border-bottom-style: hidden;
+		}
+		.site-content{
+			position: relative;
+			border-spacing:10px;
+			width:1000px;
+			margin-left: 250px;
+			padding:10;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="site-header">
+		<a class="site-name">CSE134BIssues</a>
+		<nav class="site-header-links">
+			<a href="login_form.html" style="color:#FF0000">Sign out</a>
+			<a class="now">Manage Issues</a>
+			<a href="issuelist.html">Issue list</a>
+		</nav>
+	</div>
+	<div class="site-header-2nd">
+	<span class="site-header-2nd-container">
+	<h3>User1's issues</h3>
+	<table><tr>
+		<td><a href="add_issue.html">Add issue</a></td>
+		<td><a href="edit_issues.html">Edit issues</a></td>
+		<td class="now"><a>Close/Resolve issues</a></td>
+		<td><a href="delete_issues.html" style="color:#FF0000">Delete issues</a></td>
+	</tr>
+	</table>
+	</span>
+	</div>
+	<div class="site-content">
+	<label>Choose issue to close/resolve:</label>
+	<select id="closeselect" required>
+		<option value="">Please choose an issue you want to delete</option>
+		<option value="0">Issue #3: Lags out upon internet connectivity change</option>
+		<option value="1">Issue #8: Image does not resize</option>
+		<option value="2">Issue #17: gif support</option>
+	</select>
+	<template id="selecttemplate">
+		<div>Category:</div>
+		<div>Scope:</div>
+		<div>Importance:</div>
+	</template>
+	<div id='container'>
+	</div>
+	<input type=button value="Close Issue"/><small>Note: They can be reopened by you, other users or the developer later</small>
+	<!-- Script usage is vital to demonstrate some basic proper use of template -->
+	<script>
+		var data=[{category:"fundamental",scope:"entire",importance:"95"},{category:"visual",scope:"part3",importance:"30"},{category:"suggestion",scope:"part2",importance:"15"}];//This should be data retreived from the Internet
+		var selectioner=document.getElementById('closeselect');
+		selectioner.addEventListener('change',function(){
+		var chosen=selectioner.value;
+		var fragment=document.getElementsByTagName('template')[0];
+		var item=fragment.content.querySelector("div");
+		var editing1=document.importNode(item,true);
+		editing1.textContent+=data[chosen].category;
+		var item2=item.nextElementSibling;
+		var editing2=document.importNode(item2,true);
+		editing2.textContent+=data[chosen].scope;
+		var item3=item2.nextElementSibling;
+		var editing3=document.importNode(item3,true);
+		editing3.textContent+=data[chosen].importance;
+		container.innerHTML=editing1.textContent+"<br/>"+editing2.textContent+"<br/>"+editing3.textContent;});
+	</script>
+	</div>
+</body>
+</html>
