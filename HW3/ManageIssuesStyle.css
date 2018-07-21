@@ -1,0 +1,239 @@
+
+		*{
+			margin:0;
+			padding:0;
+			text-decoration: none;
+		}
+		body{
+			display: flex;
+  			flex-direction: column;
+  			min-height: 100vh;
+			overflow: auto;
+			background-color: AliceBlue;
+		}
+		.site-header{
+			display: flex;
+			background-color:MidnightBlue;
+			color:Beige;
+			overflow: hidden;
+			width:100%;
+			box-sizing:border-box;
+		}
+		.site-header a.site-name{
+			margin-left:250px;
+			font-weight:600;
+			font-color:white;
+			font-size:30px;
+			font:Calibri;
+			padding:10px;
+		}
+		.site-header nav.site-header-links{
+			margin-left:auto;
+			margin-right:150px;
+		}
+		.site-header nav.site-header-links a{
+			float:right;
+			text-align: center;
+			font-size: 17px;
+			line-height: 30px;
+			padding:15px;
+			border-radius: 5px;
+			color:Linen;
+		}
+		.site-header nav.site-header-links a.now{
+			background-color: CornflowerBlue;
+		}
+		.site-header nav.site-header-links a:hover{
+			background-color: Linen;
+			color:DarkSlateGrey;
+		}
+		.site-header-2nd{
+			background: linear-gradient(DodgerBlue,AliceBlue);
+			min-height: 100px;
+		}
+		.site-header-2nd-container{
+			width:1000px;
+			margin-left:250px;
+		}
+		.site-header-2nd-container h3{
+			height:40px;
+			width:1000px;
+			padding:10px;
+			margin-left:250px;
+		}
+		.site-header-2nd-container table td:hover{
+			background-color: AntiqueWhite;
+		}
+		.site-header-2nd-container table{
+			margin-left: 250px;
+			border-spacing: 0;
+		}
+		.site-header-2nd-container table td{
+			border-radius: 10px 10px 0px 0px;
+			text-align: center;
+			font-size: 18px;
+			padding:10px;
+			border-bottom-style: solid;
+			border-color: LightGray;
+			border-width: 1px;
+		}
+		.site-header-2nd-container table a{
+			color:black;
+		}
+		.site-header-2nd-container table td.now{
+			border-top-style: solid;
+			border-top-width: 3px;
+			border-left-style: solid;
+			border-right-style: solid; 
+			border-bottom-style: hidden;
+		}
+		.site-content{
+			position: relative;
+			border-spacing:10px;
+			width:1000px;
+			margin-left: 250px;
+			padding:10px;
+		}
+		.site-content label{
+			font-size: 17px;
+			padding: 5px;
+		}
+		.site-content select{
+			font-size: 17px;
+		}
+		.site-content #issue-info{
+			padding:20px;
+		}
+		.site-content .radioin{
+			padding:5px;
+			margin-bottom: 15px;
+		}
+		.site-content #shortdescfield{
+			width:1000px;
+			padding:5px;
+			border-width: 2px;
+			border-radius: 3px;
+			border-style: groove;
+			border-bottom-style: none;
+		}
+		.site-content #longdescfield{
+			width: 1000px;
+			height: 200px;
+			text-align: start;
+			padding:5px;
+			border-style: groove;
+			border-width: 2px;
+			border-radius: 3px;
+			margin-bottom: 10px;
+		}
+		footer{
+			height:50px;
+			margin-top: auto;
+			bottom:20px;
+			margin-left:250px;
+			width:1030px;
+			border-top-style: solid;
+			border-top-width: 1px;
+			border-top-color: Silver;
+		}
+		footer nav{
+			align:center;
+			padding-top: 20px; 
+		}
+		footer nav a{
+			padding-left: 20px;
+			padding-right: 20px;
+			border-right-style: solid;
+			border-right-color: LightGrey;
+			border-width:1px;
+			font-size: 13px;
+		}
+
+		/* Icon credits to wentin and https://cssicon.space/ */
+		.plus.icon {
+  			color: #000;
+  			position: absolute;
+  			margin-left: 3px;
+  			margin-top: 10px;
+		}	
+		.plus.icon:before {
+  			content: '';
+  			position: absolute;
+  			width: 15px;
+  			height: 1px;
+  			background-color: currentColor;	
+		}
+		.plus.icon:after {
+  			content: '';
+  			position: absolute;
+  			width: 15px;
+  			height: 1px;
+  			background-color: currentColor;
+          	transform: rotate(90deg);
+		}
+		.search.icon {
+  			color: #000;
+  			position: absolute;
+  			margin-top: 2px;
+  			margin-left: 3px;
+  			width: 12px;
+  			height: 12px;
+  			border: solid 1px currentColor;
+  			border-radius: 100%;
+          	transform: rotate(-45deg);
+		}
+		.search.icon:before {
+  			content: '';
+  			position: absolute;
+  			top: 12px;
+  			left: 5px;
+  			height: 6px;
+  			width: 1px;
+  			background-color: currentColor;
+		}
+		.check.icon {
+  			color: #000;
+  			position: absolute;
+  			margin-left: 3px;
+  			margin-top: 4px;
+  			width: 14px;
+  			height: 8px;
+  			border-bottom: solid 1px currentColor;
+  			border-left: solid 1px currentColor;
+  			-webkit-transform: rotate(-45deg);
+          	transform: rotate(-45deg);
+		}
+		.close.icon {
+  			color: #000;
+  			position: absolute;
+  			margin-top: 0;
+  			margin-left: 0;
+  			width: 14px;
+  			height: 14px;
+		}
+		.close.icon:before {
+  			content: '';
+  			position: absolute;
+  			top: 10px;
+  			width: 17px;
+  			height: 1px;
+  			background-color: currentColor;
+          	transform: rotate(-45deg);
+		}
+		.close.icon:after {
+			 content: '';
+			 position: absolute;
+			 top: 10px;
+			 width: 17px;
+			 height: 1px;
+			 background-color: currentColor;
+			 transform: rotate(45deg);
+		}
+		.iconspace{
+			float:left;
+			width:20px;
+		}
+		.iconspace2{
+			float:left;
+			width:26px;
+		}
