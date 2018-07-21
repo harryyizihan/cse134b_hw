@@ -3,114 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Close/Resolve Issues</title>
-	<style>
-		*{
-			margin:0;
-			padding:0;
-			text-decoration: none;
-		}
-		.site-header{
-			display: flex;
-			background-color:MidnightBlue;
-			color:Beige;
-			overflow: hidden;
-			width:100%;
-			box-sizing:border-box;
-		}
-		.site-header a.site-name{
-			font-weight:600;
-			font-color:white;
-			font-size:30px;
-			font:Calibri;
-			padding:10px;
-		}
-		.site-header nav.site-header-links{
-			margin-left:auto;
-			margin-right:0;
-		}
-		.site-header nav.site-header-links a{
-			float:right;
-			text-align: center;
-			font-size: 22px;
-			line-height: 30px;
-			padding:15px;
-			border-radius: 5px;
-			color:Linen;
-		}
-		.site-header nav.site-header-links a.now{
-			background-color: CornflowerBlue;
-		}
-		.site-header nav.site-header-links a:hover{
-			background-color: Linen;
-			color:DarkSlateGrey;
-		}
-		.site-header-2nd{
-			background-color: WhiteSmoke;
-			min-height: 100px;
-		}
-		.site-header-2nd-container{
-			width:1000px;
-			margin-left:250px;
-		}
-		.site-header-2nd-container h3{
-			height:40px;
-			width:1000px;
-			padding:10px;
-			margin-left:250px;
-		}
-		.site-header-2nd-container table{
-			margin-left: 250px;
-			border-spacing: 0;
-		}
-		.site-header-2nd-container table td{
-			border-radius: 10px 10px 0px 0px;
-			text-align: center;
-			font-size: 18px;
-			padding:10px;
-			border-bottom-style: solid;
-			border-color: LightGray;
-			border-width: 1px;
-		}
-		.site-header-2nd-container table a{
-			color:black;
-		}
-		.site-header-2nd-container table td.now{
-			border-top-style: solid;
-			border-top-width: 3px;
-			border-left-style: solid;
-			border-right-style: solid; 
-			border-bottom-style: hidden;
-		}
-		.site-content{
-			position: relative;
-			border-spacing:10px;
-			width:1000px;
-			margin-left: 250px;
-			padding:10px;
-		}
-		.site-content label{
-			font-size: 20px;
-			padding: 20px;
-		}
-		.site-content select{
-			font-size: 20px;
-		}
-		.site-content #shortdescfield{
-			width:1000px;
-			padding:5px;
-		}
-		.site-content #longdescfield{
-			width: 1000px;
-			height: 200px;
-			text-align: start;
-			padding:5px;
-		}
-	</style>
+	<link rel="stylesheet" href="ManageIssuesStyle.css">
 </head>
 
 <body>
 	<div class="site-header">
-		<a class="site-name">CSE134BIssues</a>
+		<a class="site-name">Issues</a>
 		<nav class="site-header-links">
 			<a href="login_form.html" style="color:#FF0000">Sign out</a>
 			<a class="now">Manage Issues</a>
@@ -121,10 +19,10 @@
 	<span class="site-header-2nd-container">
 	<h3>User1's issues</h3>
 	<table><tr>
-		<td><a href="add_issue.html">Add issue</a></td>
-		<td><a href="edit_issues.html">Edit issues</a></td>
-		<td class="now"><a>Close/Resolve issues</a></td>
-		<td><a href="delete_issues.html" style="color:#FF0000">Delete issues</a></td>
+		<td><a href="add_issue.html"><div class="plus icon"></div><span class="iconspace">&nbsp;</span>Add issue</a></td>
+		<td><a href="edit_issues.html"><div class="search icon"></div><span class="iconspace">&nbsp;</span>Edit issues</a></td>
+		<td class="now"><a><div class="check icon"></div><span class="iconspace">&nbsp;</span>Close/Resolve issues</a></td>
+		<td><a href="delete_issues.html" style="color:#FF0000"><div class="close icon"></div><span class="iconspace2">&nbsp;</span>Delete issues</a></td>
 	</tr>
 	</table>
 	</span>
@@ -140,8 +38,8 @@
 	</select><br>
 	<ul id="issue-info" style="list-style-type:none;display:none">
 	</ul>
-	<input type="radio" checked="checked" name="radio">Close
-	<input type="radio" name="radio">Resolve <br>
+	<input type="radio" checked="checked" name="radio" class="radioin">Close
+	<input type="radio" name="radio" class="radioin">Resolve <br>
 	<input id="shortdescfield" type="text" name="shortdesc" placeholder="Briefly explain why you decide to close/resolved the issue"><br>
 	<textarea id="longdescfield" name="longdesc" placeholder="If you want, expand further on the topic..."></textarea><br>
 	<input type=button value="Close/Resolve Issue"/><small>Note: They can be reopened by you, other users or the developer later</small>
@@ -178,5 +76,15 @@
 		};});
 	</script>
 	</div>
+	<footer>
+		<nav>
+		<a>&copy; 2018 Langtian Qin</a>
+		<a href="terms.html">Terms</a>
+		<a href="help.html">Help</a>
+		<a href="contact.html">Contact Us</a>
+		<a href="credits.html">Credits</a>
+		<a href="about.html">About</a>
+		</nav>
+	</footer>
 </body>
 </html>
