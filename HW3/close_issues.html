@@ -2,6 +2,7 @@
 <html lang="en-us">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Close/Resolve Issues</title>
 	<link rel="stylesheet" href="ManageIssuesStyle.css">
 </head>
@@ -19,15 +20,18 @@
 	<span class="site-header-2nd-container">
 	<h3>User1's issues</h3>
 	<table><tr>
+		<td id="dummyfirst"></td>
 		<td><a href="add_issue.html"><div class="plus icon"></div><span class="iconspace">&nbsp;</span>Add issue</a></td>
 		<td><a href="edit_issues.html"><div class="search icon"></div><span class="iconspace">&nbsp;</span>Edit issues</a></td>
 		<td class="now"><a><div class="check icon"></div><span class="iconspace">&nbsp;</span>Close/Resolve issues</a></td>
 		<td><a href="delete_issues.html" style="color:#FF0000"><div class="close icon"></div><span class="iconspace2">&nbsp;</span>Delete issues</a></td>
+		<td id="dummylast"></td>
 	</tr>
 	</table>
 	</span>
 	</div>
-	<div class="site-content">
+	<div class="left-blank" style="float:left">&nbsp;</div>
+	<div class="site-content" style="float:left">
 	<form>
 	<label>Choose issue to close/resolve:</label>
 	<select id="closeselect" required>
@@ -43,7 +47,9 @@
 	<input id="shortdescfield" type="text" name="shortdesc" placeholder="Briefly explain why you decide to close/resolved the issue"><br>
 	<textarea id="longdescfield" name="longdesc" placeholder="If you want, expand further on the topic..."></textarea><br>
 	<input type=button value="Close/Resolve Issue"/><small>Note: They can be reopened by you, other users or the developer later</small>
-	</form>
+	</form> 
+	</div>
+	<div class="right-blank" style="float:left">&nbsp;</div>
 	<script>
 		var selector=document.getElementById("closeselect");
 		var list=document.getElementById("issue-info");
@@ -75,7 +81,6 @@
 			list.appendChild(listItem4);
 		};});
 	</script>
-	</div>
 	<footer>
 		<nav>
 		<a>&copy; 2018 Langtian Qin</a>
