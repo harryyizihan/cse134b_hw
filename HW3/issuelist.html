@@ -51,16 +51,36 @@ thead, tfoot, tr, td and th-->
 			border-radius: 5px;
 			color:Linen;
 		}
-
         /* None-used
 		.site-header nav.site-header-links a:hover{
 			background-color: Linen;
 			color:DarkSlateGrey;
 		}
         */
-        table, th, td {
-            border: 1px solid black;
+        .issue-table{
+            border-collapse: collapse;
+            overflow: auto;
+            width: auto;
         }
+
+        .issue-table tr{
+            height: 50px;
+            border-bottom: 1px solid;
+        }
+
+        .issue-table th{
+            background-color: limegreen;
+            color: white;
+            text-align: left;
+            padding: 0 20px 0 20px;
+        }
+
+        .issue-table td{
+            background-color: beige;
+            text-align: left;
+            padding: 0 20px 0 20px;
+        }
+
 	</style>
 </head>
 <body>
@@ -73,7 +93,7 @@ thead, tfoot, tr, td and th-->
 		</nav>
 	</header>
     <main>
-        <table>
+        <table class="issue-table">
             <colgroup> <col> <col> <col> <col>
             <thead>
                 <tr>
