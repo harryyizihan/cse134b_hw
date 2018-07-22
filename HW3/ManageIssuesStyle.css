@@ -3,10 +3,10 @@
 			margin:0;
 			padding:0;
 			text-decoration: none;
+			font-family: Helvetica;
 		}
 		body{
-			display: flex;
-  			flex-direction: column;
+			width: 100%;
   			min-height: 100vh;
 			overflow: auto;
 			background-color: AliceBlue;
@@ -48,55 +48,82 @@
 			color:DarkSlateGrey;
 		}
 		.site-header-2nd{
-			background: linear-gradient(DodgerBlue,AliceBlue);
-			min-height: 100px;
+			background-color:LightGrey;
+			height:87px;
 		}
 		.site-header-2nd-container{
-			width:1000px;
-			margin-left:250px;
+			width: 1000px;
+			margin-left: 250px;
 		}
 		.site-header-2nd-container h3{
-			height:40px;
+			height:30px;
 			width:1000px;
-			padding:10px;
-			margin-left:250px;
+			padding:5px;
+			margin-left:20%;
 		}
 		.site-header-2nd-container table td:hover{
 			background-color: AntiqueWhite;
 		}
 		.site-header-2nd-container table{
-			margin-left: 250px;
 			border-spacing: 0;
+			bottom: 0;
+			width: 100%;
 		}
 		.site-header-2nd-container table td{
 			border-radius: 10px 10px 0px 0px;
 			text-align: center;
 			font-size: 18px;
-			padding:10px;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 5px;
 			border-bottom-style: solid;
-			border-color: LightGray;
+			border-color: SlateGrey;
 			border-width: 1px;
 		}
 		.site-header-2nd-container table a{
 			color:black;
 		}
+		.site-header-2nd-container table td#dummyfirst{
+			width:20%;
+		}
+		.site-header-2nd-container table td#dummyfirst:hover{
+			background-color: LightGrey
+		}
+		.site-header-2nd-container table td#dummylast{
+			width:30%;
+		}
+		.site-header-2nd-container table td#dummylast:hover{
+			background-color: LightGrey
+		}
 		.site-header-2nd-container table td.now{
+			background-color: AliceBlue;
 			border-top-style: solid;
 			border-top-width: 3px;
 			border-left-style: solid;
 			border-right-style: solid; 
 			border-bottom-style: hidden;
 		}
+		.left-blank{
+			float: left;
+			margin-right: auto;
+			width: 20%;
+			height:auto;
+		}
 		.site-content{
-			position: relative;
-			border-spacing:10px;
-			width:1000px;
-			margin-left: 250px;
+			width:60%;
+			float:left;
+			margin-right: auto;
+			height:auto;
 			padding:10px;
+		}
+		.right-blank{
+			float: left;
+			margin-right: auto;
+			height:auto;
+			width: 20%;
 		}
 		.site-content label{
 			font-size: 17px;
-			padding: 5px;
 		}
 		.site-content select{
 			font-size: 17px;
@@ -109,7 +136,7 @@
 			margin-bottom: 15px;
 		}
 		.site-content #shortdescfield{
-			width:1000px;
+			width:100%;
 			padding:5px;
 			border-width: 2px;
 			border-radius: 3px;
@@ -117,7 +144,7 @@
 			border-bottom-style: none;
 		}
 		.site-content #longdescfield{
-			width: 1000px;
+			width: 100%;
 			height: 200px;
 			text-align: start;
 			padding:5px;
@@ -151,11 +178,12 @@
 			margin:5px;
 		}
 		footer{
+			position: fixed;
 			height:50px;
 			margin-top: auto;
-			bottom:20px;
-			margin-left:250px;
-			width:1030px;
+			bottom:0px;
+			margin-left:20%;
+			width:60%;
 			border-top-style: solid;
 			border-top-width: 1px;
 			border-top-color: Silver;
