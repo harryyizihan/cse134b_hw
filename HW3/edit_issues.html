@@ -32,6 +32,12 @@
 	<div class="left-blank">&nbsp;</div>
 	<div class="site-content">
 		<form method="get" onsubmit="return (a.valueAsNumber==201)">
+		<label>Choose issue to edit: <select id="closeselect" required>
+		<option value="" disabled>Select Issue(*)</option>
+		<option value="0" selected>Issue #3: Lags out upon internet connectivity change</option>
+		<option value="1">Issue #8: Image does not resize</option>
+		<option value="2">Issue #17: gif support</option>
+		</select><br>
 		<label>Project: Flower Calender <span style="font-size:10px">You cannot change this option. Please delete your issue and resubmit if it has been addressed to the wrong project.</span></label><br>
 		<label>Issue Name: <input type="text" name="issueName" style="width:250px" value="Image does not resize" required></label><br>
 		<label>Issue Type:</label>
