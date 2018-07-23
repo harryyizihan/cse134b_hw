@@ -14,15 +14,26 @@ h3, h4, h5, h6, header and footer-->
 			padding:0;
 			text-decoration: none;
 		}
+		/* fixing the anchor alignment issue - https://www.itsupportguides.com/knowledge-base/tech-tips-tricks/how-to-offset-anchor-tag-link-using-css/ */
+		:target:before {
+			content:"";
+			display:block;
+			height:60px;
+			margin:-60px 0 0;
+		}
 		.site-header{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 60px;
+			line-height: 60px;
 			display: flex; /* What does this used for? */
 			background-color:#272727;
 			overflow: hidden;
-			width: 100%;
 			box-sizing: border-box;
 		}
 		.site-header span.site-name{
-			font-weight:600;
+			font-weight: bold;
 			color:white;
 			font-size:30px;
 			font:Calibri;
@@ -58,15 +69,36 @@ h3, h4, h5, h6, header and footer-->
 			background-color: linen;
 			color:DarkSlateGrey;
         }
+		.sidenav {
+			position: fixed;
+			width: 130px;
+			top: 90px;
+			left: 30px;
+			padding: 5px;	
+			background-color: whitesmoke;
+			overflow-x: hidden;
+		}
+		.sidenav a {
+			padding: 10px 15px;
+			font-size: 20px;
+			font-weight: bold;
+			color: #2196F3;
+			display: block;
+		}
+		.sidenav a:hover {
+			color: #064579;
+		}
 		html{
 			position: relative;
 		}
 		main{
+			margin-top: 100px;
+			margin-left: 200px;
+			margin-right: 50px;
 			margin-bottom: 110px;
-			padding: 40px 80px;
 		}
 		main section{
-			padding-bottom: 20px;
+			margin-bottom: 20px;
 		}
 		main section p{
 			font-size: 14pt;
@@ -120,6 +152,13 @@ h3, h4, h5, h6, header and footer-->
 		</nav>
 	</header>
     <main>
+		<nav class="sidenav">
+			<a href="#issue-name">Issue Name</a>
+			<a href="#issue-type">Issue Type</a>
+			<a href="#issue-data">Issue Date</a>
+			<a href="#issue-description">Description</a>
+			<a href="#issue-attachment">Attachment</a>
+		</nav>
         <section id="issue-name">
             <h2>Issue Name: xxx.html cannot be access</h2>
         </section>
