@@ -20,7 +20,7 @@
 			box-sizing:border-box;
 		}
 		.site-header a.site-name{
-			margin-left:250px;
+			margin-left:15%;
 			font-weight:600;
 			font-color:white;
 			font-size:30px;
@@ -48,18 +48,18 @@
 			color:DarkSlateGrey;
 		}
 		.site-header-2nd{
-			background-color:LightGrey;
-			height:87px;
+			background: PaleTurquoise;
+			height:100px;
 		}
 		.site-header-2nd-container{
 			width: 1000px;
-			margin-left: 250px;
+			margin-left: 15%;
 		}
 		.site-header-2nd-container h3{
 			height:30px;
 			width:1000px;
 			padding:5px;
-			margin-left:20%;
+			margin-left:15%;
 		}
 		.site-header-2nd-container table td:hover{
 			background-color: AntiqueWhite;
@@ -72,7 +72,8 @@
 		.site-header-2nd-container table td{
 			border-radius: 10px 10px 0px 0px;
 			text-align: center;
-			font-size: 18px;
+			font-size: 14px;
+			height:35px;
 			padding-left: 10px;
 			padding-right: 10px;
 			padding-top: 5px;
@@ -81,19 +82,19 @@
 			border-width: 1px;
 		}
 		.site-header-2nd-container table a{
-			color:black;
+			color:SlateGrey;
 		}
 		.site-header-2nd-container table td#dummyfirst{
-			width:20%;
+			width:15%;
 		}
 		.site-header-2nd-container table td#dummyfirst:hover{
-			background-color: LightGrey
+			background-color: PaleTurquoise;
 		}
 		.site-header-2nd-container table td#dummylast{
-			width:30%;
+			width:55%;
 		}
 		.site-header-2nd-container table td#dummylast:hover{
-			background-color: LightGrey
+			background-color: PaleTurquoise;
 		}
 		.site-header-2nd-container table td.now{
 			background-color: AliceBlue;
@@ -106,15 +107,16 @@
 		.left-blank{
 			float: left;
 			margin-right: auto;
-			width: 20%;
+			width: 15%;
 			height:auto;
 		}
 		.site-content{
+			margin-top: 10px;
 			width:60%;
 			float:left;
 			margin-right: auto;
 			height:auto;
-			padding:10px;
+			padding:0px;
 		}
 		.right-blank{
 			float: left;
@@ -122,35 +124,64 @@
 			height:auto;
 			width: 20%;
 		}
-		.site-content label{
-			font-size: 17px;
+		.left-options{
+			margin-top: 10px;
+			float: left;
+			margin-right: auto;
+			height: 389px;
+			width: 15%;
+			border: solid 1px;
+			border-style: none;
+			border-right-style: none;
 		}
-		.site-content select{
-			font-size: 17px;
+		.left-options .radioin{
+			margin:4px;
+		}
+		.left-options ul{
+			padding: 4px;
+
+		}
+		.left-options select{
+			font-size: 14px;
+			margin-top: 4px;
+			margin-bottom: 4px;
+			border:0 none;
+			color:#000000;
+			background: transparent;
+		}
+		.left-options div.fileup{
+			margin-left:4px;
+			margin-top:4px;
+		}
+		.left-options div.optionscontainer{
+			margin:0px;
+			border-left:1px solid;
+			border-top:1px solid;
+		}
+		.left-options svg#curvedborder{
+			display: block;
 		}
 		.site-content #issue-info{
-			padding:20px;
-		}
-		.site-content .radioin{
-			padding:5px;
-			margin-bottom: 15px;
+			padding:15px;
 		}
 		.site-content #shortdescfield{
-			width:100%;
+			width:85%;
 			padding:5px;
+			font-size: 14px;
 			border-width: 2px;
-			border-radius: 3px;
+			border-radius: 0;
 			border-style: groove;
 			border-bottom-style: none;
 		}
 		.site-content #longdescfield{
-			width: 100%;
-			height: 200px;
+			width: 85%;
+			height: 350px;
+			font-size: 18px;
 			text-align: start;
 			padding:5px;
 			border-style: groove;
 			border-width: 2px;
-			border-radius: 3px;
+			border-radius: 0;
 			margin-bottom: 10px;
 		}
 		#widbox{

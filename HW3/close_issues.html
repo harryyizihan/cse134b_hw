@@ -21,63 +21,77 @@
 	<h3>User1's issues</h3>
 	<table><tr>
 		<td id="dummyfirst"></td>
-		<td><a href="add_issue.html"><div class="plus icon"></div><span class="iconspace">&nbsp;</span>Add issue</a></td>
-		<td><a href="edit_issues.html"><div class="search icon"></div><span class="iconspace">&nbsp;</span>Edit issues</a></td>
-		<td class="now"><a><div class="check icon"></div><span class="iconspace">&nbsp;</span>Close/Resolve issues</a></td>
-		<td><a href="delete_issues.html" style="color:#FF0000"><div class="close icon"></div><span class="iconspace2">&nbsp;</span>Delete issues</a></td>
+		<td><a href="add_issue.html"><div class="plus icon"></div><span class="iconspace">&nbsp;</span>Add</a></td>
+		<td><a href="edit_issues.html"><div class="search icon"></div><span class="iconspace">&nbsp;</span>Edit</a></td>
+		<td class="now"><a><div class="check icon"></div><span class="iconspace">&nbsp;</span>Close/Resolve</a></td>
+		<td><a href="delete_issues.html" style="color:#FF0000"><div class="close icon"></div><span class="iconspace2">&nbsp;</span>Delete</a></td>
 		<td id="dummylast"></td>
 	</tr>
 	</table>
 	</span>
 	</div>
-	<div class="left-blank" style="float:left">&nbsp;</div>
-	<div class="site-content" style="float:left">
-	<form>
-	<label>Choose issue to close/resolve:</label>
-	<select id="closeselect" required>
-		<option value="">Please choose an issue you want to close/resolve</option>
+	<div class="left-blank">&nbsp;</div>
+	<div class="left-options">
+		<div class="optionscontainer">
+		<select id="closeselect" required>
+		<option value="">Select Issue</option>
 		<option value="0">Issue #3: Lags out upon internet connectivity change</option>
 		<option value="1">Issue #8: Image does not resize</option>
 		<option value="2">Issue #17: gif support</option>
-	</select><br>
-	<ul id="issue-info" style="list-style-type:none;display:none">
-	</ul>
-	<input type="radio" checked="checked" name="radio" class="radioin">Close
-	<input type="radio" name="radio" class="radioin">Resolve <br>
+		</select><hr>
+		<ul id="issue-info" style="list-style-type:none;display:none"></ul>
+		<input type="radio" checked="checked" name="radio" class="radioin">Close<br>
+		<input type="radio" name="radio" class="radioin">Resolve <hr>
+		<div class="fileup">
+		<label for="support">Reference file:</label>
+		<input type="file" name="support">
+		</div>
+		</div>
+		<svg width="100%" height="100%" id="curvedborder">
+			<path d="M0,0 Q00,100 100,100" stroke="black" fill="transparent"></path>
+			<path d="M100,100 Q200,100 200,200" stroke="black" fill="transparent"></path>
+		</svg>
+	</div>
+	<div class="site-content">
+	<form>
 	<input id="shortdescfield" type="text" name="shortdesc" placeholder="Briefly explain why you decide to close/resolved the issue"><br>
 	<textarea id="longdescfield" name="longdesc" placeholder="If you want, expand further on the topic..."></textarea><br>
 	<input type=button value="Close/Resolve Issue"/><small>Note: They can be reopened by you, other users or the developer later</small>
 	</form> 
 	</div>
-	<div class="right-blank" style="float:left">&nbsp;</div>
+	<div class="right-blank">&nbsp;</div>
 	<script>
 		var selector=document.getElementById("closeselect");
 		var list=document.getElementById("issue-info");
 		selector.addEventListener('change',function(){
 		var current=selector.value;
 		var issueInfoTable=[["MyPlanner","Fundamental",95,"When the Internet connection switches from on to off, sometimes the app would stop responding; when the connection switches from off to on, the app does not automatically restart processing."],["Flower Calender","Visual",62,"The calendar resizes upon app resize but the images do not, resulting in them showing outside of their block"],["Flower Calender","Suggestion",25,"Seems like a good idea if the app supports animated pictures"]];
-		if(current!=="") {
-			list.style.display="block";
-			var removables=document.getElementsByClassName('removable');
+		var removables=document.getElementsByClassName('removable');
 			while(removables[0]){
 				removables[0].parentNode.removeChild(removables[0]);
 			}
+		if(current!=="") {
+			list.style.display="block";
 			var listItem1=document.createElement('li');
-			listItem1.innerHTML="Project in concern: "+issueInfoTable[current][0];
+			listItem1.innerHTML="Project in concern: "+"<br>"+issueInfoTable[current][0];
 			listItem1.className="removable";
+			listItem1.style="font-size:14px"
 			list.appendChild(listItem1);
 			var listItem2=document.createElement('li');
 			listItem2.innerHTML="Issue Type: "+issueInfoTable[current][1];
 			listItem2.className="removable";
+			listItem2.style="font-size:14px"
 			list.appendChild(listItem2);
 			var listItem3=document.createElement('li');
 			listItem3.innerHTML="Importance: "+issueInfoTable[current][2];
 			listItem3.className="removable";
+			listItem3.style="font-size:14px";
 			listItem3.style.color=issueInfoTable[current][2]>66?"red":(issueInfoTable[current][2]>33?"blue":"green");
 			list.appendChild(listItem3);
 			var listItem4=document.createElement('li');
-			listItem4.innerHTML="Description: "+issueInfoTable[current][3];
+			listItem4.innerHTML="Description: "+issueInfoTable[current][3]+"<hr>";
 			listItem4.className="removable";
+			listItem4.style="font-size:12px"
 			list.appendChild(listItem4);
 		};});
 	</script>
