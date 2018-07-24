@@ -45,7 +45,7 @@
 	</div>
 	<div class="site-header-2nd">
 	<span class="site-header-2nd-container">
-	<h3>User1's issues</h3>
+	<h3 style="font-family:monospace"><img src="avatar.png" alt="" style="height:25px;width:25px;">&nbsp;/u/drboom</h3>
 	<table><tr>
 		<td id="dummyfirst"></td>
 		<td class="now"><a href="add_issue.html"><div class="plus icon"></div><span class="iconspace">&nbsp;</span>Add</a></td>
@@ -60,10 +60,15 @@
 	<div class="left-blank">&nbsp;</div>
 	<div class="site-content">
 	<form method="get" onsubmit="return (a.valueAsNumber==538);dialog1.show()">
-		<label>Issue Name: <input type="text" name="issueName" required></label><br/>
+		<label>Project: <select name="proj" required>
+			<option value="" disabled selected>Select Project</option>
+			<option value="1">Flower Calender</option>
+			<option value="2">MyPlanner</option>
+			<option value="3">Other</option></select><br>
+		<label>Issue Name: <input type="text" name="issueName" style="width:250px" required></label><br>
 		<label>Issue Type:</label>
 		<select name="issuetype" required>
-			<option value=""> Select issue category</option>
+			<option value="" disabled selected> Select issue category</option>
 			<optgroup label="Fundamental issues"></optgroup>
 			<option value="1.1"> Crashes</option>
 			<option value="1.2"> Irresponsiveness</option>
@@ -75,25 +80,17 @@
 			<option value="3.1"> Visual Suggestions</option>
 			<option value="3.2"> Functionality Suggestions</option>
 		</select><br/>
-		<label>Issue Scope:	</label>
-			<input name=scope list=scopes required>
-			<datalist id=scopes>
-				<option value="Entire project">
-				<option value="Part 1">
-				<option value="Part 2">
-				<option value="Part 3">
-			</datalist>
-		<br/>
 		<label>Issue Description: </label><br>
-		<textarea cols=100 name="issuedesc" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000></textarea><br/>
+		<textarea cols=100 name="issuedesc" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000 style="width:90%;height:200px;"></textarea><br/>
 		<div class="range">
 			<label>Issue Importance:
 				<small>Low priority</small><input type="range" min=0 max=100 value=50 step=5 name="importance"><small>High priority</small></label>
 		</div>
 		<label>Issue Attachments:
 			<input type="file" accept=".doc,.docx,.pdf"></label><br/>
-		<fieldset>
+		<fieldset style="width:90%;">
 			<legend>Contact Info(optional):</legend>
+			<label>This information is only shown to the project developer. <a href="terms.html">Learn More.</a></label>
 			Name: <input type="text"><br/>
 			Email: <input type="email"><br/>
 			Phone: <input type="tel"><br/>
@@ -109,7 +106,7 @@
 		<div id="detailspart" style="display:none;">
 			<details><summary><label>Developer Responsiveness: </label></summary>
   			<meter min=0 max=47 value=9></meter> This developer has resolved 9 out of 47 reported issues<br/>
-  			<meter min=0 max=47 value=3></meter> This developer has closed or merged 3 out of 47 reported issues<br/>
+  			<meter min=0 max=47 value=3></meter> This developer has closed 3 out of 47 reported issues<br/>
   			<meter min=0 max=47 value=7></meter> Submitters has resolved or closed 7 out of 47 reported issues
   			</details>
   			<details><summary><label>Developer Issue History: </label></summary>
