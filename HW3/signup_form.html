@@ -13,7 +13,8 @@
     /* Full-width input fields */
     
     input[type=text],
-    input[type=password] {
+    input[type=password],
+    input[type=email] {
         width: 100%;
         padding: 15px;
         margin: 5px 0 22px 0;
@@ -138,7 +139,7 @@
                 <p>Please fill in this form to create an account.</p>
                 <hr>
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="email" placeholder="Enter Email" name="email" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
@@ -153,19 +154,6 @@
             </div>
         </form>
     </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
 </body>
 
 </html>

@@ -14,7 +14,8 @@
         /* Full-width input fields */
         
         input[type=text],
-        input[type=password] {
+        input[type=password],
+        input[type=email] {
             width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -126,14 +127,13 @@
     <form class="modal-content" action="/HW3/close_issues.html" method="GET">
         <div class="header">
             <h1>Welcome to the <i>issue tracker </i><i class="fas fa-grin-hearts"></i>
-
             </h1>
         </div>
 
 
         <div class="container">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="email" placeholder="Enter Username" name="uname" required>
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
@@ -147,19 +147,6 @@
         </div>
     </form>
     </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
 </body>
 
 </html>
