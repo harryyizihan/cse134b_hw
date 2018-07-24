@@ -19,7 +19,6 @@ thead, tfoot, tr, td and th-->
             font-family: 'Indie Flower', cursive;
         }
         /* fixing the anchor alignment issue - https://www.itsupportguides.com/knowledge-base/tech-tips-tricks/how-to-offset-anchor-tag-link-using-css/ */
-        
          :target:before {
             content: "";
             display: block;
@@ -87,9 +86,14 @@ thead, tfoot, tr, td and th-->
         }
         
         .site-header nav.site-header-links ul ul li {
-            display: inline-block;
-            height: 40px;
-            box-align: center;
+			display: block;
+			width: 100%;
+			height: 33%;
+		}
+    
+		.site-header nav.site-header-links ul ul li a{
+			width: 181.41;
+			float:	none;
         }
         
         .site-header nav.site-header-links ul li:hover ul {
@@ -97,9 +101,11 @@ thead, tfoot, tr, td and th-->
         }
         
         main {
-            margin: 100px 80px 150px 80px;
+            margin: 100px 80px 100px 80px;
         }
-        
+        .table-container{
+            overflow-x: auto;
+        }
         .issue-table {
             border-collapse: collapse;
             width: 100%;
@@ -115,15 +121,10 @@ thead, tfoot, tr, td and th-->
         .issue-table tr:nth-child(even) {
             background-color: lightgray;
         }
-<<<<<<< HEAD
         .issue-table tr:hover{
             background-color: lightyellow;
         }
         .issue-table th{
-=======
-        
-        .issue-table th {
->>>>>>> 3949380e64516598107a2e87ecec4ab0c509e28e
             background-color: #2196F3;
             color: white;
             text-align: left;
