@@ -9,14 +9,13 @@
     <title>Issue Tracker</title>
     <style>
         body {
-            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background-image: url("https://cdn.pixabay.com/photo/2017/06/21/07/33/background-2426328_960_720.jpg") 
         }
         /* Full-width input fields */
         
         input[type=text],
-        input[type=password],
-        input[type=email] {
+        input[type=password] {
             width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -36,7 +35,6 @@
             width: 100%;
             width: 50%;
             float: left;
-            font-family: "Comic Sans MS", cursive, sans-serif;
         }
         
         .header {
@@ -129,13 +127,14 @@
     <form class="modal-content" action="/HW3/close_issues.html" method="GET">
         <div class="header">
             <h1>Welcome to the <i>issue tracker </i><i class="fas fa-grin-hearts"></i>
+
             </h1>
         </div>
 
 
         <div class="container">
             <label for="uname"><b>Username</b></label>
-            <input type="email" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" name="uname" required>
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
@@ -149,6 +148,19 @@
         </div>
     </form>
     </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 
 </html>
