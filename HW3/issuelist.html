@@ -2,152 +2,174 @@
 thead, tfoot, tr, td and th-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="/HW3/favicon.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <title>Issue List</title>
-	<style>
-		*{
-			margin:0;
-			padding:0;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
             text-decoration: none;
-            font-family: "Comic Sans MS", cursive, sans-serif;
-		}
-		/* fixing the anchor alignment issue - https://www.itsupportguides.com/knowledge-base/tech-tips-tricks/how-to-offset-anchor-tag-link-using-css/ */
-		:target:before {
-			content:"";
-			display:block;
-			height:60px;
-			margin:-60px 0 0;
-		}
-		.site-header{
-			position: fixed;
-			top: 0;
-			width: 100%;
-			height: 60px;
-			line-height: 60px;
-			display: flex;
-			background-color:#272727;
-		}
-		.site-header span.site-name{
-			font-weight: bold;
-			color:white;
-			font-size:30px;
-			padding-left: 20px;
-		}
-		.site-header nav.site-header-links{
-			display: table;
-			margin-left:auto;
-			margin-right:0;
-		}
-		.site-header nav.site-header-links ul li {
-			display: table-cell;
-			position: relative;
-			text-align: center;
-		}
-		.site-header nav.site-header-links ul li a{
-			display: block;
-			float:right;
-			text-align: center;
-			font-size: 22px;
-			line-height: 30px;
-			padding: 15px;
-			color: white;
-		}
-		.site-header #sign-out-buttom{
-			background-color: #E30000;
-			color: white;
-		}
-		.site-header nav.site-header-links a.current-page{
-			background-color: #FF652F;
-		}
-		.site-header nav.site-header-links a:hover{
-			background-color: #86C232;
-		}
-		.site-header nav.site-header-links ul ul{
-			display: none;
-			position: absolute;
-			background-color: #272727;
-			overflow: hidden;
-		}
-		.site-header nav.site-header-links ul ul li{
-			display: block;
-			width: 100%;
-			height: 33%;
-		}
-		.site-header nav.site-header-links ul ul li a{
-			width: 181.41;
-			float:	none;
-		}
-		.site-header nav.site-header-links ul li:hover ul {
-			display: table-cell;
+            font-family: 'Indie Flower', cursive;
         }
-		main{
-			margin: 100px 80px 100px 80px;
-		}
-        .table-container{
-            overflow-x: auto;
+        /* fixing the anchor alignment issue - https://www.itsupportguides.com/knowledge-base/tech-tips-tricks/how-to-offset-anchor-tag-link-using-css/ */
+        
+         :target:before {
+            content: "";
+            display: block;
+            height: 60px;
+            margin: -60px 0 0;
         }
-        .issue-table{
+        
+        .site-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            display: flex;
+            background-color: #272727;
+        }
+        
+        .site-header span.site-name {
+            font-weight: bold;
+            color: white;
+            font-size: 30px;
+            padding-left: 20px;
+        }
+        
+        .site-header nav.site-header-links {
+            display: table;
+            margin-left: auto;
+            margin-right: 0;
+        }
+        
+        .site-header nav.site-header-links ul li {
+            display: table-cell;
+            position: relative;
+            text-align: center;
+        }
+        
+        .site-header nav.site-header-links ul li a {
+            display: block;
+            float: right;
+            text-align: center;
+            font-size: 22px;
+            line-height: 30px;
+            padding: 15px;
+            color: white;
+        }
+        
+        .site-header #sign-out-buttom {
+            background-color: #E30000;
+            color: white;
+        }
+        
+        .site-header nav.site-header-links a.current-page {
+            background-color: #FF652F;
+        }
+        
+        .site-header nav.site-header-links a:hover {
+            background-color: #86C232;
+        }
+        
+        .site-header nav.site-header-links ul ul {
+            display: none;
+            position: absolute;
+            background-color: #272727;
+            overflow: hidden;
+        }
+        
+        .site-header nav.site-header-links ul ul li {
+            display: inline-block;
+            height: 40px;
+            box-align: center;
+        }
+        
+        .site-header nav.site-header-links ul li:hover ul {
+            display: table-cell;
+        }
+        
+        main {
+            margin: 100px 80px 150px 80px;
+        }
+        
+        .issue-table {
             border-collapse: collapse;
             width: 100%;
             margin: 0 auto;
         }
-        .issue-table tr{
+        
+        .issue-table tr {
             background-color: whitesmoke;
             height: 50px;
             border-bottom: 1px solid;
         }
+        
         .issue-table tr:nth-child(even) {
             background-color: lightgray;
         }
+<<<<<<< HEAD
         .issue-table tr:hover{
             background-color: lightyellow;
         }
         .issue-table th{
+=======
+        
+        .issue-table th {
+>>>>>>> 3949380e64516598107a2e87ecec4ab0c509e28e
             background-color: #2196F3;
             color: white;
             text-align: left;
             padding: 0 20px 0 20px;
         }
-        .issue-table td{
+        
+        .issue-table td {
             text-align: left;
             padding: 0 20px 0 20px;
         }
-		footer{
+        
+        footer {
             left: 0;
             bottom: 0;
             width: 100%;
             height: 110px;
             position: relative;
-			overflow: hidden;
+            overflow: hidden;
             background-color: #272727;
             color: white;
-		}
-		footer #copyright{
-			box-align: left;
-			padding-left: 30px;
-			padding-top: 75px; 
-			font-size: 12pt;
-		}
-		footer nav{
-			float: right;
-			padding-right: 30px;
-			padding-top: 30px;
-		}
-		footer .back-to-top{
-			background-color: #86C232;
-			padding: 13px;
-			text-align: center;
-			color: white;
-			font-size: 15pt;
-			font-weight: bold;
-		}
-	</style>
+        }
+        
+        footer #copyright {
+            box-align: left;
+            padding-left: 30px;
+            padding-top: 75px;
+            font-size: 12pt;
+        }
+        
+        footer nav {
+            float: right;
+            padding-right: 30px;
+            padding-top: 30px;
+        }
+        
+        footer .back-to-top {
+            background-color: #86C232;
+            padding: 13px;
+            text-align: center;
+            color: white;
+            font-size: 15pt;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
     <header class="site-header">
         <span class="site-name">CSE134BIssues</span>
@@ -157,119 +179,124 @@ thead, tfoot, tr, td and th-->
                 <li><a href="./add_issue.html">Manage Issues</a>
                     <ul class="manage-sub-menu">
                         <li><a href="./add_issue.html">Manage Issues</a>
-                        <li><a href="./add_issue.html">Add Issues</a></li>
-                        <li><a href="./edit_issue.html">Edit Issues</a></li>
-                        <li><a href="./delete_issues.html">Delete Issues</a></li>
+                            <li><a href="./add_issue.html">Add Issues</a></li>
+                            <li><a href="./edit_issue.html">Edit Issues</a></li>
+                            <li><a href="./delete_issues.html">Delete Issues</a></li>
                     </ul>
-                </li>
-                <li><a href="login_form.html" id="sign-out-buttom">Sign out</a></li>
+                    </li>
+                    <li><a href="login_form.html" id="sign-out-buttom">Sign out</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="table-container">
             <table class="issue-table">
-                <colgroup> <col> <col> <col> <col>
-                <thead>
-                    <tr>
-                        <th>Issue Id</th>
-                        <th>Issue Name</th>
-                        <th>Issue Type</th>
-                        <th>Issue Status</th>
-                        <th>Issue Priority</th>
-                        <th>Last Modify Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>18072301</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>Bug</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                        <td><time>2018-07-23</time></td>
-                    </tr>
-                    <tr>
-                        <td>18072302</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>Task</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                        <td><time>2018-07-23</time></td>
-                    </tr>
-                    <tr>
-                        <td>18072201</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>Bug</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
-                        <td><time>2018-07-22</time></td>
-                    </tr>
-                    <tr>
-                        <td>18072202</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>Improvement</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                        <td><time>2018-07-22</time></td>
-                    </tr>
-                    <tr>
-                        <td>18072203</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>New Feature</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                        <td><time>2018-07-22</time></td>
-                    </tr>
-                    <tr>
-                        <td>18072204</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>Bug</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                        <td><time>2018-07-22</time></td>
-                    </tr>
-                    <tr>
-                        <td>18072101</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>Task</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                        <td><time>2018-07-21</time></td>
-                    </tr>
-                    <tr>
-                        <td>18072102</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>Task</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                        <td><time>2018-07-21</time></td>
-                    </tr>
-                    <tr>
-                        <td>18072103</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>Improvement</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                        <td><time>2018-07-21</time></td>
-                    </tr>
-                    <tr>
-                        <td>18072104</td>
-                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                        <td>Bug</td>
-                        <td>Open</td>
-                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                        <td><time>2018-07-21</time></td>
-                    </tr>
-                </tbody>
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <thead>
+                        <tr>
+                            <th>Issue Id</th>
+                            <th>Issue Name</th>
+                            <th>Issue Type</th>
+                            <th>Issue Status</th>
+                            <th>Issue Priority</th>
+                            <th>Last Modify Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>18072301</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Bug</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-23</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072302</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Task</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-23</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072201</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Bug</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-22</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072202</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Improvement</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-22</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072203</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>New Feature</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-22</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072204</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Bug</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><time>2018-07-22</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072101</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Task</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-21</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072102</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Task</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-21</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072103</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Improvement</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-21</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072104</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Bug</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><time>2018-07-21</time></td>
+                        </tr>
+                    </tbody>
             </table>
         </div>
     </main>
-	<footer>
-            <nav>
-                <a class="back-to-top" href="#top">Back to Top</a>
-            </nav>
-            <p id="copyright">&copy; CSE 134B Summer 2018 HW</p>
+    <footer>
+        <nav>
+            <a class="back-to-top" href="#top">Back to Top</a>
+        </nav>
+        <p id="copyright">&copy; CSE 134B Summer 2018 HW</p>
     </footer>
 </body>
+
 </html>

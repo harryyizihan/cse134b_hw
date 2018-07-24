@@ -1,85 +1,101 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Delete Issues</title>
-	<link rel="stylesheet" href="ManageIssuesStyle.css">
-	<link rel="icon" type="image/png" href="/HW3/favicon.png">
-	<script>
-		window.onload=function(){
-			document.getElementById('widbox').style.display="block";
-		}
-		function hide(){
-			document.getElementById('widbox').style.display="none";
-		}
-	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Issues</title>
+    <link rel="stylesheet" href="ManageIssuesStyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/HW3/favicon.png">
+    <script>
+        window.onload = function() {
+            document.getElementById('widbox').style.display = "block";
+        }
+
+        function hide() {
+            document.getElementById('widbox').style.display = "none";
+        }
+    </script>
 </head>
+
 <body>
-	<div class="site-header">
-		<a class="site-name">Issues</a>
-		<span>
+    <div class="site-header">
+        <a class="site-name">Issues</a>
+        <span>
 			<img src="/HW3/formatted_icon.png" alt="icon pictures" width="70">
 		</span>
-		<nav class="site-header-links">
-			<a href="login_form.html" style="color:#FF0000">Sign out</a>
-			<a class="now">Manage Issues</a>
-			<a href="issuelist.html">Issue list</a>
-		</nav>
-	</div>
-	<div class="site-header-2nd">
-	<span class="site-header-2nd-container">
+        <nav class="site-header-links">
+            <a href="login_form.html" style="color:#FF0000">Sign out</a>
+            <a class="now">Manage Issues</a>
+            <a href="issuelist.html">Issue list</a>
+        </nav>
+    </div>
+    <div class="site-header-2nd">
+        <span class="site-header-2nd-container">
 	<h3 style="font-family:monospace"><img src="avatar.png" alt="" style="height:25px;width:25px;">&nbsp;/u/drboom/submitted</h3>
 	<table><tr>
 		<td id="dummyfirst"></td>
-		<td><a href="add_issue.html"><div class="plus icon"></div><span class="iconspace">&nbsp;</span>Add</a></td>
-		<td><a href="edit_issues.html"><div class="search icon"></div><span class="iconspace">&nbsp;</span>Edit</a></td>
-		<td><a href="close_issues.html"><div class="check icon"></div><span class="iconspace">&nbsp;</span>Close/Resolve</a></td>
-		<td class="now"><a style="color:#FF0000"><div class="close icon"></div><span class="iconspace2">&nbsp;</span>Delete</a></td>
-		<td id="dummylast"></td>
-	</tr>
-	</table>
-	</span>
-	</div>
-	<div class="left-blank">&nbsp;</div>
-	<div class="site-content">
-	<form>
-	<label>Choose issue to delete:</label>
-	<div id="widbox">
-	<div id="whatisdelete">
-		<p>Deleting an issue is an action that only the issue initiator and site admin can utilize. It should be used when the issue is considered irrelvant, misleading, posted by accident or by any way violates the site's <a href="terms.html">Terms of Service</a>. If you see an issue that violates our Terms of Service please <a href="contact.html">report</a> it to the site admins. </p>
-		<p> Issues that are not in consideration or are duplicates should be closed. Issues that are fixed, implemented or otherwise solved should be resolved.</p>
-		<p>Please note that deleting an issue is a permanent action; an issue and any communication history related to it would not be recoverable once deleted. Closing/resolving on the otherhand would merely change the status of the issue, so that it can be reopened or disputed and that its history may be viewed.</p>
-		<input type="button" value="I understand" onclick="hide()">
-	</div>
-	</div>
-	<select id="closeselect" required>
+		<td><a href="add_issue.html"><div class="plus icon"></div><span class="iconspace">&nbsp;</span>Add</a>
+        </td>
+        <td>
+            <a href="edit_issues.html">
+                <div class="search icon"></div><span class="iconspace">&nbsp;</span>Edit</a>
+        </td>
+        <td>
+            <a href="close_issues.html">
+                <div class="check icon"></div><span class="iconspace">&nbsp;</span>Close/Resolve</a>
+        </td>
+        <td class="now">
+            <a style="color:#FF0000">
+                <div class="close icon"></div><span class="iconspace2">&nbsp;</span>Delete</a>
+        </td>
+        <td id="dummylast"></td>
+        </tr>
+        </table>
+        </span>
+    </div>
+    <div class="left-blank">&nbsp;</div>
+    <div class="site-content">
+        <form>
+            <label>Choose issue to delete:</label>
+            <div id="widbox">
+                <div id="whatisdelete">
+                    <p>Deleting an issue is an action that only the issue initiator and site admin can utilize. It should be used when the issue is considered irrelvant, misleading, posted by accident or by any way violates the site's <a href="terms.html">Terms of Service</a>.
+                        If you see an issue that violates our Terms of Service please <a href="contact.html">report</a> it to the site admins. </p>
+                    <p> Issues that are not in consideration or are duplicates should be closed. Issues that are fixed, implemented or otherwise solved should be resolved.</p>
+                    <p>Please note that deleting an issue is a permanent action; an issue and any communication history related to it would not be recoverable once deleted. Closing/resolving on the otherhand would merely change the status of the issue, so
+                        that it can be reopened or disputed and that its history may be viewed.</p>
+                    <input type="button" value="I understand" onclick="hide()">
+                </div>
+            </div>
+            <select id="closeselect" required>
 		<option value="">Please choose an issue you want to delete</option>
 		<option value="0">Issue #3: Lags out upon internet connectivity change</option>
 		<option value="1">Issue #8: Image does not resize</option>
 		<option value="2">Issue #17: gif support</option>
 	</select><br>
-	<label>Select reason(s) for deletion:	</label><br>
-		<input type="checkbox" name="reason" value="mistake" style="margin-left:20px">
-		<label for="mistake">The issue was posted by mistake.</label><br>
-		<input type="checkbox" name="reason" value="wrongproj" style="margin-left:20px">
-		<label for="wrongproj">The issue was posted to the wrong project.</label><br>
-		<input type="checkbox" name="reason" value="inexist" style="margin-left:20px">
-		<label for="inexist">The issue has misleading titles/description and needs revision.</label><br>
-		<input type="checkbox" name="reason" value="violate" style="margin-left:20px">
-		<label for="violate">The issue violates the terms of service (i.e. contains sensitive information</label><br>
-	<input type="button" value="Delete issue" style="margin-top:10px">
-	</form>
-	</div>
-	<div class="right-blank">&nbsp;</div>
-	<footer>
-		<nav>
-		<a>&copy; 2018 Langtian Qin</a>
-		<a href="terms.html">Terms</a>
-		<a href="help.html">Help</a>
-		<a href="contact.html">Contact Us</a>
-		<a href="credits.html">Credits</a>
-		<a href="about.html">About</a>
-		</nav>
-	</footer>	
+            <label>Select reason(s) for deletion:	</label><br>
+            <input type="checkbox" name="reason" value="mistake" style="margin-left:20px">
+            <label for="mistake">The issue was posted by mistake.</label><br>
+            <input type="checkbox" name="reason" value="wrongproj" style="margin-left:20px">
+            <label for="wrongproj">The issue was posted to the wrong project.</label><br>
+            <input type="checkbox" name="reason" value="inexist" style="margin-left:20px">
+            <label for="inexist">The issue has misleading titles/description and needs revision.</label><br>
+            <input type="checkbox" name="reason" value="violate" style="margin-left:20px">
+            <label for="violate">The issue violates the terms of service (i.e. contains sensitive information</label><br>
+            <input type="button" value="Delete issue" style="margin-top:10px">
+        </form>
+    </div>
+    <div class="right-blank">&nbsp;</div>
+    <footer>
+        <nav>
+            <a>&copy; 2018 Langtian Qin</a>
+            <a href="terms.html">Terms</a>
+            <a href="help.html">Help</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="credits.html">Credits</a>
+            <a href="about.html">About</a>
+        </nav>
+    </footer>
 </body>
