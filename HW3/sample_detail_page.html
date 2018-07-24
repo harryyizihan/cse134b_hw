@@ -27,30 +27,34 @@ h3, h4, h5, h6, header and footer-->
 			width: 100%;
 			height: 60px;
 			line-height: 60px;
-			display: flex; /* What does this used for? */
+			display: flex;
 			background-color:#272727;
-			overflow: hidden;
-			box-sizing: border-box;
 		}
 		.site-header span.site-name{
 			font-weight: bold;
 			color:white;
 			font-size:30px;
-			font:Calibri;
 			padding-left: 20px;
 		}
 		.site-header nav.site-header-links{
+			display: table;
 			margin-left:auto;
 			margin-right:0;
 		}
-		.site-header nav.site-header-links a{
+		.site-header nav.site-header-links ul li {
+			display: table-cell;
+			display: inline-block;
+			position: relative;
+			text-align: center;
+		}
+		.site-header nav.site-header-links ul li a{
+			display: block;
 			float:right;
 			text-align: center;
 			font-size: 22px;
 			line-height: 30px;
-			padding:15px;
-			border-radius: 5px;
-			color:white;
+			padding: 15px;
+			color: white;
 		}
 		.site-header #sign-out-buttom{
 			color:red;
@@ -62,13 +66,25 @@ h3, h4, h5, h6, header and footer-->
 			font-size: 22px;
 			line-height: 30px;
 			padding:15px;
-			border-radius: 5px;
 			color:white;
 		}
 		.site-header nav.site-header-links a:hover{
 			background-color: linen;
 			color:DarkSlateGrey;
-        }
+		}
+		.site-header nav.site-header-links ul ul{
+			display: none;
+			position: absolute;
+			background-color: #272727;
+		}
+		.site-header nav.site-header-links ul ul li{
+			height: 40px;
+			box-align: center;
+			display: inline-block;
+		}
+		.site-header nav.site-header-links ul li:hover ul {
+			display: block;
+		}
 		.sidenav {
 			position: fixed;
 			width: 130px;
@@ -143,18 +159,29 @@ h3, h4, h5, h6, header and footer-->
 	<header class="site-header">
 		<span class="site-name">CSE134BIssues</span>
 		<nav class="site-header-links">
-			<a href="login_form.html" id="sign-out-buttom">Sign out</a>
-            <a href="close_issues.html">Manage Issues</a>
-			<a href="issuelist.html">Issue list</a>
+			<ul>
+				<li><a href="issuelist.html">Issue list</a></li>
+				<li><a href="./add_issue.html">Manage Issues</a>
+					<ul class="manage-sub-menu">
+						<li><a href="./add_issue.html">Manage Issues</a>
+						<li><a href="./add_issue.html">Add Issues</a></li>
+						<li><a href="./edit_issue.html">Edit Issues</a></li>
+						<li><a href="./delete_issues.html">Delete Issues</a></li>
+					</ul>
+				</li>
+				<li><a href="login_form.html" id="sign-out-buttom">Sign out</a></li>
+			</ul>
 		</nav>
 	</header>
     <main>
 		<nav class="sidenav">
-			<a href="#issue-name">Issue Name</a>
-			<a href="#issue-type">Issue Type</a>
-			<a href="#issue-data">Issue Date</a>
-			<a href="#issue-description">Description</a>
-			<a href="#issue-attachment">Attachment</a>
+			<ul>
+				<li><a href="#issue-name">Issue Name</a></li>
+				<li><a href="#issue-type">Issue Type</a></li>
+				<li><a href="#issue-data">Issue Date</a></li>
+				<li><a href="#issue-description">Description</a></li>
+				<li><a href="#issue-attachment">Attachment</a></li>
+			</ul>
 		</nav>
         <section id="issue-name">
             <h2>Issue Name: xxx.html cannot be access</h2>
