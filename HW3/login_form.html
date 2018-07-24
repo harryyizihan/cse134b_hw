@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: "Comic Sans MS", cursive, sans-serif;
-            background-image: url("https://cdn.pixabay.com/photo/2017/06/21/07/33/background-2426328_960_720.jpg") 
+            background-image: url("/HW3/background_img.jpg")
         }
         /* Full-width input fields */
         
@@ -24,9 +24,9 @@
             box-sizing: border-box;
         }
         /* Set a style for all buttons */
-
+        
         #icon {
-            animation:spin 3.5s linear infinite;
+            animation: spin 3.5s linear infinite;
             margin-top: 20px;
         }
         
@@ -126,12 +126,16 @@
                 width: 100%;
             }
         }
-
-        @keyframes spin{
-	from{transform:rotate(0deg)}
-	to{transform:rotate(360deg)}	
-}
-
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg)
+            }
+            to {
+                transform: rotate(360deg)
+            }
+        }
+        
         #issue-tracker {
             font-family: Brush Script MT, Brush Script Std, cursive;
             color: red;
@@ -143,7 +147,7 @@
 <body>
     <form class="modal-content" action="/HW3/close_issues.html" method="GET">
         <div class="header">
-        <img id="icon" src="/HW3/formatted_icon.png" alt="icon pictures" width="120">
+            <img id="icon" src="/HW3/formatted_icon.png" alt="icon pictures" width="120">
         </div>
         <div class="header">
             <h1>Welcome to the <span id="issue-tracker"><i><b>IssueTracker</b></i></span> <i class="fas fa-grin-hearts"></i>
@@ -168,19 +172,6 @@
         </div>
     </form>
     </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
 </body>
 
 </html>
