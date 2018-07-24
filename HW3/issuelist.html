@@ -9,6 +9,7 @@ thead, tfoot, tr, td and th-->
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="/HW3/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <title>Issue List</title>
     <style>
         * {
@@ -101,14 +102,18 @@ thead, tfoot, tr, td and th-->
         
         .issue-table {
             border-collapse: collapse;
-            overflow: auto;
-            width: auto;
-            margin: 20px 50px;
+            width: 100%;
+            margin: 0 auto;
         }
         
         .issue-table tr {
+            background-color: whitesmoke;
             height: 50px;
             border-bottom: 1px solid;
+        }
+        
+        .issue-table tr:nth-child(even) {
+            background-color: lightgray;
         }
         
         .issue-table th {
@@ -119,7 +124,6 @@ thead, tfoot, tr, td and th-->
         }
         
         .issue-table td {
-            background-color: whitesmoke;
             text-align: left;
             padding: 0 20px 0 20px;
         }
@@ -128,8 +132,8 @@ thead, tfoot, tr, td and th-->
             left: 0;
             bottom: 0;
             width: 100%;
-            height: 70px;
-            position: fixed;
+            height: 110px;
+            position: relative;
             overflow: hidden;
             background-color: #272727;
             color: white;
@@ -137,8 +141,8 @@ thead, tfoot, tr, td and th-->
         
         footer #copyright {
             box-align: left;
-            position: absolute;
-            top: 40%;
+            padding-left: 30px;
+            padding-top: 75px;
             font-size: 12pt;
         }
         
@@ -148,24 +152,13 @@ thead, tfoot, tr, td and th-->
             padding-top: 30px;
         }
         
-        footer .back-to-issueList {
-            background-color: #FF652F;
-            padding: 13px;
-            text-align: center;
-            color: white;
-            font-size: 15pt;
-            font-weight: bold;
-        }
-        
         footer .back-to-top {
             background-color: #86C232;
             padding: 13px;
-            padding-bottom: 5px;
             text-align: center;
             color: white;
             font-size: 15pt;
             font-weight: bold;
-            pos
         }
     </style>
 </head>
@@ -189,81 +182,107 @@ thead, tfoot, tr, td and th-->
         </nav>
     </header>
     <main>
-        <table class="issue-table">
-            <colgroup>
-                <col>
-                <col>
-                <col>
-                <col>
-                <thead>
-                    <tr>
-                        <th>Issue Id</th>
-                        <th>Issue Name</th>
-                        <th>Issue Type</th>
-                        <th>Issue Status</th>
-                        <th>Last Modify Date</th>
-                        <th>Issue Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td><a href="./headings&sections.html">Heading and section</a></td>
-                        <td>Heading and section type tags</td>
-                        <td>open</td>
-                        <td><time>2018-07-21</time></td>
-                        <td>Tags like &lt;h1&gt; and &lt;section&gt; should be explored.</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><a href="./boilerplate.html">Boiler Plate Text</a></td>
-                        <td>Grouping, Text-level semantics and Edits elements</td>
-                        <td>open</td>
-                        <td><time>2018-07-21</time></td>
-                        <td>Try all the various semantic block and inline tags with Lorem ipsum style text as content. Don't foreget all the lists!</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><a href="./image.html">Images</a></td>
-                        <td>&lt;img&gt; &lt;picture&gt; &lt;map&gt; &lt;area&gt;tags</td>
-                        <td>open</td>
-                        <td><time>2018-07-21</time></td>
-                        <td>Tags with different types of images. Since the Internet likes cats use pictures of cats and dogs for visual fun.</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td><a href="./media.html">Media</a></td>
-                        <td>&lt;embed&gt; &lt;object&gt; &lt;viedo&gt; &lt;audio&gt; tags</td>
-                        <td>open</td>
-                        <td><time>2018-07-21</time></td>
-                        <td>Tags with media contents</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td><a href="./iframe.html">Iframe</a></td>
-                        <td>&lt;Iframe&gt; tag</td>
-                        <td>open</td>
-                        <td><time>2018-07-21</time></td>
-                        <td>Iframe the UCSD sites + webpagetest performance report</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td><a href="./login_form.html">Forms</a></td>
-                        <td>&lt;input type="test"&gt;, etc</td>
-                        <td>open</td>
-                        <td><time>2018-07-21</time></td>
-                        <td>Test the form and all types of input tags</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Old Tags</td>
-                        <td>&lt;marquee&gt;, etc</td>
-                        <td>open</td>
-                        <td><time>2018-07-21</time></td>
-                        <td>Tags from ancient time, tags demo been include in <a href="./add_issue.html">add issue page</a></td>
-                    </tr>
-                </tbody>
-        </table>
+        <div class="table-container">
+            <table class="issue-table">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <thead>
+                        <tr>
+                            <th>Issue Id</th>
+                            <th>Issue Name</th>
+                            <th>Issue Type</th>
+                            <th>Issue Status</th>
+                            <th>Issue Priority</th>
+                            <th>Last Modify Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>18072301</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Bug</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-23</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072302</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Task</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-23</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072201</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Bug</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-22</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072202</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Improvement</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-22</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072203</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>New Feature</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-22</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072204</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Bug</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><time>2018-07-22</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072101</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Task</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-21</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072102</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Task</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-21</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072103</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Improvement</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                            <td><time>2018-07-21</time></td>
+                        </tr>
+                        <tr>
+                            <td>18072104</td>
+                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                            <td>Bug</td>
+                            <td>Open</td>
+                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                            <td><time>2018-07-21</time></td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
     </main>
     <footer>
         <nav>
