@@ -24,6 +24,11 @@
             box-sizing: border-box;
         }
         /* Set a style for all buttons */
+
+        #icon {
+            animation:spin 3s linear infinite;
+            margin-top: 20px;
+        }
         
         button {
             background-color: #4CAF50;
@@ -122,6 +127,11 @@
             }
         }
 
+        @keyframes spin{
+	from{transform:rotate(0deg)}
+	to{transform:rotate(360deg)}	
+}
+
         #issue-tracker {
             font-family: Brush Script MT, Brush Script Std, cursive;
             color: red;
@@ -133,7 +143,7 @@
 <body>
     <form class="modal-content" action="/HW3/close_issues.html" method="GET">
         <div class="header">
-        <img src="/HW3/formatted_icon.png" alt="icon pictures" width="120">
+        <img id="icon" src="/HW3/formatted_icon.png" alt="icon pictures" width="120">
         </div>
         <div class="header">
             <h1>Welcome to the <span id="issue-tracker"><i><b>IssueTracker</b></i></span> <i class="fas fa-grin-hearts"></i>
