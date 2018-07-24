@@ -3,9 +3,10 @@
 
 <head>
     <link rel="icon" type="image/png" href="/HW3/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <style>
         body {
-            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-family: 'Indie Flower', cursive;
             background-image: url("/HW3/background_img.jpg")
         }
         
@@ -41,7 +42,7 @@
             cursor: pointer;
             width: 100%;
             opacity: 0.8;
-            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-family: 'Indie Flower', cursive;
         }
         
         button:hover {
@@ -96,6 +97,7 @@
             border: 1px solid #888;
             width: 80%;
             max-width: 800px;
+            min-width: 450px;
             /* Could be more or less, depending on screen size */
         }
         /* Style the horizontal ruler */
@@ -104,36 +106,11 @@
             border: 1px solid #f1f1f1;
             margin-bottom: 25px;
         }
-        /* The Close Button (x) */
-        
-        .close {
-            position: absolute;
-            right: 35px;
-            top: 15px;
-            font-size: 40px;
-            font-weight: bold;
-            color: #f1f1f1;
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: #f44336;
-            cursor: pointer;
-        }
-        /* Clear floats */
         
         .clearfix::after {
             content: "";
             clear: both;
             display: table;
-        }
-        /* Change styles for cancel button and signup button on extra small screens */
-        
-        @media screen and (max-width: 300px) {
-            .cancelbtn,
-            .signupbtn {
-                width: 100%;
-            }
         }
     </style>
 </head>

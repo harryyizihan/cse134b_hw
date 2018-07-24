@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" type="image/png" href="/HW3/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <title>Issue Tracker</title>
     <style>
         body {
-            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-family: 'Indie Flower', cursive;
             background-image: url("/HW3/background_img.jpg")
         }
         /* Full-width input fields */
@@ -40,7 +41,7 @@
             width: 100%;
             width: 50%;
             float: left;
-            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-family: 'Indie Flower', cursive;
         }
         
         .header {
@@ -113,18 +114,8 @@
             width: 50%;
             top: 50%;
             max-width: 600px;
+            min-width: 350px;
             /* Could be more or less, depending on screen size */
-        }
-        /* Change styles for span and cancel button on extra small screens */
-        
-        @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: none;
-            }
-            .cancelbtn {
-                width: 100%;
-            }
         }
         
         @keyframes spin {
@@ -145,7 +136,7 @@
 </head>
 
 <body>
-    <form class="modal-content" action="/HW3/close_issues.html" method="GET">
+    <form class="modal-content" action="/HW3/issuelist.html" method="GET">
         <div class="header">
             <img id="icon" src="/HW3/formatted_icon.png" alt="icon pictures" width="120">
         </div>
@@ -163,7 +154,7 @@
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
 
-            <button type="submit" onclick="window.location.href='/HW3/close_issues.html'">Login</button>
+            <button type="submit" onclick="window.location.href='/HW3/issuelist.html'">Login</button>
             <button type="submit" id="signup" onclick="window.location.href='/HW3/signup_form.html'">Sign up</button>
 
             <label>
@@ -171,7 +162,6 @@
       </label>
         </div>
     </form>
-    </div>
 </body>
 
 </html>
