@@ -13,21 +13,7 @@ thead, tfoot, tr, td and th-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="/HW3/favicon.png">
     <title>Issue List</title>
-    <script>
-        function changeCSS(cssFile, cssLinkIndex) {
-            var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-            var newlink = document.createElement("link");
-            newlink.setAttribute("rel", "stylesheet");
-            newlink.setAttribute("type", "text/css");
-            newlink.setAttribute("href", cssFile);
-            document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
-        }
-    </script>
-    <noscript>
-            <div>Your browser does not support JavaScript! The print mode is not able to work!</div>   
-        </noscript>
 </head>
-
 <body>
     <header class="site-header">
         <span class="site-name">MyTracker</span>
@@ -208,6 +194,19 @@ thead, tfoot, tr, td and th-->
         </nav>
         <p id="copyright">&copy; CSE 134B Summer 2018 HW</p>
     </footer>
+    <script>
+        function changeCSS(cssFile, cssLinkIndex) {
+            var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+            var newlink = document.createElement("link");
+            newlink.setAttribute("rel", "stylesheet");
+            newlink.setAttribute("type", "text/css");
+            newlink.setAttribute("href", cssFile);
+            document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+        }
+    </script>
+    <noscript>
+        <p>Your browser does not support JavaScript, some functionality may not able to work!</p>
+    </noscript>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     <meta charset="UTF-8">
@@ -10,19 +10,6 @@
     <link rel="icon" type="image/png" href="/HW3/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <title>sample detail page</title>
-    <script>
-        function changeCSS(cssFile, cssLinkIndex) {
-            var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-            var newlink = document.createElement("link");
-            newlink.setAttribute("rel", "stylesheet");
-            newlink.setAttribute("type", "text/css");
-            newlink.setAttribute("href", cssFile);
-            document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
-        }
-    </script>
-    <noscript>
-            <div>Your browser does not support JavaScript! The print mode is not able to work!</div>   
-        </noscript>
 </head>
 
 <body>
@@ -107,6 +94,19 @@
         </nav>
         <p id="copyright">&copy; CSE 134B Summer 2018 HW</p>
     </footer>
+    <script>
+        function changeCSS(cssFile, cssLinkIndex) {
+            var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+            var newlink = document.createElement("link");
+            newlink.setAttribute("rel", "stylesheet");
+            newlink.setAttribute("type", "text/css");
+            newlink.setAttribute("href", cssFile);
+            document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+        }
+    </script>
+    <noscript>
+        <p>Your browser does not support JavaScript, some functionality may not able to work!</p>
+    </noscript>
 </body>
 
 </html>
