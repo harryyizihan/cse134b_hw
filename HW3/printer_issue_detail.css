@@ -19,7 +19,6 @@
 }
 .mode {
     display: table;
-    min-width: 350px;
 }
 #normal-sheet {
     display: block;

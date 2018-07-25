@@ -132,7 +132,6 @@
 }
 .mode {
     display: table;
-    min-width: 450px;
 }
 #normal-sheet {
     display: none;
@@ -165,6 +164,7 @@ body {
 main {
     flex: 1 0 auto;
     margin: 100px 30px 120px 30px;
+    min-width: 320px;
 }
 
 footer {

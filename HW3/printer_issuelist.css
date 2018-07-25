@@ -11,7 +11,6 @@
 
 .mode {
     display: table;
-    min-width: 350px;
 }
 
 #normal-sheet {
@@ -81,7 +80,8 @@ body {
 
 main {
     flex: 1 0 auto;
-    margin: 60px 50px;
+    margin: 60px 30px;
+    min-width: 320px;
 }
 
 footer {
@@ -90,4 +90,16 @@ footer {
 
 #icon-img {
     width: 70px;
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        margin: 60px 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    main {
+        margin: 60px 20px;
+    }
 }
