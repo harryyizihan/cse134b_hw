@@ -114,10 +114,12 @@
 			color: white;
 			
 		}
-		html{
-			position: relative;
-		}
+        body {
+            display: flex;
+            flex-direction: column;
+        }
 		main{
+			flex: 1 0 auto;
 			margin: 100px 80px 150px 210px;
 			min-width: 700px;
 		}
@@ -127,16 +129,16 @@
 		main section p{
 			font-size: 14pt;
 		}
-		footer{
-            left: 0;
+        footer {
+            flex-shrink: 0;
+			left: 0;
+			right: 0;
             bottom: 0;
             width: 100%;
             height: 110px;
-            position: absolute;
-			overflow: hidden;
             background-color: #272727;
             color: white;
-		}
+        }
 		footer #copyright{
 			box-align: left;
 			padding-left: 30px;
