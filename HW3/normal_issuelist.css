@@ -4,6 +4,8 @@
     text-decoration: none;
     font-family: 'Indie Flower', cursive;
 }
+
+
 /* fixing the anchor alignment issue - https://www.itsupportguides.com/knowledge-base/tech-tips-tricks/how-to-offset-anchor-tag-link-using-css/ */
 
  :target:before {
@@ -21,7 +23,7 @@
     line-height: 60px;
     display: flex;
     background-color: #272727;
-    min-width: 600px;
+    min-width: 300px;
 }
 
 .site-header span.site-name {
@@ -29,6 +31,25 @@
     color: white;
     font-size: 30px;
     padding-left: 20px;
+}
+
+.mode {
+    display: table;
+    right: 100%;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
+    min-width: 450px;
+}
+
+#normal-sheet {
+    background: #86C232;
+}
+
+#printer-sheet {
+    background-color: #FF652F;
 }
 
 .site-header nav.site-header-links {
@@ -48,12 +69,13 @@
     float: right;
     text-align: center;
     font-size: 22px;
+    font-weight: bold;
     line-height: 30px;
     padding: 15px;
     color: white;
 }
 
-.site-header #sign-out-buttom {
+.site-header nav.site-header-links a.sign-out-buttom {
     background-color: #E30000;
     color: white;
 }
@@ -80,7 +102,7 @@
 }
 
 .site-header nav.site-header-links ul ul li a {
-    width: 181.41;
+    width: 132px;
     float: none;
 }
 
@@ -88,8 +110,8 @@
     display: table-cell;
 }
 
-main {
-    margin: 100px 80px 100px 80px;
+.site-header nav.site-header-links ul .responsive-link {
+    display: none;
 }
 
 .table-container {
@@ -120,27 +142,42 @@ main {
     background-color: #2196F3;
     color: white;
     text-align: left;
-    padding: 0 20px 0 20px;
+    padding: 0 17px 0 17px;
 }
 
 .issue-table td {
     text-align: left;
-    padding: 0 20px 0 20px;
+    padding: 0 17px 0 17px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin: 100px 30px 120px 30px;
 }
 
 footer {
+    flex-shrink: 0;
     left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
     height: 110px;
-    position: relative;
-    overflow: hidden;
     background-color: #272727;
     color: white;
 }
 
 footer #copyright {
-    box-align: left;
+    text-align: left;
     padding-left: 30px;
     padding-top: 75px;
     font-size: 12pt;
@@ -159,4 +196,36 @@ footer .back-to-top {
     color: white;
     font-size: 15pt;
     font-weight: bold;
+}
+
+#icon-img {
+    width: 70px;
+}
+
+@media screen and (max-width: 700px) {
+    .site-header nav.site-header-links .flex-link {
+        display: none;
+    }
+    .site-header nav.site-header-links ul .responsive-link {
+        display: table-cell;
+        background-color: #FFAF00;
+    }
+    main {
+        margin: 100px 25px 120px 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .site-header span.site-name {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+    .site-header nav.site-header-links ul li a {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px 8px;
+    }
+    main {
+        margin: 100px 20px 120px 20px;
+    }
 }
