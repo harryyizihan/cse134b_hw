@@ -263,6 +263,7 @@ footer {
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: Silver;
+    min-width: 600px;
 }
 
 footer nav {
