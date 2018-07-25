@@ -15,6 +15,7 @@
 }
 
 #normal-sheet {
+    display: block;
     background: #86C232;
     float: left;
     padding: 10px;

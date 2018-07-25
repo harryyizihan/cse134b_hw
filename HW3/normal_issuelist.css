@@ -144,6 +144,7 @@
     font-weight: bold;
 }
 #printer-sheet {
+    display: block;
     background-color: #FF652F;
     color: white;
     float: left;
