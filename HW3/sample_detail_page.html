@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>sample detail page</title>
+	<link rel="icon" type="image/png" href="/HW3/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	<title>sample detail page</title>
     <style>
 		*{
 			margin:0;
 			padding:0;
 			text-decoration: none;
-			font-family: "Comic Sans MS", cursive, sans-serif;
+            font-family: 'Indie Flower', cursive;
 		}
 		/* fixing the anchor alignment issue - https://www.itsupportguides.com/knowledge-base/tech-tips-tricks/how-to-offset-anchor-tag-link-using-css/ */
 		:target:before {
@@ -27,7 +29,7 @@
 			line-height: 60px;
 			display: flex;
 			background-color:#272727;
-			min-width: 700px;
+			min-width: 600px;
 		}
 		.site-header span.site-name{
 			font-weight: bold;
@@ -166,11 +168,18 @@
 			width: 100%;
 			height: auto;
 		}
+
+		#icon-img {
+			width: 70px;
+		}
     </style>
 </head>
 <body>
 	<header class="site-header">
-		<span class="site-name">CSE134BIssues</span>
+		<span class="site-name">MyTracker</span>
+		<span id="icon-img">
+				<img src="/HW3/formatted_icon.png" alt="icon pictures" width="70">
+        </span>
 		<nav class="site-header-links">
 			<ul>
 				<li><a href="issuelist.html">Issue list</a></li>
