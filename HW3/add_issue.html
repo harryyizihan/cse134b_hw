@@ -103,7 +103,8 @@
             <textarea cols=100 name="issuedesc" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000 style="width:90%;height:200px;"></textarea><br/>
             <div class="range">
                 <label>Issue Importance:
-				<small>Low priority</small><input type="range" min=0 max=100 value=50 step=5 name="importance"><small>High priority</small></label>
+				                <div class="rangepc"><small>Low priority</small><input type="range" min=0 max=100 value=62 step=1 name="importance"><small>High priority</small></div>
+                <input class="rangemob" type="number" min=0 max=100 value=62 name="importance" style="display:none">
             </div>
             <label>Issue Attachments:
 			<input type="file" accept=".doc,.docx,.pdf"></label><br/>

@@ -12,7 +12,7 @@
 
 <body>
     <div class="site-header">
-        <a class="site-name">MyTracker</a>
+        <a class="site-name">MyTracker<br></a>
         <span>
 			<img src="formatted_icon.png" alt="" width="70">
 		</span>
@@ -75,7 +75,9 @@
             <textarea cols=100 name="issuedesc" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000 style="width:90%;height:200px;">The calendar resizes upon app resize but the images do not, resulting in them showing outside of their block</textarea><br/>
             <div class="range">
                 <label>Issue Importance:
-				<small>Low priority</small><input type="range" min=0 max=100 value=62 step=5 name="importance"><small>High priority</small></label>
+				<div class="rangepc"><small>Low priority</small><input type="range" min=0 max=100 value=62 step=1 name="importance"><small>High priority</small></div>
+                <input class="rangemob" type="number" min=0 max=100 value=62 name="importance" style="display:none">
+            </label>
             </div>
             <label>Issue Attachments:
 			<input type="file" accept=".doc,.docx,.pdf"></label><br/>

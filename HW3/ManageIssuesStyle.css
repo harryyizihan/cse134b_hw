@@ -17,7 +17,7 @@ body {
     clear: both;
     background-color: AliceBlue;
     margin: 0 0 50px;
-    min-width: 800px;
+    min-width: 400px;
 }
 
 .site-header {
@@ -27,7 +27,7 @@ body {
     overflow: hidden;
     width: 100%;
     box-sizing: border-box;
-    min-width: 800px;
+    min-width: 400px;
 }
 
 .site-header a.site-name {
@@ -35,13 +35,12 @@ body {
     font-weight: 600;
     color: white;
     font-size: 30px;
-    font: Calibri;
     padding: 10px;
 }
 
 .site-header nav.site-header-links {
     margin-left: auto;
-    margin-right: 150px;
+    margin-right: 15%;
 }
 
 .site-header nav.site-header-links a {
@@ -63,6 +62,56 @@ body {
     color: DarkSlateGrey;
 }
 
+@media screen and (max-width: 500px){
+    .site-header {
+        width: 90% !important;
+        min-width: 0px !important;
+    }
+    .site-header a.site-name{
+        display: none;
+        float: none;
+    }
+    .site-header nav.site-header-links a{
+        display: block !important;
+        float:left !important;
+        font-size:10px;
+    }
+    .site-header-2nd{
+        width: 90% !important;
+        min-width: 0px !important;
+    }
+    .left-blank{
+        display: none;
+    }
+    .right-blank{
+        display: none;
+    }
+    .left-options{
+        width: 25% !important;
+        margin-right: 0 !important;
+    }
+    .site-content{
+    }
+    .site-content *{
+        width: 97% !important;
+    }
+    #whatisdelete{
+        margin: 0 !important;
+    }
+    .rangepc{
+        display: none;
+    }
+    .rangemob{
+        display: block !important;
+    }
+    fieldset{
+        width:70% !important;
+    }
+    footer{
+        display: none;
+    }
+}
+
 .site-header-2nd {
     background: LightGrey;
     height: 100px;
@@ -70,7 +119,7 @@ body {
 
 .site-header-2nd-container {
     width: 100%;
-    min-width: 800px;
+    min-width: 400px;
     margin-left: 15%;
 }
 
