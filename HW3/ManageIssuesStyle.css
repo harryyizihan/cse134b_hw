@@ -17,7 +17,7 @@ body {
     clear: both;
     background-color: AliceBlue;
     margin: 0 0 50px;
-    min-width: 750px;
+    min-width: 800px;
 }
 
 .site-header {
@@ -69,13 +69,14 @@ body {
 }
 
 .site-header-2nd-container {
-    width: 1000px;
+    width: 100%;
+    min-width: 800px;
     margin-left: 15%;
 }
 
 .site-header-2nd-container h3 {
     height: 30px;
-    width: 1000px;
+    width: 100%;
     padding: 5px;
     margin-left: 15%;
 }
