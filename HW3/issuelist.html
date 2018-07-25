@@ -102,10 +102,11 @@ thead, tfoot, tr, td and th-->
         .site-header nav.site-header-links ul li:hover ul {
             display: table-cell;
         }
+        
         .site-header nav.site-header-links ul .responsive-link {
             display: none;
         }
-
+        
         .table-container {
             overflow-x: auto;
         }
@@ -141,17 +142,22 @@ thead, tfoot, tr, td and th-->
             text-align: left;
             padding: 0 17px 0 17px;
         }
-        html, body {
+        
+        html,
+        body {
             height: 100%;
         }
+        
         body {
             display: flex;
             flex-direction: column;
         }
+        
         main {
             flex: 1 0 auto;
             margin: 100px 30px 120px 30px;
         }
+        
         footer {
             flex-shrink: 0;
             left: 0;
@@ -162,6 +168,7 @@ thead, tfoot, tr, td and th-->
             background-color: #272727;
             color: white;
         }
+        
         footer #copyright {
             text-align: left;
             padding-left: 30px;
@@ -183,11 +190,13 @@ thead, tfoot, tr, td and th-->
             font-size: 15pt;
             font-weight: bold;
         }
-		#icon-img {
-			width: 70px;
+        
+        #icon-img {
+            width: 70px;
         }
+        
         @media screen and (max-width: 700px) {
-            .site-header nav.site-header-links .flex-link{
+            .site-header nav.site-header-links .flex-link {
                 display: none;
             }
             .site-header nav.site-header-links ul .responsive-link {
@@ -198,6 +207,7 @@ thead, tfoot, tr, td and th-->
                 margin: 100px 25px 120px 25px;
             }
         }
+        
         @media screen and (max-width: 400px) {
             .site-header span.site-name {
                 font-size: 20px;
@@ -227,7 +237,7 @@ thead, tfoot, tr, td and th-->
                     <ul class="responsive-menu">
                         <li><a class="responsive-link">&nbsp;Control Menu&nbsp;</a></li>
                         <li><a href="./add_issue.html">Add Issues</a></li>
-                        <li><a href="./edit_issue.html">Edit Issues</a></li>
+                        <li><a href="./edit_issues.html">Edit Issues</a></li>
                         <li><a href="./delete_issues.html">Delete Issues</a></li>
                         <li><a href="login_form.html" class="sign-out-buttom">Sign out</a></li>
                     </ul>
@@ -235,151 +245,152 @@ thead, tfoot, tr, td and th-->
                 <li><a href="#" class="current-page flex-link">Issue list</a></li>
                 <li><a class="flex-link">Manage Issues</a>
                     <ul class="manage-sub-menu">
-                        <li><a>Manage Issues</a><li></li>
-                        <li><a href="./add_issue.html">Add Issues</a></li>
-                        <li><a href="./edit_issue.html">Edit Issues</a></li>
-                        <li><a href="./delete_issues.html">Delete Issues</a></li>
+                        <li><a>Manage Issues</a>
+                            <li></li>
+                            <li><a href="./add_issue.html">Add Issues</a></li>
+                            <li><a href="./edit_issues.html">Edit Issues</a></li>
+                            <li><a href="./delete_issues.html">Delete Issues</a></li>
                     </ul>
-                </li>
-                <li><a href="login_form.html" class="sign-out-buttom flex-link">Sign out</a></li>
+                    </li>
+                    <li><a href="login_form.html" class="sign-out-buttom flex-link">Sign out</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="table-container">
             <table class="issue-table">
-                    <thead>
-                        <tr>
-                            <th>Issue Id</th>
-                            <th>Issue Name</th>
-                            <th>Issue Type</th>
-                            <th>Issue Status</th>
-                            <th>Issue Priority</th>
-                            <th>Last Modify Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>18072405</td>
-                            <td><a href="./webp_img.html">Support WebP Image</a></td>
-                            <td>New Feature</td>
-                            <td>Open</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-23</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072404</td>
-                            <td><a href="./png_img.html">Support PNG Image</a></td>
-                            <td>New Feature</td>
-                            <td>Open</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><time>2018-07-23</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072403</td>
-                            <td><a href="./jpeg_img.html">Support JPEG Image</a></td>
-                            <td>New Feature</td>
-                            <td>Open</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><time>2018-07-23</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072402</td>
-                            <td><a href="./gif_img.html">Support GIF Image</a></td>
-                            <td>New Feature</td>
-                            <td>Open</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><time>2018-07-23</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072401</td>
-                            <td><a href="./svg_img.html">Support SVG Image</a></td>
-                            <td>New Feature</td>
-                            <td>Open</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-23</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072302</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>Bug</td>
-                            <td>Open</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-23</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072301</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>Task</td>
-                            <td>Open</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-23</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072204</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>Bug</td>
-                            <td>Open</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-22</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072203</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>Improvement</td>
-                            <td>Open</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-22</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072202</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>New Feature</td>
-                            <td>Close</td>
-                            <td><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-22</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072201</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>Bug</td>
-                            <td>Close</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><time>2018-07-22</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072104</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>Task</td>
-                            <td>Close</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-21</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072103</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>Task</td>
-                            <td>Close</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-21</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072102</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>Improvement</td>
-                            <td>Close</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
-                            <td><time>2018-07-21</time></td>
-                        </tr>
-                        <tr>
-                            <td>18072101</td>
-                            <td><a href="./sample_detail_page.html">Sample Issue</a></td>
-                            <td>Bug</td>
-                            <td>Close</td>
-                            <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-                            <td><time>2018-07-21</time></td>
-                        </tr>
-                    </tbody>
+                <thead>
+                    <tr>
+                        <th>Issue Id</th>
+                        <th>Issue Name</th>
+                        <th>Issue Type</th>
+                        <th>Issue Status</th>
+                        <th>Issue Priority</th>
+                        <th>Last Modify Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>18072405</td>
+                        <td><a href="./webp_img.html">Support WebP Image</a></td>
+                        <td>New Feature</td>
+                        <td>Open</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-23</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072404</td>
+                        <td><a href="./png_img.html">Support PNG Image</a></td>
+                        <td>New Feature</td>
+                        <td>Open</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                        <td><time>2018-07-23</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072403</td>
+                        <td><a href="./jpeg_img.html">Support JPEG Image</a></td>
+                        <td>New Feature</td>
+                        <td>Open</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                        <td><time>2018-07-23</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072402</td>
+                        <td><a href="./gif_img.html">Support GIF Image</a></td>
+                        <td>New Feature</td>
+                        <td>Open</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                        <td><time>2018-07-23</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072401</td>
+                        <td><a href="./svg_img.html">Support SVG Image</a></td>
+                        <td>New Feature</td>
+                        <td>Open</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-23</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072302</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>Bug</td>
+                        <td>Open</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-23</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072301</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>Task</td>
+                        <td>Open</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-23</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072204</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>Bug</td>
+                        <td>Open</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-22</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072203</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>Improvement</td>
+                        <td>Open</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-22</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072202</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>New Feature</td>
+                        <td>Close</td>
+                        <td><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-22</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072201</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>Bug</td>
+                        <td>Close</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                        <td><time>2018-07-22</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072104</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>Task</td>
+                        <td>Close</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-21</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072103</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>Task</td>
+                        <td>Close</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-21</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072102</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>Improvement</td>
+                        <td>Close</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                        <td><time>2018-07-21</time></td>
+                    </tr>
+                    <tr>
+                        <td>18072101</td>
+                        <td><a href="./sample_detail_page.html">Sample Issue</a></td>
+                        <td>Bug</td>
+                        <td>Close</td>
+                        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                        <td><time>2018-07-21</time></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </main>
