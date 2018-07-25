@@ -47,8 +47,8 @@ body {
 .site-header nav.site-header-links a {
     float: right;
     text-align: center;
-    font-size: 17px;
-    line-height: 30px;
+    font-size: 14px;
+    line-height: 40px;
     padding: 15px;
     border-radius: 5px;
     color: Linen;
@@ -155,6 +155,9 @@ body {
     height: auto;
     padding: 0px;
 }
+.site-content *{
+    font-family: 'Helvetica';
+}
 
 .right-blank {
     float: left;
@@ -172,6 +175,10 @@ body {
     border: solid 1px;
     border-style: none;
     border-right-style: none;
+}
+
+.left-options *{
+        font-family: 'Helvetica';
 }
 
 .left-options .radioin {
