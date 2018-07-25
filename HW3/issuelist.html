@@ -35,7 +35,7 @@ thead, tfoot, tr, td and th-->
             line-height: 60px;
             display: flex;
             background-color: #272727;
-            min-width: 600px;
+            min-width: 430px;
         }
         
         .site-header span.site-name {
@@ -62,12 +62,13 @@ thead, tfoot, tr, td and th-->
             float: right;
             text-align: center;
             font-size: 22px;
+            font-weight: bold;
             line-height: 30px;
             padding: 15px;
             color: white;
         }
         
-        .site-header #sign-out-buttom {
+        .site-header nav.site-header-links a.sign-out-buttom {
             background-color: #E30000;
             color: white;
         }
@@ -101,7 +102,6 @@ thead, tfoot, tr, td and th-->
         .site-header nav.site-header-links ul li:hover ul {
             display: table-cell;
         }
-        
         .table-container {
             overflow-x: auto;
         }
@@ -139,7 +139,6 @@ thead, tfoot, tr, td and th-->
         }
         html, body {
             height: 100%;
-
         }
         body {
             display: flex;
@@ -147,7 +146,7 @@ thead, tfoot, tr, td and th-->
         }
         main {
             flex: 1 0 auto;
-            margin: 100px 80px 120px 80px;
+            margin: 100px 30px 120px 30px;
         }
         footer {
             flex-shrink: 0;
@@ -180,6 +179,25 @@ thead, tfoot, tr, td and th-->
             font-size: 15pt;
             font-weight: bold;
         }
+		#icon-img {
+			width: 70px;
+        }
+        @media screen and (max-width: 700px) {
+            .site-header nav.site-header-links .flex-link{
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .site-header nav.site-header-links ul li a {
+                font-size: 18px;
+                padding: 15px 10px;
+            }
+
+            .site-header span.site-name {
+                font-size: 25px;
+            }
+        }
     </style>
 </head>
 
@@ -191,16 +209,17 @@ thead, tfoot, tr, td and th-->
         </span>
         <nav class="site-header-links">
             <ul>
-                <li><a href="#" class="current-page">Issue list</a></li>
+                <li><a href="#" class="current-page flex-link">Issue list</a></li>
                 <li><a href="./add_issue.html">Manage Issues</a>
                     <ul class="manage-sub-menu">
-                        <li><a href="./add_issue.html">Manage Issues</a>
-                            <li><a href="./add_issue.html">Add Issues</a></li>
-                            <li><a href="./edit_issue.html">Edit Issues</a></li>
-                            <li><a href="./delete_issues.html">Delete Issues</a></li>
+                        <li><a>Manage Issues</a>
+                        <li><a href="./add_issue.html">Add Issues</a></li>
+                        <li><a href="./edit_issue.html">Edit Issues</a></li>
+                        <li><a href="./delete_issues.html">Delete Issues</a></li>
                     </ul>
-                    </li>
-                    <li><a href="login_form.html" id="sign-out-buttom">Sign out</a></li>
+                </li>
+
+                <li><a href="login_form.html" class="sign-out-buttom">Sign out</a></li>
             </ul>
         </nav>
     </header>
