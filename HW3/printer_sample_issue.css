@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 60px;
+    margin: -60px 0 0;
+}
+
+.site-header {
+    display: none;
+}
+
+.mode {
+    display: table;
+    right: 100%;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+    float: right;
+}
+
+.sidenav {
+    display: none;
+}
+
+html {
+    position: relative;
+}
+
+main {
+    margin: 100px 80px 150px 210px;
+    min-width: 700px;
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+main section p {
+    font-size: 14pt;
+}
+
+footer {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+#icon-img {
+    width: 70px;
+}

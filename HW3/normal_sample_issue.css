@@ -1,88 +1,116 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     text-decoration: none;
     font-family: 'Indie Flower', cursive;
 }
+
+
 /* fixing the anchor alignment issue - https://www.itsupportguides.com/knowledge-base/tech-tips-tricks/how-to-offset-anchor-tag-link-using-css/ */
+
 :target:before {
-    content:"";
-    display:block;
-    height:60px;
-    margin:-60px 0 0;
+    content: "";
+    display: block;
+    height: 60px;
+    margin: -60px 0 0;
 }
-.site-header{
+
+.site-header {
     position: fixed;
     top: 0;
     width: 100%;
     height: 60px;
     line-height: 60px;
     display: flex;
-    background-color:#272727;
+    background-color: #272727;
     min-width: 600px;
 }
-.site-header span.site-name{
+
+.mode {
+    display: table;
+    right: 100%;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+    min-width: 450px;
+}
+
+.site-header span.site-name {
     font-weight: bold;
-    color:white;
-    font-size:30px;
+    color: white;
+    font-size: 30px;
     padding-left: 20px;
 }
-.site-header nav.site-header-links{
+
+.site-header nav.site-header-links {
     display: table;
-    margin-left:auto;
-    margin-right:0;
+    margin-left: auto;
+    margin-right: 0;
 }
+
 .site-header nav.site-header-links ul li {
     display: table-cell;
     position: relative;
     text-align: center;
 }
-.site-header nav.site-header-links ul li a{
+
+.site-header nav.site-header-links ul li a {
     display: block;
-    float:right;
+    float: right;
     text-align: center;
     font-size: 22px;
     line-height: 30px;
     padding: 15px;
     color: white;
 }
-.site-header #sign-out-buttom{
+
+.site-header #sign-out-buttom {
     background-color: #E30000;
     color: white;
 }
-.site-header nav.site-header-links a.current-page{
+
+.site-header nav.site-header-links a.current-page {
     background-color: CornflowerBlue;
-    float:right;
+    float: right;
     text-align: center;
     font-size: 22px;
     line-height: 30px;
-    padding:15px;
-    color:white;
+    padding: 15px;
+    color: white;
 }
-.site-header nav.site-header-links a:hover{
+
+.site-header nav.site-header-links a:hover {
     background-color: #86C232;
 }
-.site-header nav.site-header-links .manage-sub-menu{
+
+.site-header nav.site-header-links .manage-sub-menu {
     padding: 0;
 }
-.site-header nav.site-header-links ul ul{
+
+.site-header nav.site-header-links ul ul {
     display: none;
     position: absolute;
     background-color: #272727;
     overflow: hidden;
 }
-.site-header nav.site-header-links ul ul li{
+
+.site-header nav.site-header-links ul ul li {
     display: block;
     width: 100%;
     height: 33%;
 }
-.site-header nav.site-header-links ul ul li a{
+
+.site-header nav.site-header-links ul ul li a {
     width: 181.41;
-    float:	none;
+    float: none;
 }
+
 .site-header nav.site-header-links ul li:hover ul {
     display: table-cell;
 }
+
 .sidenav {
     position: fixed;
     width: 130px;
@@ -91,6 +119,7 @@
     background-color: whitesmoke;
     overflow: hidden;
 }
+
 .sidenav a {
     padding: 10px 15px;
     font-size: 20px;
@@ -99,25 +128,30 @@
     text-align: center;
     display: block;
 }
+
 .sidenav a:hover {
     background-color: #2196F3;
     color: white;
-    
 }
-html{
+
+html {
     position: relative;
 }
-main{
+
+main {
     margin: 100px 80px 150px 210px;
     min-width: 700px;
 }
-main section{
+
+main section {
     margin-bottom: 20px;
 }
-main section p{
+
+main section p {
     font-size: 14pt;
 }
-footer{
+
+footer {
     left: 0;
     bottom: 0;
     width: 100%;
@@ -127,18 +161,21 @@ footer{
     background-color: #272727;
     color: white;
 }
-footer #copyright{
+
+footer #copyright {
     box-align: left;
     padding-left: 30px;
-    padding-top: 75px; 
+    padding-top: 75px;
     font-size: 12pt;
 }
-footer nav{
+
+footer nav {
     float: right;
     padding-right: 30px;
     padding-top: 30px;
 }
-footer .back-to-issueList{
+
+footer .back-to-issueList {
     background-color: #FF652F;
     padding: 13px;
     text-align: center;
@@ -146,7 +183,8 @@ footer .back-to-issueList{
     font-size: 15pt;
     font-weight: bold;
 }
-footer .back-to-top{
+
+footer .back-to-top {
     background-color: #86C232;
     padding: 13px;
     text-align: center;
@@ -154,6 +192,7 @@ footer .back-to-top{
     font-size: 15pt;
     font-weight: bold;
 }
+
 img {
     width: 100%;
     height: auto;
