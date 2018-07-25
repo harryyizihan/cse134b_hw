@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+/* fixing the anchor alignment issue - https://www.itsupportguides.com/knowledge-base/tech-tips-tricks/how-to-offset-anchor-tag-link-using-css/ */
+
+:target:before {
+    content: "";
+    display: block;
+    height: 60px;
+    margin: -60px 0 0;
+}
+
+.site-header {
+    display: none;
+}
+
+.sidenav {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin: 100px 80px 150px 210px;
+    min-width: 300px;
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+main section h2 {
+    color: navy;
+}
+
+main section p {
+    font-size: 14pt;
+}
+
+footer {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+#icon-img {
+    width: 70px;
+}
+
+@media screen and (max-width: 700px) {
+    .sidenav {
+        display: none;
+    }
+    main {
+        margin: 100px 40px 150px 40px;
+    }
+    main section h2 {
+        font-size: 15pt;
+    }
+    main section p {
+        font-size: 12pt;
+    }
+    .site-header nav.site-header-links .flex-link {
+        display: none;
+    }
+    .site-header nav.site-header-links ul .responsive-link {
+        display: table-cell;
+        background-color: #FFAF00;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .site-header span.site-name {
+        font-size: 25px;
+        padding-left: 10px;
+    }
+    main {
+        margin: 100px 20px 150px 20px;
+    }
+    main section h2 {
+        font-size: 15pt;
+    }
+    main section p {
+        font-size: 12pt;
+    }
+    .site-header nav.site-header-links ul li a {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px 8px;
+    }
+    footer .back-to-issueList {
+        display: none;
+    }
+    footer .back-to-top {
+        margin-right: 15px
+    }
+}
