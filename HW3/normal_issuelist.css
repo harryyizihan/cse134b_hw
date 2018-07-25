@@ -35,21 +35,26 @@
 
 .mode {
     display: table;
-    right: 100%;
-    margin-left: auto;
-    margin-right: 0;
-    font-size: 30px;
-    color: white;
-    font-weight: bolder;
     min-width: 450px;
 }
 
 #normal-sheet {
+    display: none;
     background: #86C232;
+    float: left;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #printer-sheet {
     background-color: #FF652F;
+    color: white;
+    float: left;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .site-header nav.site-header-links {
