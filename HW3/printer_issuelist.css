@@ -11,7 +11,7 @@
 
 .mode {
     display: table;
-    min-width: 450px;
+    min-width: 350px;
 }
 
 #normal-sheet {
@@ -89,32 +89,4 @@ footer {
 
 #icon-img {
     width: 70px;
-}
-
-@media screen and (max-width: 700px) {
-    .site-header nav.site-header-links .flex-link {
-        display: none;
-    }
-    .site-header nav.site-header-links ul .responsive-link {
-        display: table-cell;
-        background-color: #FFAF00;
-    }
-    main {
-        margin: 100px 25px 120px 25px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .site-header span.site-name {
-        font-size: 20px;
-        padding-left: 10px;
-    }
-    .site-header nav.site-header-links ul li a {
-        font-size: 18px;
-        font-weight: bold;
-        padding: 15px 8px;
-    }
-    main {
-        margin: 100px 20px 120px 20px;
-    }
 }

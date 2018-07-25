@@ -23,7 +23,7 @@
     line-height: 60px;
     display: flex;
     background-color: #272727;
-    min-width: 300px;
+    min-width: 320px;
 }
 
 .site-header span.site-name {
@@ -31,30 +31,6 @@
     color: white;
     font-size: 30px;
     padding-left: 20px;
-}
-
-.mode {
-    display: table;
-    min-width: 450px;
-}
-
-#normal-sheet {
-    display: none;
-    background: #86C232;
-    float: left;
-    padding: 10px;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#printer-sheet {
-    background-color: #FF652F;
-    color: white;
-    float: left;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
 }
 
 .site-header nav.site-header-links {
@@ -154,7 +130,27 @@
     text-align: left;
     padding: 0 17px 0 17px;
 }
-
+.mode {
+    display: table;
+    min-width: 450px;
+}
+#normal-sheet {
+    display: none;
+    background: #86C232;
+    float: left;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+#printer-sheet {
+    background-color: #FF652F;
+    color: white;
+    float: left;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
 html,
 body {
     height: 100%;
@@ -179,6 +175,7 @@ footer {
     height: 110px;
     background-color: #272727;
     color: white;
+    min-width: 320px;
 }
 
 footer #copyright {
