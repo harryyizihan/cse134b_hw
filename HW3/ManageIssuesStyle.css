@@ -94,6 +94,7 @@ body {
     border-radius: 10px 10px 0px 0px;
     text-align: center;
     font-size: 14px;
+    font-size: 1vw;
     height: 29px;
     padding-left: 10px;
     padding-right: 10px;
@@ -107,6 +108,11 @@ body {
     color: SlateGrey;
 }
 
+@media screen and (max-width: 900px){
+    .textspace1{
+        display:none !important;
+    }
+}
 .site-header-2nd-container table td#dummyfirst {
     width: 15%;
 }
