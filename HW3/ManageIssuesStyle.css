@@ -330,7 +330,6 @@ footer {
 }
 
 footer nav {
-    align: center;
     padding-top: 20px;
 }
 
@@ -401,7 +400,6 @@ footer nav a {
     height: 8px;
     border-bottom: solid 1px currentColor;
     border-left: solid 1px currentColor;
-    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
 

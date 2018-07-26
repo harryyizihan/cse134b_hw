@@ -53,7 +53,7 @@
         </nav>
     </div>
     <div class="site-header-2nd">
-        <span class="site-header-2nd-container">
+        <div class="site-header-2nd-container" style="display:inline">
 	<h3 style="font-family:monospace"><img src="avatar.png" alt="" style="height:25px;width:25px;">&nbsp;/u/drboom</h3>
 	<table><tr>
 		<td id="dummyfirst"></td>
@@ -74,7 +74,7 @@
         <td id="dummylast"></td>
         </tr>
         </table>
-        </span>
+        </div>
     </div>
     <div class="left-blank">&nbsp;</div>
     <div class="site-content">
@@ -83,7 +83,7 @@
 			<option value="" disabled selected>Select Project</option>
 			<option value="1">Flower Calender</option>
 			<option value="2">MyPlanner</option>
-			<option value="3">Other</option></select><br>
+			<option value="3">Other</option></select></label><br>
 		<label>Issue Name: <input type="text" name="issueName" style="width:250px" required></label><br>
             <label>Issue Type:</label>
             <select name="issuetype" required>
@@ -102,15 +102,16 @@
             <label>Issue Description: </label><br>
             <textarea cols=100 name="issuedesc" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000 style="width:90%;height:200px;"></textarea><br/>
             <div class="range">
-                <label>Issue Importance:
-				                <div class="rangepc"><small>Low priority</small><input type="range" min=0 max=100 value=62 step=1 name="importance"><small>High priority</small></div>
+                <div class="rangepc">
+                <label>Issue Importance:</label>
+				                <small>Low priority</small><input type="range" min=0 max=100 value=62 step=1 name="importance"><small>High priority</small></div>
                 <input class="rangemob" type="number" min=0 max=100 value=62 name="importance" style="display:none">
             </div>
             <label>Issue Attachments:
 			<input type="file" accept=".doc,.docx,.pdf"></label><br/>
             <fieldset style="width:90%;">
                 <legend>Contact Info(optional):</legend>
-                <label>This information is only shown to the project developer. <a href="terms.html">Learn More.</a></label> Name: <input type="text"><br/> Email: <input type="email"><br/> Phone: <input type="tel"><br/> Twitter: <input type="URL"><br/>
+                <label>This information is only shown to the project developer. <a href="terms.html">Learn More.</a></label><br> Name: <input type="text"><br/> Email: <input type="email"><br/> Phone: <input type="tel"><br/> Twitter: <input type="URL"><br/>
             </fieldset><br/>
             <!--When javascript is enabled, users can toggle between showing and not showing details-->
             <div id="initbutton" style="display:none;">
