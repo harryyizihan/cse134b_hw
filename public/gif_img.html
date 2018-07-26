@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="normal_issue_detail.css">
     <link rel="stylesheet" media="print" href="printer_issue_detail.css">
-    <link rel="icon" type="image/png" href="/HW3/favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <title>sample detail page</title>
 </head>
@@ -16,7 +16,7 @@
     <header class="site-header">
         <span class="site-name">MyTracker</span>
         <span id="icon-img">
-				<img src="/HW3/formatted_icon.png" alt="icon pictures" width="70">
+                <img src="formatted_icon.png" alt="icon pictures" width="70">
         </span>
         <nav class="site-header-links">
             <ul>
@@ -46,9 +46,9 @@
     </header>
     <main>
         <div class="mode">
-            <a href="#" onclick="changeCSS('printer_issue_detail.css', 0);" id="printer-sheet">Switch to Printer mode</a>
+            <a onclick="changeCSS('printer_issue_detail.css', 0);" id="printer-sheet">Switch to Printer mode</a>
             <span>&nbsp;&nbsp;&nbsp;</span>
-            <a href="#" onclick="changeCSS('normal_issue_detail.css', 0);" id="normal-sheet">Switch to Normal mode</a>
+            <a onclick="changeCSS('normal_issue_detail.css', 0);" id="normal-sheet">Switch to Normal mode</a>
         </div>
         <nav class="sidenav">
             <ul>
@@ -60,30 +60,27 @@
             </ul>
         </nav>
         <section id="issue-name">
-            <h2>Issue Name: xxx.html cannot be access</h2>
+            <h2>Issue Name: Supporting GIF Format Image Display.</h2>
         </section>
         <section id="issue-type">
-            <h2>Issue Type: Sample Type</h2>
+            <h2>Issue Type: New Feature</h2>
         </section>
         <section id="issue-data">
-            <h2>Issue occurred date: <time>2018-07-22</time></h2>
+            <h2>Issue occurred date: <time>2018-07-24</time></h2>
         </section>
         <section id="issue-description">
             <h2>Issue Description: </h2>
-            <p>The xxx.html page cannot be access from the link on index page.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam facere, optio, necessitatibus consequatur accusantium iusto aut rem quia harum consectetur adipisci neque nulla fugit ut laborum sequi molestias nam voluptas! Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Nobis at suscipit nesciunt voluptatem, pariatur modi necessitatibus labore optio incidunt non, quas ad minus! Deleniti cumque voluptatem magnam? Doloremque, cumque quis.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus nostrum rem placeat explicabo nulla atque necessitatibus beatae maiores ullam ut iure, similique, enim numquam laboriosam fugit quae sed debitis distinctio! Lorem, ipsum
-                dolor sit amet consectetur adipisicing elit. Culpa ea possimus obcaecati earum perspiciatis vero dignissimos cum magni adipisci error a laudantium repellat quisquam modi, ad voluptatem ex repellendus veniam.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam facere, optio, necessitatibus consequatur accusantium iusto aut rem quia harum consectetur adipisci neque nulla fugit ut laborum sequi molestias nam voluptas! Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Nobis at suscipit nesciunt voluptatem, pariatur modi necessitatibus labore optio incidunt non, quas ad minus! Deleniti cumque voluptatem magnam? Doloremque, cumque quis.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus nostrum rem placeat explicabo nulla atque necessitatibus beatae maiores ullam ut iure, similique, enim numquam laboriosam fugit quae sed debitis distinctio! Lorem, ipsum
-                dolor sit amet consectetur adipisicing elit. Culpa ea possimus obcaecati earum perspiciatis vero dignissimos cum magni adipisci error a laudantium repellat quisquam modi, ad voluptatem ex repellendus veniam.</p>
+            <p>The GIF format image should be properly display on screen for supported client browser.</p>
+            <p>Attachment is a example of GIF format image, the attachment intend to show how it supported to display on the web application.</p>
+            <p>After the implementaion, the new feature should tested across diffent operation system platform, includeing Windows, Mac, Linux(ubantu and cent OS), ios, and android. Also, testing on differnet Browser including Chrome, FireFox, and Internet
+                Explorer. </p>
+            <p>In the case of un-fixable support issue, the issue should be documented and report.</p>
+            <p>Note: the GIF image should support animation, be aware while implemation and testing.</p>
         </section>
         <section id="issue-attachment">
             <h2>Attachment:</h2>
             <picture>
-                <img src="./sampleIssuePic.PNG" alt="screen capture of issue">
+                <img src="./pic_gif.gif" alt="example image for demo the new feature">
             </picture>
         </section>
     </main>
