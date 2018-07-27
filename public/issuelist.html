@@ -18,17 +18,6 @@ thead, tfoot, tr, td and th-->
 
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
-
-    <script>
-        firebase.initializeApp({
-        apiKey: '### FIREBASE API KEY ###',
-        authDomain: '### FIREBASE AUTH DOMAIN ###',
-        projectId: '### CLOUD FIRESTORE PROJECT ID ###'
-        });
-
-        // Initialize Cloud Firestore through Firebase
-        var db = firebase.firestore();
-    </script>
 </head>
 
 <body>
@@ -45,7 +34,7 @@ thead, tfoot, tr, td and th-->
                         <li><a href="add_issue.html">Add Issues</a></li>
                         <li><a href="edit_issues.html">Edit Issues</a></li>
                         <li><a href="delete_issues.html">Delete Issues</a></li>
-                        <li><a href="" class="sign-out-buttom" id="sign-out-btn">Sign out</a></li>
+                        <li><a href="login_form.html" class="sign-out-buttom" id="sign-out-btn">Sign out</a></li>
                     </ul>
                 </li>
                 <li><a href="#" class="current-page flex-link">Issue list</a></li>
@@ -58,7 +47,7 @@ thead, tfoot, tr, td and th-->
                             <li><a href="delete_issues.html">Delete Issues</a></li>
                     </ul>
                     </li>
-                    <li><a href="" class="sign-out-buttom flex-link" id="sign-out-btn-2">Sign out</a></li>
+                    <li><a href="login_form.html" class="sign-out-buttom flex-link">Sign out</a></li>
             </ul>
         </nav>
     </header>
