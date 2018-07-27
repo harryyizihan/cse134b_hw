@@ -45,6 +45,8 @@
         if (firebaseUser) {
             alert('You are now logged in!');
             window.location = 'issuelist.html';
-        } else {}
+        } else {
+            alert('Not logged in!');
+        }
     });
 }());
