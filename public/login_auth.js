@@ -14,7 +14,7 @@
     const password = document.getElementById('password-txt');
     const btnLogin = document.getElementById('login');
 
-    btnSignup.addEventListener('click', e => {
+    btnLogin.addEventListener('click', e => {
         const emailVal = email.value;
         const pass = password.value;
         firebase.auth().signInWithEmailAndPassword(emailVal, pass).catch(function(error) {
@@ -22,20 +22,19 @@
             var errorCode = error.code;
             var errorMessage = error.message;
             if (errorCode === 'auth/wrong-password') {
-                alert('Wrong password.');
+                alert('Wrong password lmao');
             } else {
-                alert(errorMessage);
+                alert('No recognizable email exists, please register the account first!');
             }
             console.log(error);
         });
     });
 
-        //Add a realtime listener
+    //Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
             window.location = 'issuelist.html';
-        } else {
-            console.log('not logged in');
-        }
+            alert('You are now logged in!')
+        } else {}
     });
 }());
