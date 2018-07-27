@@ -17,19 +17,24 @@
     btnSignup.addEventListener('click', e => {
         const emailVal = email.value;
         const pass = password.value;
-        const auth = firebase.auth();
-
-        console.log('got there');
-
-        const promise = auth.createUserWithEmailAndPassword(emailVal, pass);
-        promise.catch(e => console.log(e.message));
+        firebase.auth().createUserWithEmailAndPassword(emailVal, pass).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode === 'auth/wrong-password') {
+                alert('Wrong password.');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+        });
     });
 
 
     //Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
-            console.log(firebaseUser);
+            window.location = 'issuelist.html';
         } else {
             console.log('not logged in');
         }

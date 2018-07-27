@@ -14,12 +14,28 @@
     const password = document.getElementById('password-txt');
     const btnLogin = document.getElementById('login');
 
-    btnLogin.addEventListener('click', e => {
+    btnSignup.addEventListener('click', e => {
         const emailVal = email.value;
         const pass = password.value;
-        const auth = firebase.auth();
+        firebase.auth().signInWithEmailAndPassword(emailVal, pass).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode === 'auth/wrong-password') {
+                alert('Wrong password.');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+        });
+    });
 
-        const promise = auth.signInWithEmailAndPassword(emailVal, pass);
-        promise.catch(e => console.log(e.message));
+        //Add a realtime listener
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+            window.location = 'issuelist.html';
+        } else {
+            console.log('not logged in');
+        }
     });
 }());
