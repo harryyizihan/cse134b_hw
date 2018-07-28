@@ -16,10 +16,9 @@
     var userId;
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          alert(user.uid);
-          userId = user.uid;
+
         } else {
-          alert("No user logged in!");
+          alert("You are not logged in, how could you get to this page???");
         }
     });
 
@@ -44,7 +43,6 @@
         firebaseRef.child("Issue Importance").set(importance);
         
         var updates = {};
-        var key = firebase.database().ref().child('Count').push().key;
         updates['Count'] = issueId;
         firebase.database().ref().update(updates);
     });
