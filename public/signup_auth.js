@@ -1,3 +1,4 @@
+var globalEmail;
 (function() {
     // Initialize Firebase
     const config = {
@@ -17,6 +18,7 @@
 
     btnSignup.addEventListener('click', e => {
         const emailVal = email.value;
+        globalEmail = emailVal;
         const pass = password.value;
         const passRepeat = passwordRepeat.value;
 
@@ -44,6 +46,7 @@
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
             alert('You are now logged in!');
+            //firebaseUser.updateName(globalEmail);
             window.location = 'issuelist.html';
         } else {}
     });

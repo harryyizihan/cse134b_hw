@@ -8,6 +8,7 @@
     <title>Add Issue</title>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
     <link rel="stylesheet" href="ManageIssuesStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -99,9 +100,9 @@
 			<option value="2">MyPlanner</option>
             <option value="3">Other</option></select></label><br>
             -->
-            <label>Issue Name: <input type="text" name="issueName" style="width:250px" required></label><br>
+            <label>Issue Name: <input type="text" id= "issue-name" name="issueName" style="width:250px" required></label><br>
             <label>Issue Type:</label>
-            <select name="issuetype" required>
+            <select name="issuetype" required id="issue-type">
 			<option value="" disabled selected> Select issue category</option>
 			<optgroup label="Fundamental issues"></optgroup>
 			<option value="1.1"> Crashes</option>
@@ -115,11 +116,11 @@
 			<option value="3.2"> Functionality Suggestions</option>
 		</select><br/>
             <label>Issue Description: </label><br>
-            <textarea cols=100 name="issuedesc" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000 style="width:90%;height:200px;"></textarea><br/>
+            <textarea cols=100 name="issuedesc" id="issue-description" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000 style="width:90%;height:200px;"></textarea><br/>
             <div class="range">
                 <div class="rangepc">
                     <label>Issue Importance:</label>
-                    <small>Low priority</small><input type="range" min=0 max=100 value=62 step=1 name="importance"><small>High priority</small></div>
+                    <small>Low priority</small><input type="range" min=0 max=100 value=62 step=1 name="importance" id="issue-importance"><small>High priority</small></div>
                 <input class="rangemob" type="number" min=0 max=100 value=62 name="importance" style="display:none">
             </div>
             <label>Issue Attachments:
@@ -165,7 +166,7 @@
 		</noscript>
             <label>Verification: 227+310=<input name=a type=number min=0 max=1000 step=any oninput="o.value=(a.valueAsNumber==538)"></label>
             <output name=o for="a"></output><br/>
-            <input type=submit>
+            <button type="submit" id="submit-btn">Submit</button>
         </form>
     </div>
     <div class="right-blank">&nbsp;</div>
