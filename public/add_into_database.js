@@ -29,19 +29,23 @@
         const description = issueDescription.value;
         const importance = issueImportance.value;
 
-        var issueId;
+        var issueId = 1;
+
         var userRef = firebase.database().ref(userId);
         var countRef = firebase.database().ref('Count');
         var count = countRef.on('value', snap => 
             issueId = snap.val() + 1);
         
-        firebase.database().ref().set("0");
-
-        var firebaseRef = firebase.database().ref(userId + "/" + issueId);
+        var firebaseRef = firebase.database().ref("users/" + userId + "/" + issueId);
         firebaseRef.child("Issue ID").set(issueId);
         firebaseRef.child("Issue Name").set(name);
         firebaseRef.child("Issue Type").set(type);
         firebaseRef.child("Issue Description").set(description);
         firebaseRef.child("Issue Importance").set(importance);
+        
+        var updates = {};
+        var key = firebase.database().ref().child('Count').push().key;
+        updates['Count'] = issueId;
+        firebase.database().ref().update(updates);
     });
 }());
