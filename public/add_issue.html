@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Issue</title>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
     <link rel="stylesheet" href="ManageIssuesStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -54,37 +56,50 @@
     </div>
     <div class="site-header-2nd">
         <div class="site-header-2nd-container" style="display:inline">
-	<h3 style="font-family:monospace"><img src="avatar.png" alt="" style="height:25px;width:25px;">&nbsp;/u/drboom</h3>
-	<table><tr>
-		<td id="dummyfirst"></td>
-		<td class="now"><a href="add_issue.html"><div class="plus icon"></div><span class="iconspace">&nbsp;</span><div class="textspace1">Add</div></a>
-        </td>
-        <td>
-            <a href="edit_issues.html">
-                <div class="search icon"></div><span class="iconspace">&nbsp;</span><div class="textspace1">Edit</div></a>
-        </td>
-        <td>
-            <a href="close_issues.html">
-                <div class="check icon"></div><span class="iconspace">&nbsp;</span><div class="textspace1">Close/Resolve</div></a>
-        </td>
-        <td>
-            <a href="delete_issues.html" style="color:#FF0000">
-                <div class="close icon"></div><span class="iconspace2">&nbsp;</span><div class="textspace1">Delete</div></a>
-        </td>
-        <td id="dummylast"></td>
-        </tr>
-        </table>
+            <h3 style="font-family:monospace"><img src="avatar.png" alt="" style="height:25px;width:25px;">&nbsp;/u/drboom</h3>
+            <table>
+                <tr>
+                    <td id="dummyfirst"></td>
+                    <td class="now">
+                        <a href="add_issue.html">
+                            <div class="plus icon"></div><span class="iconspace">&nbsp;</span>
+                            <div class="textspace1">Add</div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="edit_issues.html">
+                            <div class="search icon"></div><span class="iconspace">&nbsp;</span>
+                            <div class="textspace1">Edit</div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="close_issues.html">
+                            <div class="check icon"></div><span class="iconspace">&nbsp;</span>
+                            <div class="textspace1">Close/Resolve</div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="delete_issues.html" style="color:#FF0000">
+                            <div class="close icon"></div><span class="iconspace2">&nbsp;</span>
+                            <div class="textspace1">Delete</div>
+                        </a>
+                    </td>
+                    <td id="dummylast"></td>
+                </tr>
+            </table>
         </div>
     </div>
     <div class="left-blank">&nbsp;</div>
     <div class="site-content">
         <form method="get" onsubmit="return (a.valueAsNumber==538);dialog1.show()">
+            <!--
             <label>Project: <select name="proj" required>
 			<option value="" disabled selected>Select Project</option>
 			<option value="1">Flower Calender</option>
 			<option value="2">MyPlanner</option>
-			<option value="3">Other</option></select></label><br>
-		<label>Issue Name: <input type="text" name="issueName" style="width:250px" required></label><br>
+            <option value="3">Other</option></select></label><br>
+            -->
+            <label>Issue Name: <input type="text" name="issueName" style="width:250px" required></label><br>
             <label>Issue Type:</label>
             <select name="issuetype" required>
 			<option value="" disabled selected> Select issue category</option>
@@ -103,8 +118,8 @@
             <textarea cols=100 name="issuedesc" placeholder="Describe the issue here. (Limit: 1000 characters)" maxlength=1000 style="width:90%;height:200px;"></textarea><br/>
             <div class="range">
                 <div class="rangepc">
-                <label>Issue Importance:</label>
-				                <small>Low priority</small><input type="range" min=0 max=100 value=62 step=1 name="importance"><small>High priority</small></div>
+                    <label>Issue Importance:</label>
+                    <small>Low priority</small><input type="range" min=0 max=100 value=62 step=1 name="importance"><small>High priority</small></div>
                 <input class="rangemob" type="number" min=0 max=100 value=62 name="importance" style="display:none">
             </div>
             <label>Issue Attachments:
@@ -165,4 +180,7 @@
             <a href="about.html">About</a>
         </nav>
     </footer>
+    <script src="add_into_database.js"></script>
 </body>
+
+</html>
