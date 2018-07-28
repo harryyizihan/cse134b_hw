@@ -16,9 +16,9 @@
     var userId;
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-
+            userId = user.uid;
         } else {
-          alert("You are not logged in, how could you get to this page???");
+            alert("You are not logged in, how could you get to this page???");
         }
     });
 
@@ -28,12 +28,19 @@
         const description = issueDescription.value;
         const importance = issueImportance.value;
 
-        var issueId = 1;
+        var issueId;
 
         var userRef = firebase.database().ref(userId);
         var countRef = firebase.database().ref('Count');
-        var count = countRef.on('value', snap => 
-            issueId = snap.val() + 1);
+        var count = countRef.on('value', snap => {
+            if (typeof snap === undefined) {
+                issueId = 1;
+            }
+            else {
+                issueId = snap.val() + 1;
+            }
+        });
+        
         
         var firebaseRef = firebase.database().ref("users/" + userId + "/" + issueId);
         firebaseRef.child("Issue ID").set(issueId);
