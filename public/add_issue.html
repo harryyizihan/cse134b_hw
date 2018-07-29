@@ -26,9 +26,10 @@
     <script>
         //All buttons were contextually initialized to not show due to noscript concerns; thus an onload js function is needed to show the button to user agents who do enable javascript
         window.onload = function() {
-                document.getElementById('initbutton').style.display = "block";
-            }
-            //These are onclick triggers that would hide/show detail divs and change which button would be active
+            document.getElementById('initbutton').style.display = "block";
+        }
+        
+        //These are onclick triggers that would hide/show detail divs and change which button would be active
         function detailstoggle1() {
             document.getElementById('detailspart').style.display = 'block';
             document.getElementById('initbutton').style.display = 'none';
