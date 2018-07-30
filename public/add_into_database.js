@@ -41,13 +41,12 @@
             }
         });
         
-        
         var firebaseRef = firebase.database().ref("users/" + userId + "/" + issueId);
-        firebaseRef.child("Issue ID").set(issueId);
-        firebaseRef.child("Issue Name").set(name);
-        firebaseRef.child("Issue Type").set(type);
-        firebaseRef.child("Issue Description").set(description);
-        firebaseRef.child("Issue Importance").set(importance);
+        firebaseRef.child("id").set(issueId);
+        firebaseRef.child("name").set(name);
+        firebaseRef.child("type").set(type);
+        firebaseRef.child("description").set(description);
+        firebaseRef.child("importance").set(importance);
         
         var updates = {};
         updates['Count'] = issueId;
