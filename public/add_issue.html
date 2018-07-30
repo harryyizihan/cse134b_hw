@@ -131,6 +131,7 @@
                 <label>This information is only shown to the project developer. <a href="terms.html">Learn More.</a></label><br> Name: <input type="text"><br/> Email: <input type="email"><br/> Phone: <input type="tel"><br/> Twitter: <input type="URL"><br/>
             </fieldset><br/>
             <!--When javascript is enabled, users can toggle between showing and not showing details-->
+            <!--
             <div id="initbutton" style="display:none;">
                 <button onclick="javascript:detailstoggle1();" type=button>Show developer details</button>
             </div>
@@ -150,7 +151,9 @@
                     out of 47
                 </details>
             </div>
+            -->
             <!--When javascript is disabled, the details would just show by default instead.-->
+            <!--
             <noscript>
 			<div id="detailspartns">
 			<details><summary><label>Developer Responsiveness: </label></summary>
@@ -163,10 +166,11 @@
   			Missing Functionality: <progress id='MFns' value=22 max=47></progress> 22 out of 47<br/>
   			Suggestions: <progress id='Sns' value=12 max=47></progress> 12 out of 47
   			</details>
-		</div>
-		</noscript>
+		    </div>
+            </noscript>
             <label>Verification: 227+310=<input name=a type=number min=0 max=1000 step=any oninput="o.value=(a.valueAsNumber==538)"></label>
             <output name=o for="a"></output><br/>
+            -->
             <button type="submit" id="submit-btn">Submit</button>
         </form>
     </div>

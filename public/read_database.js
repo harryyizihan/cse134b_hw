@@ -26,7 +26,7 @@
                 document.getElementById('issue-list-content').innerHTML = content;
             });
         } else {
-            alert("You are not logged in, how could you get to this page???");
+            //alert("You are not logged in, how could you get to this page???");
             return null;
         }
     });
