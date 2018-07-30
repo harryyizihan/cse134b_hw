@@ -23,7 +23,7 @@
         content = "";
         snapshot.forEach(function(data){
             content +='<tr>';
-            content += '<td>' + data.val().issueId + '</td>';
+            content += '<td>' + data.val().id + '</td>';
             content += '<td>' + data.val().name + '</td>';
             content += '<td>' + data.val().type + '</td>';
             content += '<td>' + 'open' + '</td>';
