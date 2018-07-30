@@ -35,19 +35,18 @@
         var count = countRef.on('value', snap => {
             if (typeof snap === undefined) {
                 issueId = 1;
-            }
-            else {
+            } else {
                 issueId = snap.val() + 1;
             }
         });
-        
+
         var firebaseRef = firebase.database().ref("users/" + userId + "/" + issueId);
         firebaseRef.child("id").set(issueId);
         firebaseRef.child("name").set(name);
         firebaseRef.child("type").set(type);
         firebaseRef.child("description").set(description);
         firebaseRef.child("importance").set(importance);
-        
+
         var updates = {};
         updates['Count'] = issueId;
         firebase.database().ref().update(updates);

@@ -10,6 +10,9 @@
     <title>Login Page</title>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+    <script>
+        var global_mode = 0;
+    </script>
     <style>
         body {
             font-family: 'Indie Flower', cursive;
@@ -112,6 +115,64 @@
             color: red;
             font-size: 50px;
         }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        
+        .switch input {
+            display: none;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: red;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+        
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+        
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+        /* Rounded sliders */
+        
+        .slider.round {
+            border-radius: 34px;
+        }
+        
+        .slider.round:before {
+            border-radius: 50%;
+        }
     </style>
 </head>
 
@@ -138,11 +199,25 @@
             <button type="submit" id="signup" onclick="window.location.href='signup_form.html'">Sign up</button>
 
             <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+
+            <br>
+
+            <div>
+                <span>REST Mode</span>
+                <label class="switch">
+                    <input type="checkbox" onchange="modeChanged(this)">
+                    <span class="slider round"></span>
+                </label>
+                <span>Firebase Mode</span>
+            </div>
+
+
         </div>
     </div>
     <script src="login_auth.js"></script>
+    <script src="mode_check.js"></script>
 </body>
 
 </html>
