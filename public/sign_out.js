@@ -11,8 +11,8 @@
             }).catch(function(error) {
                 alert(error);
             });
-        } 
-        
+        }
+
         //REST
         else {
             window.location.href = 'login_form.html';
@@ -28,11 +28,11 @@
             }).catch(function(error) {
                 alert(error);
             });
-        } 
-        
+        }
+
         //REST
         else {
             window.location.href = 'login_form.html';
         }
     });
-}());
+}())
