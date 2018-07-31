@@ -61,9 +61,4 @@
             window.location = 'issuelist.html';
         });
     });
-
-
-
-
-
 }());

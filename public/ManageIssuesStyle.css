@@ -441,3 +441,16 @@ footer nav a {
     float: left;
     width: 26px;
 }
+
+#Attachments {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+}
+
+#uploader {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50%;
+}

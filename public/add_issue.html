@@ -9,6 +9,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-storage.js"></script>
     <link rel="stylesheet" href="ManageIssuesStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -126,8 +127,10 @@
                     <small>Low priority</small><input type="range" min=0 max=100 value=62 step=1 name="importance" id="issue-importance"><small>High priority</small></div>
                 <input class="rangemob" type="number" min=0 max=100 value=62 name="importance" style="display:none">
             </div>
-            <label>Issue Attachments:
-			<input type="file" accept=".doc,.docx,.pdf"></label><br/>
+            <label id="Attachments">Issue Attachments:
+            <input type="file" value="upload" id="fileButton"></label><br/>
+            <label>Percentage: 
+            <progress value="0" max="100" id="uploader">0%</progress></label><br>
             <fieldset style="width:90%;">
                 <legend>Contact Info(optional):</legend>
                 <label>This information is only shown to the project developer. <a href="terms.html">Learn More.</a></label><br> Name: <input type="text"><br/> Email: <input type="email"><br/> Phone: <input type="tel"><br/> Twitter: <input type="URL"><br/>
