@@ -85,6 +85,7 @@
             top: 0;
             width: 100%;
             height: 100%;
+            height: 00px;
             overflow: auto;
             background-color: rgb(0, 0, 0);
             background-color: rgba(0, 0, 0, 0.4);
@@ -173,6 +174,16 @@
         .slider.round:before {
             border-radius: 50%;
         }
+
+        #mode {
+            font-size: 120%;
+            font-weight: bolder;
+        }
+
+        #note {
+            font-size: 90%;
+            color: white;
+        }
     </style>
 </head>
 
@@ -199,19 +210,20 @@
             <button type="submit" id="signup" onclick="window.location.href='signup_form.html'">Sign up</button>
 
             <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
+                <div id="mode">
+                        <span>REST</span>
+                        <label class="switch">
+                            <input type="checkbox" onchange="modeChanged(this)">
+                            <span class="slider round"></span>
+                        </label>
+                        <span>Firebase</span>
+                        <div id="note">
+                            <br>
+                            Note: the two storage endpoints have totally different data! 
+                        </div>   
+                </div>
             </label>
-
-            <br>
-
-            <div>
-                <span>REST Mode</span>
-                <label class="switch">
-                    <input type="checkbox" onchange="modeChanged(this)">
-                    <span class="slider round"></span>
-                </label>
-                <span>Firebase Mode</span>
-            </div>
+                   
         </div>
     </div>
     <script src="login_auth.js"></script>
