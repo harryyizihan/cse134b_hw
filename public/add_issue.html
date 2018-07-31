@@ -23,6 +23,7 @@
         }
     </style>
     <!-- script usage to demonstrate the interaction between script, noscript and onclink attribute of buttons -->
+    <!--
     <script>
         //All buttons were contextually initialized to not show due to noscript concerns; thus an onload js function is needed to show the button to user agents who do enable javascript
         window.onload = function() {
@@ -42,6 +43,7 @@
             document.getElementById('secondarybutton').style.display = 'none';
         }
     </script>
+    -->
 </head>
 
 <body>
@@ -93,7 +95,7 @@
     </div>
     <div class="left-blank">&nbsp;</div>
     <div class="site-content">
-        <form method="get" onsubmit="return (a.valueAsNumber==538);dialog1.show()">
+        <div>
             <!--
             <label>Project: <select name="proj" required>
 			<option value="" disabled selected>Select Project</option>
@@ -169,10 +171,10 @@
 		    </div>
             </noscript>
             <label>Verification: 227+310=<input name=a type=number min=0 max=1000 step=any oninput="o.value=(a.valueAsNumber==538)"></label>
-            <output name=o for="a"></output><br/>
+            <output name=o for="a"></output>
             -->
             <button type="submit" id="submit-btn">Submit</button>
-        </form>
+        </div>
     </div>
     <div class="right-blank">&nbsp;</div>
 

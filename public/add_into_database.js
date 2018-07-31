@@ -49,6 +49,9 @@
 
         var updates = {};
         updates['Count'] = issueId;
-        firebase.database().ref().update(updates);
+        firebase.database().ref().update(updates).then(function() {
+            alert("Successfully submit the issue!");
+            window.location = 'issuelist.html';
+        });
     });
 }());
