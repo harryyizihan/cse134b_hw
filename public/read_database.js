@@ -16,7 +16,7 @@
                 firebase.database().ref('/users/' + userId).once('value').then(function(snapshot){
                     content = "";
                     snapshot.forEach(function(data){
-                        content +='<tr>';
+                        content += '<tr>';
                         content += '<td>' + data.val().id + '</td>';
                         content += '<td>' + data.val().name + '</td>';
                         content += '<td>' + data.val().type + '</td>';
