@@ -24,10 +24,12 @@
 
     var uploader = document.getElementById('uploader');
     var fileButton = document.getElementById('fileButton');
+    var fileName;
 
     fileButton.addEventListener('change', function(e) {
         // Get file
         var file = e.target.files[0];
+        fileName = file.name;
 
         // Create a storage ref
         var storageRef = firebase.storage().ref(userId + '/' + file.name);
@@ -44,7 +46,7 @@
             },
 
             function error(err) {
-                alert('Something wrong with the file upload!');
+                alert('Something wrong with uploading the file!');
             },
 
             function complete() {   
@@ -60,29 +62,60 @@
         const importance = issueImportance.value;
 
         var issueId;
+        console.log(fileName);
 
         var userRef = firebase.database().ref(userId);
         var countRef = firebase.database().ref('Count');
-        var count = countRef.on('value', snap => {
-            if (typeof snap === undefined) {
+        var count = countRef.once('value').then(function(snapshot) {
+            if (typeof snapshot === "undefined") {
                 issueId = 1;
+                console.log('undefined');
+
+                const issueid = issueId;
+
+                var firebaseRef = firebase.database().ref("users/" + userId + "/" + issueid);
+                firebaseRef.child("id").set(issueid);
+                firebaseRef.child("name").set(name);
+                firebaseRef.child("type").set(type);
+                firebaseRef.child("description").set(description);
+                firebaseRef.child("importance").set(importance);
+                if (typeof fileName === "undefined") {
+
+                } else {
+                    firebaseRef.child("filename").set(fileName);
+                }
+        
+                var updates = {};
+                updates['Count'] = issueId;
+                firebase.database().ref().update(updates).then(function() {
+                    alert("Successfully submit the issue!");
+                    window.location = 'issuelist.html';
+                });
             } else {
-                issueId = snap.val() + 1;
+                issueId = snapshot.val() + 1;
+                console.log('got it!');
+
+                const issueid = issueId;
+
+                var firebaseRef = firebase.database().ref("users/" + userId + "/" + issueid);
+                firebaseRef.child("id").set(issueid);
+                firebaseRef.child("name").set(name);
+                firebaseRef.child("type").set(type);
+                firebaseRef.child("description").set(description);
+                firebaseRef.child("importance").set(importance);
+                if (typeof fileName === "undefined") {
+
+                } else {
+                    firebaseRef.child("filename").set(fileName);
+                }
+        
+                var updates = {};
+                updates['Count'] = issueId;
+                firebase.database().ref().update(updates).then(function() {
+                    alert("Successfully submit the issue!");
+                    window.location = 'issuelist.html';
+                });
             }
-        });
-
-        var firebaseRef = firebase.database().ref("users/" + userId + "/" + issueId);
-        firebaseRef.child("id").set(issueId);
-        firebaseRef.child("name").set(name);
-        firebaseRef.child("type").set(type);
-        firebaseRef.child("description").set(description);
-        firebaseRef.child("importance").set(importance);
-
-        var updates = {};
-        updates['Count'] = issueId;
-        firebase.database().ref().update(updates).then(function() {
-            alert("Successfully submit the issue!");
-            window.location = 'issuelist.html';
         });
     });
 }());
