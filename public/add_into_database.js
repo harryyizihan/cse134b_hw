@@ -59,7 +59,8 @@
 
         //REST
         else {
-
+            alert("Oooops, REST storage endpoint does not support file attachment yet.");
+            return;
         } 
     });
 
@@ -133,6 +134,9 @@
             });
         }
 
+
+
+        
         //REST
         else {
 
