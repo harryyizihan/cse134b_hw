@@ -139,7 +139,31 @@
         
         //REST
         else {
+            const url = 'http://localhost:3000/db';
 
+            var numIssues;
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onload = function() {
+                data = JSON.parse(this.responseText);
+                numIssues = data.count[0];
+            }
+            xhr.send();
+
+            var fs = require("fs");
+            var JSONObject = {
+                id: numIssues + 1,
+                name: this.name,
+                type: this.type,
+                description: this.description,
+                importance: this.importance
+            };
+
+            fs.writeFile("db.json", JSON.stringify(JSONObject, null, 4), (err) => {
+                console.log(err);
+            });
+
+            alert("Successfully submit the issue!");
         }
     });
 }());
