@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Issues</title>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-storage.js"></script>
     <link rel="stylesheet" href="ManageIssuesStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -26,7 +30,7 @@
 			<img src="formatted_icon.png" alt="" width="70">
 		</span>
         <nav class="site-header-links">
-            <a href="login_form.html" style="color:#FF0000">Sign out</a>
+            <a href="login_form.html" style="color:#FF0000" id="sign-out-btn">Sign out</a>
             <a class="now">Manage Issues</a>
             <a href="issuelist.html">Issue list</a>
         </nav>
@@ -71,20 +75,17 @@
             </div>
             <select id="closeselect" required>
 		<option value="">Please choose an issue you want to delete</option>
-		<option value="0">Issue #3: Lags out upon internet connectivity change</option>
-		<option value="1">Issue #8: Image does not resize</option>
-		<option value="2">Issue #17: gif support</option>
 	</select><br>
             <label>Select reason(s) for deletion:	</label><br>
-            <input type="checkbox" name="reason" value="mistake" style="margin-left:20px">
+            <input type="checkbox" name="reason" value="mistake" style="margin-left:20px" class="checks">
             <label>The issue was posted by mistake.</label><br>
-            <input type="checkbox" name="reason" value="wrongproj" style="margin-left:20px">
+            <input type="checkbox" name="reason" value="wrongproj" style="margin-left:20px" class="checks">
             <label>The issue was posted to the wrong project.</label><br>
-            <input type="checkbox" name="reason" value="inexist" style="margin-left:20px">
+            <input type="checkbox" name="reason" value="inexist" style="margin-left:20px" class="checks">
             <label>The issue has misleading titles/description and needs revision.</label><br>
-            <input type="checkbox" name="reason" value="violate" style="margin-left:20px">
+            <input type="checkbox" name="reason" value="violate" style="margin-left:20px" class="checks">
             <label>The issue violates the terms of service (i.e. contains sensitive information</label><br>
-            <input type="button" value="Delete issue" style="margin-top:10px">
+            <input type="button" value="Delete issue" style="margin-top:10px" id="deletebutton">
         </form>
     </div>
     <div class="right-blank">&nbsp;</div>
@@ -95,6 +96,8 @@
                     <p>Please note that deleting an issue is a permanent action; an issue and any communication history related to it would not be recoverable once deleted. Closing/resolving on the otherhand would merely change the status of the issue, so
                         that it can be reopened or disputed and that its history may be viewed.</p>
     </noscript>
+    <script src="database_access_delete.js"></script>
+    <script src="sign_out_CRUD_use.js"></script>
     <footer>
         <nav>
             <a>&copy; 2018 Langtian Qin</a>
