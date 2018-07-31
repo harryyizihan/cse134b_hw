@@ -38,7 +38,43 @@
             document.getElementById('select-issue').value = snapshot.child("type").val();
             document.getElementById('description').innerHTML = snapshot.child("description").val();
             document.getElementById('importance').value = snapshot.child("importance").val();
+            if (snapshot.hasChild("filename")) {
+                document.getElementById('prev-file').innerHTML = snapshot.child("filename").val();
+            }
        }); 
+    });
+
+    var uploader = document.getElementById('uploader');
+    var fileButton = document.getElementById('fileButton');
+    var fileName;
+
+    fileButton.addEventListener('change', function(e) {
+        // Get file
+        var file = e.target.files[0];
+        fileName = file.name;
+
+        // Create a storage ref
+        var storageRef = firebase.storage().ref(userId + '/' + file.name);
+
+        // upload file
+        var task = storageRef.put(file);
+
+        // update progress bar
+        task.on('state_changed', 
+    
+            function progress(snapshot) {
+                var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                uploader.value = percentage;
+            },
+
+            function error(err) {
+                alert('Something wrong with uploading the file!');
+            },
+
+            function complete() {   
+                alert('Nice! Firebase got your file:)');
+            }
+        );
     });
 
     const submitBtn = document.getElementById('submit-btn');
@@ -55,6 +91,11 @@
         updates['type'] = typeChange.value;
         updates['description'] = descriptiponChange.value;
         updates['importance'] = importanceChange.value;
+        if (typeof fileName === "undefined") {
+
+        } else {
+            updates['filename'] = fileName;
+        }
 
         firebase.database().ref('/users/' + userId + '/' + index).update(updates).then(function() {
             alert("Successfully update the issue!");

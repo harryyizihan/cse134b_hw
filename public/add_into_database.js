@@ -62,7 +62,11 @@
         const importance = issueImportance.value;
 
         var issueId;
-        console.log(fileName);
+
+        if (!name && ! type) {
+            alert('Issue Name and Issue Type are required before submit:)');
+            return;
+        }
 
         var userRef = firebase.database().ref(userId);
         var countRef = firebase.database().ref('Count');
