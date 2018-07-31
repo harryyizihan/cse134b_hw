@@ -10,11 +10,20 @@
     });
 
     btnSignOut.addEventListener('click', e => {
-        firebase.auth().signOut().then(function() {
-            alert('successfully logged out!');
-            window.location = 'login_form.html';
-        }).catch(function(error) {
-            alert(error);
-        });
+        global_mode = localStorage.getItem("mode");
+        if (global_mode == 1) {
+            firebase.auth().signOut().then(function() {
+                alert('successfully logged out!');
+                window.location = 'login_form.html';
+            }).catch(function(error) {
+                alert(error);
+            });
+        }
+
+        //REST
+        else {
+
+        }
+
     });
 }());
