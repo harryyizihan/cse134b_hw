@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Close/Resolve Issues</title>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-storage.js"></script>
     <link rel="stylesheet" href="ManageIssuesStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -17,7 +21,7 @@
 			<img src="formatted_icon.png" alt="" width="70">
 		</span>
         <nav class="site-header-links">
-            <a href="login_form.html" style="color:#FF0000">Sign out</a>
+            <a href="login_form.html" style="color:#FF0000" id="sign-out-btn">Sign out</a>
             <a class="now">Manage Issues</a>
             <a href="issuelist.html">Issue list</a>
         </nav>
@@ -51,9 +55,6 @@
         <div class="optionscontainer">
             <select id="closeselect" required>
 		<option value="" disabled selected>Select Issue(*)</option>
-		<option value="0">Issue #3: Lags out upon internet connectivity change</option>
-		<option value="1">Issue #8: Image does not resize</option>
-		<option value="2">Issue #17: gif support</option>
 		</select>
             <hr>
             <ul id="issue-info" style="list-style-type:none;display:none"></ul>
@@ -74,52 +75,12 @@
         <form>
             <input id="shortdescfield" type="text" name="shortdesc" placeholder="Briefly explain why you decide to close/resolved the issue"><br>
             <textarea id="longdescfield" name="longdesc" placeholder="If you want, expand further on the topic..."></textarea><br>
-            <input type=button value="Close/Resolve Issue" /><small>Note: They can be reopened by you, other users or the developer later</small>
+            <input type=button value="Close/Resolve Issue" id="submitbutton"/><small>Note: They can be reopened by you, other users or the developer later</small>
         </form>
     </div>
     <div class="right-blank">&nbsp;</div>
-    <script>
-        var selector = document.getElementById("closeselect");
-        var list = document.getElementById("issue-info");
-        selector.addEventListener('change', function() {
-            var current = selector.value;
-            var issueInfoTable = [
-                ["MyPlanner", "Fundamental", 95, "When the Internet connection switches from on to off, sometimes the app would stop responding; when the connection switches from off to on, the app does not automatically restart processing."],
-                ["Flower Calender", "Visual", 62, "The calendar resizes upon app resize but the images do not, resulting in them showing outside of their block"],
-                ["Flower Calender", "Suggestion", 25, "Seems like a good idea if the app supports animated pictures"]
-            ];
-            var removables = document.getElementsByClassName('removable');
-            while (removables[0]) {
-                removables[0].parentNode.removeChild(removables[0]);
-            }
-            if (current !== "") {
-                var svg = document.getElementById('curvedborder2');
-                svg.setAttribute('d', 'M100,100 L200,100');
-                list.style.display = "block";
-                var listItem1 = document.createElement('li');
-                listItem1.innerHTML = "Project in concern: " + "<br>" + issueInfoTable[current][0];
-                listItem1.className = "removable";
-                listItem1.style = "font-size:14px"
-                list.appendChild(listItem1);
-                var listItem2 = document.createElement('li');
-                listItem2.innerHTML = "Issue Type: " + issueInfoTable[current][1];
-                listItem2.className = "removable";
-                listItem2.style = "font-size:14px"
-                list.appendChild(listItem2);
-                var listItem3 = document.createElement('li');
-                listItem3.innerHTML = "Importance: " + issueInfoTable[current][2];
-                listItem3.className = "removable";
-                listItem3.style = "font-size:14px";
-                listItem3.style.color = issueInfoTable[current][2] > 66 ? "red" : (issueInfoTable[current][2] > 33 ? "blue" : "green");
-                list.appendChild(listItem3);
-                var listItem4 = document.createElement('li');
-                listItem4.innerHTML = "Description: " + issueInfoTable[current][3] + "<hr>";
-                listItem4.className = "removable";
-                listItem4.style = "font-size:12px"
-                list.appendChild(listItem4);
-            };
-        });
-    </script>
+    <script src="database_access_close.js"></script>
+    <script src="sign_out_CRUD_use.js"></script>
 
 
     <footer>

@@ -20,7 +20,7 @@
                         content += '<td>' + data.val().id + '</td>';
                         content += '<td>' + data.val().name + '</td>';
                         content += '<td>' + data.val().type + '</td>';
-                        content += '<td>' + 'open' + '</td>';
+                        content += '<td>' + data.val().status + 'd' + '</td>';
                         content += '<td>' + data.val().importance + '</td>';
                         content += '<td>' + '2018-07-21' + '</td>';
                         content += '</tr>';
