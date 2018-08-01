@@ -59,7 +59,7 @@
             for (i = 1; i <= numIssues; i++) {
                 var node = document.createElement("option");
                 node.setAttribute("value", data.issues[i-1].id);
-                var content = 'Issue #' + data.issues[i-1].id + ': ' + data.issues[i].name;
+                var content = 'Issue #' + data.issues[i-1].id + ': ' + data.issues[i-1].name;
                 var textNode = document.createTextNode(content);
                 node.appendChild(textNode);
                 rootNode.appendChild(node);
