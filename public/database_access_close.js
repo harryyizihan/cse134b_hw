@@ -58,17 +58,17 @@
 
             for (i = 1; i <= numIssues; i++) {
                 var node = document.createElement("option");
-                node.setAttribute("value", data.issues[i].id);
-                var content = 'Issue #' + data.issues[i].id + ': ' + data.issues[i].name;
+                node.setAttribute("value", data.issues[i-1].id);
+                var content = 'Issue #' + data.issues[i-1].id + ': ' + data.issues[i].name;
                 var textNode = document.createTextNode(content);
                 node.appendChild(textNode);
                 rootNode.appendChild(node);
                 issueInfoTable[i] = [];
-                issueInfoTable[i].push(data.issues[i].name);
-                issueInfoTable[i].push(data.issues[i].type);
-                issueInfoTable[i].push(data.issues[i].importance);
-                issueInfoTable[i].push(data.issues[i].description);
-                issueInfoTable[i].push(data.issues[i].status);
+                issueInfoTable[i].push(data.issues[i-1].name);
+                issueInfoTable[i].push(data.issues[i-1].type);
+                issueInfoTable[i].push(data.issues[i-1].importance);
+                issueInfoTable[i].push(data.issues[i-1].description);
+                issueInfoTable[i].push(data.issues[i-1].status);
             }
         }
         xhr.send();
