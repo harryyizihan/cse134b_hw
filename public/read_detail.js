@@ -69,8 +69,6 @@
         function renderIssues(issues) {
             data = JSON.parse(issues);
 
-            alert("issue ID:"+issueId);
-
             read_name = "<h2>Issue Name: " + data.issues[issueId].name + "</h2>";
             document.getElementById("issue-name").innerHTML = read_name;
 
