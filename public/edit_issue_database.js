@@ -10,6 +10,7 @@
     var rootNode = document.getElementById('closeselect');
 
     var userId;
+    var status;
     //const attachment;
 
     if (localStorage.getItem("mode") == 1) {
@@ -37,23 +38,23 @@
     else {
         const url_db = 'http://localhost:3000/db';
 
-            let xhr = new XMLHttpRequest();
-            let numIssues;
-            xhr.open('GET', url_db, true);
-            xhr.onload = function() {
-                data = JSON.parse(this.responseText);
-                numIssues = data.issues.length;
+        let xhr = new XMLHttpRequest();
+        let numIssues;
+        xhr.open('GET', url_db, true);
+        xhr.onload = function() {
+            data = JSON.parse(this.responseText);
+            numIssues = data.issues.length;
 
-                for (i = 0; i < numIssues; i++) {
-                    var node = document.createElement("option");
-                    node.setAttribute("value", data.issues[i].id);
-                    var content = 'Issue #' +  data.issues[i].id + ': ' + data.issues[i].name;
-                    var textNode = document.createTextNode(content);
-                    node.appendChild(textNode);
-                    rootNode.appendChild(node);
-                }
+            for (i = 0; i < numIssues; i++) {
+                var node = document.createElement("option");
+                node.setAttribute("value", data.issues[i].id);
+                var content = 'Issue #' + data.issues[i].id + ': ' + data.issues[i].name;
+                var textNode = document.createTextNode(content);
+                node.appendChild(textNode);
+                rootNode.appendChild(node);
             }
-            xhr.send();
+        }
+        xhr.send();
     }
 
     rootNode.addEventListener('change', function() {
@@ -66,6 +67,7 @@
                 document.getElementById('select-issue').value = snapshot.child("type").val();
                 document.getElementById('description').innerHTML = snapshot.child("description").val();
                 document.getElementById('importance').value = snapshot.child("importance").val();
+                status = snapshot.child("status").val();
                 if (snapshot.hasChild("filename")) {
                     document.getElementById('prev-file').innerHTML = snapshot.child("filename").val();
                 }
@@ -84,6 +86,7 @@
                 document.getElementById('select-issue').value = data.issues[index - 1].type;
                 document.getElementById('description').innerHTML = data.issues[index - 1].description;
                 document.getElementById('importance').value = data.issues[index - 1].importance;
+                status = data.issues[index - 1].status;
             }
             xhr.send();
         }
@@ -145,6 +148,7 @@
             updates['description'] = descriptiponChange.value;
             updates['importance'] = importanceChange.value;
             updates['datetime'] = new Date().toLocaleString();
+            updates['status'] = status;
             if (typeof fileName === "undefined") {
 
             } else {
@@ -165,18 +169,19 @@
             updates.importance = importanceChange.value;
             updates.id = index;
             updates.datetime = new Date().toLocaleString();
+            updates.status = status;
             updates = JSON.stringify(updates);
 
             const url = 'http://localhost:3000/issues/' + index;
 
             var xhr = new XMLHttpRequest();
             xhr.open("PUT", url, true);
-            xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-            xhr.onload = function () {
-                alert("Successful edit the issue!");
+            xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+            xhr.onload = function() {
                 window.location = 'issuelist.html';
             }
             xhr.send(updates);
         }
+        alert("Successful edit the issue!");
     });
 }());

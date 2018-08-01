@@ -102,11 +102,11 @@
             let xhr = new XMLHttpRequest();
             xhr.open('DELETE', url_db + '/' + index, true);
             xhr.onload = function() {
-                //window.location='issuelist.html';
+                window.location = 'issuelist.html';
             }
             xhr.send();
         }
-
+        alert("Successfully delete the issue!");
     });
 
 }());
