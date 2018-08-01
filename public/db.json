@@ -1,31 +1,21 @@
 {
   "issues": [
     {
-      "name": "asdasda",
+      "name": "first issue",
       "type": "Crashes",
+      "description": "asdasdas",
       "importance": "62",
-      "description": "asdasd",
-      "status": "closed",
-      "closeshortdesc": "asdas",
-      "closelongdesc": "asdas",
-      "datetime": "8/1/2018, 2:08:25 PM",
-      "id": 2
+      "id": 1,
+      "datetime": "8/1/2018, 3:30:07 PM"
     },
     {
-      "id": 3,
-      "name": "asdasda",
-      "type": "Crashes",
-      "description": "asdasd",
+      "name": "hi",
+      "type": "Intended Mechanic not Working",
+      "description": "asas",
       "importance": "62",
-      "datetime": "8/1/2018, 1:35:00 PM"
-    },
-    {
-      "id": 4,
-      "name": "dbdbdb",
-      "type": "Irresponsiveness",
-      "description": "asdasd",
-      "importance": "62",
-      "datetime": "8/1/2018, 1:35:42 PM"
+      "id": 2,
+      "datetime": "8/1/2018, 3:35:32 PM",
+      "status": "open"
     }
   ]
 }
