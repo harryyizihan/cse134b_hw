@@ -19,12 +19,16 @@
                 userId = user.uid;
                 firebase.database().ref('/users/' + userId).on('value', function(snapshot) {
                     snapshot.forEach(element => {
-                        var node = document.createElement("option");
-                        node.setAttribute("value", element.val().id);
-                        var content = 'Issue #' + element.val().id + ': ' + element.val().name;
-                        var textNode = document.createTextNode(content);
-                        node.appendChild(textNode);
-                        rootNode.appendChild(node);
+                        if (element.val().status == "closed" || element.val().status == "resolved") {
+
+                        } else {
+                            var node = document.createElement("option");
+                            node.setAttribute("value", element.val().id);
+                            var content = 'Issue #' + element.val().id + ': ' + element.val().name;
+                            var textNode = document.createTextNode(content);
+                            node.appendChild(textNode);
+                            rootNode.appendChild(node);
+                        }
                     });
                 });
             } else {
@@ -46,12 +50,16 @@
             numIssues = data.issues.length;
 
             for (i = 0; i < numIssues; i++) {
-                var node = document.createElement("option");
-                node.setAttribute("value", data.issues[i].id);
-                var content = 'Issue #' + data.issues[i].id + ': ' + data.issues[i].name;
-                var textNode = document.createTextNode(content);
-                node.appendChild(textNode);
-                rootNode.appendChild(node);
+                if (data.issues[i].status == "closed" || data.issues[i].status == "resolved") {
+
+                } else {
+                    var node = document.createElement("option");
+                    node.setAttribute("value", data.issues[i].id);
+                    var content = 'Issue #' + data.issues[i].id + ': ' + data.issues[i].name;
+                    var textNode = document.createTextNode(content);
+                    node.appendChild(textNode);
+                    rootNode.appendChild(node);
+                }
             }
         }
         xhr.send();
