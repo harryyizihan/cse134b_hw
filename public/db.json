@@ -1,9 +1,9 @@
 {
   "issues": [
     {
-      "name": "hi ",
+      "name": "sample issue",
       "type": "1.2",
-      "description": "nice try :)",
+      "description": "default for testing",
       "importance": "17",
       "id": 1,
       "datetime": "8/1/2018, 1:12:09 AM"
