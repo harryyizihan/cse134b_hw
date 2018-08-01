@@ -92,6 +92,7 @@
                     firebaseRef.child("id").set(issueid);
                     firebaseRef.child("name").set(name);
                     firebaseRef.child("type").set(type);
+                    firebaseRef.child("status").set("Open");
                     firebaseRef.child("description").set(description);
                     firebaseRef.child("importance").set(importance);
                     firebaseRef.child("datetime").set(new Date().toLocaleString());
@@ -117,6 +118,7 @@
                     firebaseRef.child("id").set(issueid);
                     firebaseRef.child("name").set(name);
                     firebaseRef.child("type").set(type);
+                    firebaseRef.child("status").set("Open");
                     firebaseRef.child("description").set(description);
                     firebaseRef.child("importance").set(importance);
                     firebaseRef.child("datetime").set(new Date().toLocaleString());

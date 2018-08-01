@@ -20,7 +20,7 @@
                         content += '<td>' + data.val().id + '</td>';
                         content += '<td> <a href="./sample_detail_page.html" onclick="recordID(' + data.val().id + ')">' + data.val().name + '</a></td>';
                         content += '<td>' + data.val().type + '</td>';
-                        content += '<td>' + data.val().status + 'd' + '</td>';
+                        content += '<td>' + data.val().status + '</td>';
                         content += '<td>' + data.val().importance + '</td>';
                         content += '<td>' + data.val().datetime + '</td>';
                         content += '</tr>';
