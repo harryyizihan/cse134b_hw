@@ -77,6 +77,7 @@
 
     var selector = document.getElementById("closeselect");
     var list = document.getElementById("issue-info");
+    const submitbutton = document.getElementById("submitbutton");
     
     selector.addEventListener('change', function() {
         var current = selector.selectedIndex;
@@ -98,6 +99,7 @@
                 closespan.style="display:none";
                 resolvespan.style="display:inline";
                 reopenspan.style="display:inline";
+                submitbutton.value="Resolve/reopen issue";
             }
             else if(issueInfoTable[current][4]=="resolved"){
                 statusradio[0].style="display:inline-block";
@@ -106,6 +108,7 @@
                 closespan.style="display:inline";
                 resolvespan.style="display:none";
                 reopenspan.style="display:inline";
+                submitbutton.value="Close/reopen issue";
             }
             else{
                 statusradio[0].style="display:inline-block";
@@ -114,6 +117,7 @@
                 closespan.style="display:inline";
                 resolvespan.style="display:inline";
                 reopenspan.style="display:none";
+                submitbutton.value="Close/resolve issue";
             }
             var svg = document.getElementById('curvedborder2');
             svg.setAttribute('d', 'M100,100 L200,100');
@@ -142,7 +146,7 @@
         };
     });
 
-    const submitbutton = document.getElementById("submitbutton");
+
 
     submitbutton.addEventListener('click', function() {
         const shortdesc = document.getElementById("shortdescfield");
