@@ -134,38 +134,48 @@
             });
         }
 
-
-
-
         //REST
         else {
-            const url = 'http://localhost:3000/db';
+            const url_db = 'http://localhost:3000/db';
 
-            var numIssues;
             let xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
+            let numIssues;
+            xhr.open('GET', url_db, true);
             xhr.onload = function() {
+                //renderIssues(this.responseText);
                 data = JSON.parse(this.responseText);
-                numIssues = data.count[0];
+                numIssues = data.issues.length;
+
+                const url = 'http://localhost:3000/issues';
+
+                const name = issueName.value;
+                const type = issueType.value;
+                const description = issueDescription.value;
+                const importance = issueImportance.value;
+    
+                var payload = {
+                    id: numIssues + 1,
+                    name: issueName.value,
+                    type: issueType.value,
+                    description: issueDescription.value,
+                    importance: issueImportance.value
+                };
+    
+                payload = JSON.stringify(payload);
+                
+                let xhr1 = new XMLHttpRequest();
+                xhr1.open('POST', url, true);
+                xhr1.setRequestHeader('Content-type', 'application/json; charset=utf-8')
+                xhr1.onload = function() {
+                    // no error checking done here!
+                    // bad idea to go and refetch issues, network is easy but... need a store 
+                    //getIssues();
+                }
+                xhr1.send(payload);
+    
+                alert("Successfully submit the issue!");
             }
             xhr.send();
-
-            var fs = require(['fs'], function(foo) {
-                //foo is now loaded.
-            });
-            var JSONObject = {
-                id: numIssues + 1,
-                name: this.name,
-                type: this.type,
-                description: this.description,
-                importance: this.importance
-            };
-
-            fs.writeFile("db.json", JSON.stringify(JSONObject, null, 4), (err) => {
-                console.log(err);
-            });
-
-            alert("Successfully submit the issue!");
         }
     });
 }());

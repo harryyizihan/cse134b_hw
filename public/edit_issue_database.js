@@ -35,7 +35,25 @@
 
     //REST
     else {
+        const url_db = 'http://localhost:3000/db';
 
+            let xhr = new XMLHttpRequest();
+            let numIssues;
+            xhr.open('GET', url_db, true);
+            xhr.onload = function() {
+                data = JSON.parse(this.responseText);
+                numIssues = data.issues.length;
+
+                for (i = 0; i < numIssues; i++) {
+                    var node = document.createElement("option");
+                    node.setAttribute("value", data.issues[i].id);
+                    var content = 'Issue #' +  data.issues[i].id + ': ' + data.issues[i].name;
+                    var textNode = document.createTextNode(content);
+                    node.appendChild(textNode);
+                    rootNode.appendChild(node);
+                }
+            }
+            xhr.send();
     }
 
     rootNode.addEventListener('change', function() {
@@ -56,7 +74,18 @@
 
         //REST
         else {
+            const url_db = 'http://localhost:3000/db';
 
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', url_db, true);
+            xhr.onload = function() {
+                data = JSON.parse(this.responseText);
+                document.getElementById('fk-name').value = data.issues[index - 1].name;
+                document.getElementById('select-issue').value = data.issues[index - 1].type;
+                document.getElementById('description').innerHTML = data.issues[index - 1].description;
+                document.getElementById('importance').value = data.issues[index - 1].importance;
+            }
+            xhr.send();
         }
     });
 
@@ -96,7 +125,7 @@
 
         // REST
         else {
-
+            alert("REST storage endpoint does not support attachments yet!");
         }
     });
 
@@ -122,14 +151,30 @@
             }
 
             firebase.database().ref('/users/' + userId + '/' + index).update(updates).then(function() {
-                alert("Successfully update the issue!");
+                alert("Successfully edit the issue!");
                 window.location = 'issuelist.html';
             });
         }
 
         //REST
         else {
+            updates.name = nameChange.value;
+            updates.type = typeChange.value;
+            updates.description = descriptiponChange.value;
+            updates.importance = importanceChange.value;
+            updates.id = index;
+            updates = JSON.stringify(updates);
 
+            const url = 'http://localhost:3000/issues/' + index;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", url, true);
+            xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+            xhr.onload = function () {
+                alert("Successful edit the issue!");
+                window.location = 'issuelist.html';
+            }
+            xhr.send(updates);
         }
     });
 }());

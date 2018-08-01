@@ -56,10 +56,9 @@
         function renderIssues(issues) {
 
             data = JSON.parse(issues);
-            let numIssues = data.count[0];
             let content = "";
 
-            for (i = 0; i < numIssues; i++) {
+            for (i = 0; i < data.issues.length; i++) {
                 content +='<tr>';
                 content += '<td>' + data.issues[i].id + '</td>';
                 content += '<td>' + data.issues[i].name + '</td>';
