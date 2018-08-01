@@ -29,11 +29,11 @@
                     document.getElementById("issue-description").innerHTML = read_description;
 
                     storageRef = firebase.storage().ref(userId + '/' + data.val().filename);
-                    alert(storageRef);
-                    gsReference = storage.refFromURL(storageRef);
-                    alert(gsReference);
-                    read_picture = "<img src=" + gsReference + "alt='issue attachment image'>";
-                    document.getElementById("issue-picture").innerHTML = read_picture;
+                    storageRef.getDownloadURL().then(function(url) {
+                        attach_img = document.createElement('img');
+                        attach_img.setAttribute('src', url);
+                        document.getElementById("issue-picture").appendChild(attach_img);
+                    })
                 });
             } else {
                 //alert("You are not logged in, how could you get to this page???");
