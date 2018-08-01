@@ -56,19 +56,19 @@
             data = JSON.parse(this.responseText);
             numIssues = data.issues.length;
 
-            for (i = 0; i < numIssues; i++) {
+            for (i = 1; i <= numIssues; i++) {
                 var node = document.createElement("option");
-                node.setAttribute("value", data.issues[i].id);
-                var content = 'Issue #' + data.issues[i].id + ': ' + data.issues[i].name;
+                node.setAttribute("value", data.issues[i-1].id);
+                var content = 'Issue #' + data.issues[i-1].id + ': ' + data.issues[i-1].name;
                 var textNode = document.createTextNode(content);
                 node.appendChild(textNode);
                 rootNode.appendChild(node);
                 issueInfoTable[i] = [];
-                issueInfoTable[i].push(data.issues[i].name);
-                issueInfoTable[i].push(data.issues[i].type);
-                issueInfoTable[i].push(data.issues[i].importance);
-                issueInfoTable[i].push(data.issues[i].description);
-                issueInfoTable[i].push(data.issues[i].status);
+                issueInfoTable[i].push(data.issues[i-1].name);
+                issueInfoTable[i].push(data.issues[i-1].type);
+                issueInfoTable[i].push(data.issues[i-1].importance);
+                issueInfoTable[i].push(data.issues[i-1].description);
+                issueInfoTable[i].push(data.issues[i-1].status);
             }
         }
         xhr.send();
@@ -170,7 +170,7 @@
             updates.type = issueInfoTable[current][1];
             updates.importance = issueInfoTable[current][2];
             updates.description = issueInfoTable[current][3];
-            updates.status = (statusradio[0].checked == true) ? "closed" : "resolved";
+            updates.status = (statusradio[0].checked == true) ? "closed" : ((statusradio[1].checked == true)? "resolved":"open");
             updates.closeshortdesc = shortdesc.value;
             updates.closelongdesc = longdesc.value;
             updates.datetime = new Date().toLocaleString();
