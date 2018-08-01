@@ -97,14 +97,14 @@
     width: 130px;
     top: 90px;
     left: 40px;
-    background-color: whitesmoke;
+    background-color: #494C5D;
     overflow: hidden;
 }
 .sidenav a {
     padding: 10px 15px;
     font-size: 20px;
     font-weight: bold;
-    color: #064579;
+    color: whitesmoke;
     text-align: center;
     display: block;
 }
