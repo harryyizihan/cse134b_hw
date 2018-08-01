@@ -8,6 +8,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-storage.js"></script>
     <link rel="stylesheet" href="normal_issue_detail.css">
     <link rel="stylesheet" media="print" href="printer_issue_detail.css">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -65,12 +66,10 @@
         <section id="issue-name"></section>
         <section id="issue-type"></section>
         <section id="issue-date"></section>
-        <section id="issue-description">
-        </section>
+        <section id="issue-description"></section>
         <section id="issue-attachment">
             <h2>Attachment:</h2>
-            <picture>
-                <img src="./sampleIssuePic.PNG" alt="screen capture of issue">
+            <picture id="issue-picture">
             </picture>
         </section>
     </main>

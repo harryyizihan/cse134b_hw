@@ -11,8 +11,6 @@
 
         issueId = "3";
 
-        alert("HELLLLLLO");
-
         //const attachment;
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
@@ -29,6 +27,13 @@
 
                     read_description = "<h2>Issue Description: </h2> <p>" + data.val().description + "/<p>";
                     document.getElementById("issue-description").innerHTML = read_description;
+
+                    storageRef = firebase.storage().ref(userId + '/' + data.val().filename);
+                    alert(storageRef);
+                    gsReference = storage.refFromURL(storageRef);
+                    alert(gsReference);
+                    read_picture = "<img src=" + gsReference + "alt='issue attachment image'>";
+                    document.getElementById("issue-picture").innerHTML = read_picture;
                 });
             } else {
                 //alert("You are not logged in, how could you get to this page???");
