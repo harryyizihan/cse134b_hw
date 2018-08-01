@@ -240,6 +240,14 @@
             document.getElementById("checkbox").checked = false;
         }
     </script>
+    <script>
+        document.getElementById('signup').addEventListener('click', function() {
+            if (localStorage.getItem("mode") == 0) {
+                alert("You don't need to register for REST storage endpoint, please click Login directly:)");
+                window.location = 'login_form.html';
+            }
+        });
+    </script>
 </body>
 
 </html>
