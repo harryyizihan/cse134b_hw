@@ -170,7 +170,7 @@
             updates.type = issueInfoTable[current][1];
             updates.importance = issueInfoTable[current][2];
             updates.description = issueInfoTable[current][3];
-            updates.status = (statusradio[0].checked == true) ? "closed" : "resolved";
+            updates.status = (statusradio[0].checked == true) ? "closed" : ((statusradio[1].checked == true)? "resolved":"open");
             updates.closeshortdesc = shortdesc.value;
             updates.closelongdesc = longdesc.value;
             updates.datetime = new Date().toLocaleString();
