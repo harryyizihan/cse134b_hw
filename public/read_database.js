@@ -8,14 +8,14 @@
             storageBucket: "real-issue-tracker.appspot.com"
         };
         firebase.initializeApp(config);
-    
+
         //const attachment;
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-                userId = user.uid; 
-                firebase.database().ref('/users/' + userId).once('value').then(function(snapshot){
+                userId = user.uid;
+                firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
                     content = "";
-                    snapshot.forEach(function(data){
+                    snapshot.forEach(function(data) {
                         content += '<tr>';
                         content += '<td>' + data.val().id + '</td>';
                         content += '<td> <a href="./sample_detail_page.html" onclick="recordID(' + data.val().id + ')">' + data.val().name + '</a></td>';
@@ -32,8 +32,8 @@
                 return null;
             }
         });
-    } 
-    
+    }
+
     //REST
     else {
         const url = 'http://localhost:3000/db';
@@ -59,15 +59,15 @@
             let content = "";
 
             for (i = 0; i < data.issues.length; i++) {
-                content +='<tr>';
+                content += '<tr>';
                 content += '<td>' + data.issues[i].id + '</td>';
                 content += '<td> <a href="./sample_detail_page.html" onclick="recordID(' + data.issues[i].id + ')">' + data.issues[i].name + '</a></td>';
                 content += '<td>' + data.issues[i].type + '</td>';
-                content += '<td>' + 'open' + '</td>';
+                content += '<td>' + data.issues[i].status + '</td>';
                 content += '<td>' + data.issues[i].importance + '</td>';
                 content += '<td>' + data.issues[i].datetime + '</td>';
                 content += '</tr>';
-    
+
             }
 
             document.getElementById('issue-list-content').innerHTML = content;
