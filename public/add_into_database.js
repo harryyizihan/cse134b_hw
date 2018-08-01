@@ -32,26 +32,26 @@
         if (global_mode == 1) {
             var file = e.target.files[0];
             fileName = file.name;
-    
+
             // Create a storage ref
             var storageRef = firebase.storage().ref(userId + '/' + file.name);
-    
+
             // upload file
             var task = storageRef.put(file);
-    
+
             // update progress bar
-            task.on('state_changed', 
-        
+            task.on('state_changed',
+
                 function progress(snapshot) {
                     var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                     uploader.value = percentage;
                 },
-    
+
                 function error(err) {
                     alert('Something wrong with uploading the file!');
                 },
-    
-                function complete() {   
+
+                function complete() {
                     alert('Nice! Firebase got your file:)');
                 }
             );
@@ -61,7 +61,7 @@
         else {
             alert("Oooops, REST storage endpoint does not support file attachment yet.");
             return;
-        } 
+        }
     });
 
     submitBtn.addEventListener('click', e => {
@@ -72,7 +72,7 @@
 
         var issueId;
 
-        if (!name && ! type) {
+        if (!name && !type) {
             alert('Issue Name and Issue Type are required before submit:)');
             return;
         }
@@ -85,9 +85,9 @@
                 if (typeof snapshot === "undefined") {
                     issueId = 1;
                     console.log('undefined');
-    
+
                     const issueid = issueId;
-    
+
                     var firebaseRef = firebase.database().ref("users/" + userId + "/" + issueid);
                     firebaseRef.child("id").set(issueid);
                     firebaseRef.child("name").set(name);
@@ -95,11 +95,11 @@
                     firebaseRef.child("description").set(description);
                     firebaseRef.child("importance").set(importance);
                     if (typeof fileName === "undefined") {
-    
+
                     } else {
                         firebaseRef.child("filename").set(fileName);
                     }
-            
+
                     var updates = {};
                     updates['Count'] = issueId;
                     firebase.database().ref().update(updates).then(function() {
@@ -109,9 +109,9 @@
                 } else {
                     issueId = snapshot.val() + 1;
                     console.log('got it!');
-    
+
                     const issueid = issueId;
-    
+
                     var firebaseRef = firebase.database().ref("users/" + userId + "/" + issueid);
                     firebaseRef.child("id").set(issueid);
                     firebaseRef.child("name").set(name);
@@ -119,11 +119,11 @@
                     firebaseRef.child("description").set(description);
                     firebaseRef.child("importance").set(importance);
                     if (typeof fileName === "undefined") {
-    
+
                     } else {
                         firebaseRef.child("filename").set(fileName);
                     }
-            
+
                     var updates = {};
                     updates['Count'] = issueId;
                     firebase.database().ref().update(updates).then(function() {
@@ -136,7 +136,7 @@
 
 
 
-        
+
         //REST
         else {
             const url = 'http://localhost:3000/db';
@@ -150,7 +150,9 @@
             }
             xhr.send();
 
-            var fs = require("fs");
+            var fs = require(['fs'], function(foo) {
+                //foo is now loaded.
+            });
             var JSONObject = {
                 id: numIssues + 1,
                 name: this.name,
