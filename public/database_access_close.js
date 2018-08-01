@@ -48,7 +48,30 @@
 
     //REST
     else {
+        const url_db = 'http://localhost:3000/db';
 
+            let xhr = new XMLHttpRequest();
+            let numIssues;
+            xhr.open('GET', url_db, true);
+            xhr.onload = function() {
+                data = JSON.parse(this.responseText);
+                numIssues = data.issues.length;
+
+                for (i = 0; i < numIssues; i++) {
+                    var node = document.createElement("option");
+                    node.setAttribute("value", data.issues[i].id);
+                    var content = 'Issue #' +  data.issues[i].id + ': ' + data.issues[i].name;
+                    var textNode = document.createTextNode(content);
+                    node.appendChild(textNode);
+                    rootNode.appendChild(node);
+                    issueInfoTable[i]=[];
+                    issueInfoTable[i].push(data.issues[i].name);
+                    issueInfoTable[i].push(data.issues[i].type);
+                    issueInfoTable[i].push(data.issues[i].importance);
+                    issueInfoTable[i].push(data.issues[i].description);
+                }
+            }
+            xhr.send();
     }
 
 
@@ -109,7 +132,22 @@
 
         // REST
         else {
-
+            const url_db='http://localhost:3000/db';
+            let xhr=new XMLHttpRequest();
+            var updates={};
+            updates.name=issueInfoTable[index][0];
+            updates.type=issueInfoTable[index][1];
+            updates.importance=issueInfoTable[index][2];
+            updates.description=issueInfoTable[index][3];
+            updates.status=(statusradio[0].checked == true) ? "closed" : "resolved";
+            updates.closeshortdesc=shortdesc.value;
+            update.closelongdesc=longdesc.value;
+            xhr.open('PUT',url_db,true);
+            xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+            xhr.onload=function(){
+                window.location='issuelist.html';
+            }
+            xhr.send(updates);
         }
 
     });
