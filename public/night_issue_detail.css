@@ -127,7 +127,7 @@
 }
 #printer-sheet {
     display: block;
-    background-color: #FF652F;
+    background-color: #C6430E;
     color: white;
     float: left;
     padding: 10px;
@@ -135,7 +135,7 @@
     font-weight: bold;
 }
 #day-sheet {
-    display: none;
+    display: block;
     background: #2196F3;
     float: left;
     padding: 10px 21px;
@@ -144,7 +144,7 @@
     font-weight: bold;
 }
 #night-sheet {
-    display: block;
+    display: none;
     background-color: #FF9A00;
     color: white;
     float: left;
@@ -161,6 +161,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    background-color: #302C3A;
+    color: white;
 }
 main{
     flex: 1 0 auto;
@@ -171,7 +173,7 @@ main section{
     margin-bottom: 20px;
 }
 main section h2{
-    color: navy;
+    color: lightblue;
 }
 main section p{
     font-size: 14pt;

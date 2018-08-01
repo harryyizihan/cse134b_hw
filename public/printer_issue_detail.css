@@ -38,6 +38,24 @@
     font-size: 20px;
     font-weight: bold;
 }
+#day-sheet {
+    display: none;
+    background: #2196F3;
+    float: left;
+    padding: 10px 21px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+#night-sheet {
+    display: none;
+    background-color: #FF9A00;
+    color: white;
+    float: left;
+    padding: 10px 19px;
+    font-size: 20px;
+    font-weight: bold;
+}
 body {
     display: flex;
     flex-direction: column;
