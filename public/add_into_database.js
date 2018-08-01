@@ -156,18 +156,19 @@
                 const type = issueType.value;
                 const description = issueDescription.value;
                 const importance = issueImportance.value;
-    
+
                 var payload = {
                     id: numIssues + 1,
                     name: issueName.value,
                     type: issueType.value,
                     description: issueDescription.value,
                     importance: issueImportance.value,
-                    datetime: new Date().toLocaleString()
+                    datetime: new Date().toLocaleString(),
+                    status: "open"
                 };
-    
+
                 payload = JSON.stringify(payload);
-                
+
                 let xhr1 = new XMLHttpRequest();
                 xhr1.open('POST', url, true);
                 xhr1.setRequestHeader('Content-type', 'application/json; charset=utf-8')
@@ -175,9 +176,9 @@
                     // no error checking done here!
                     // bad idea to go and refetch issues, network is easy but... need a store 
                     //getIssues();
+                    window.location = 'issuelist.html';
                 }
                 xhr1.send(payload);
-    
                 alert("Successfully submit the issue!");
             }
             xhr.send();

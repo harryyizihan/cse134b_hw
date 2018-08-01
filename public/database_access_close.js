@@ -148,10 +148,11 @@
             xhr.open('PUT', url_db, true);
             xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
             xhr.onload = function() {
-                //window.location = 'issuelist.html';
+                window.location = 'issuelist.html';
             }
             xhr.send(updates);
         }
 
+        alert("Successfully " + (statusradio[0].checked == true) ? "closed" : "resolved" + " the issue!");
     });
 }());
