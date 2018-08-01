@@ -45,6 +45,10 @@
     
     //REST
     else {
+        var issueId = localStorage.getItem("click_id");
+        // as Json server tracking issue id from 0 (not 1)
+        issueId = issueId - 1;
+
         const url = 'http://localhost:3000/db';
 
         window.addEventListener('DOMContentLoaded', function() {
