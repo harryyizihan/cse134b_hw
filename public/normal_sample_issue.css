@@ -137,6 +137,7 @@
 }
 body {
     display: flex;
+    position: relative;
     flex-direction: column;
 }
 main{
@@ -154,6 +155,7 @@ main section p{
     font-size: 14pt;
 }
 footer {
+    position: absolute;
     flex-shrink: 0;
     left: 0;
     right: 0;
