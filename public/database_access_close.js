@@ -56,7 +56,7 @@
             data = JSON.parse(this.responseText);
             numIssues = data.issues.length;
 
-            for (i = 0; i < numIssues; i++) {
+            for (i = 1; i <= numIssues; i++) {
                 var node = document.createElement("option");
                 node.setAttribute("value", data.issues[i].id);
                 var content = 'Issue #' + data.issues[i].id + ': ' + data.issues[i].name;
