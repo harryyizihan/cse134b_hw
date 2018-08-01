@@ -45,6 +45,10 @@
     
     //REST
     else {
+        var issueId = localStorage.getItem("click_id");
+        // as Json server tracking issue id from 0 (not 1)
+        issueId = issueId - 1;
+
         const url = 'http://localhost:3000/db';
 
         window.addEventListener('DOMContentLoaded', function() {
@@ -64,6 +68,8 @@
         // approach deeply buries in the markup though!
         function renderIssues(issues) {
             data = JSON.parse(issues);
+
+            alert("issue ID:"+issueId);
 
             read_name = "<h2>Issue Name: " + data.issues[issueId].name + "</h2>";
             document.getElementById("issue-name").innerHTML = read_name;

@@ -61,7 +61,7 @@
             for (i = 0; i < data.issues.length; i++) {
                 content +='<tr>';
                 content += '<td>' + data.issues[i].id + '</td>';
-                content += '<td>' + data.issues[i].name + '</td>';
+                content += '<td> <a href="./sample_detail_page.html" onclick="recordID(' + data.issues[i].id + ')">' + data.issues[i].name + '</a></td>';
                 content += '<td>' + data.issues[i].type + '</td>';
                 content += '<td>' + 'open' + '</td>';
                 content += '<td>' + data.issues[i].importance + '</td>';
