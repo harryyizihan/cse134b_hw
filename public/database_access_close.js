@@ -135,10 +135,11 @@
             const url_db = 'http://localhost:3000/issues/' + index;
             let xhr = new XMLHttpRequest();
             var updates = {};
-            updates.name = issueInfoTable[index][0];
-            updates.type = issueInfoTable[index][1];
-            updates.importance = issueInfoTable[index][2];
-            updates.description = issueInfoTable[index][3];
+            var current = selector.selectedIndex;
+            updates.name = issueInfoTable[current][0];
+            updates.type = issueInfoTable[current][1];
+            updates.importance = issueInfoTable[current][2];
+            updates.description = issueInfoTable[current][3];
             updates.status = (statusradio[0].checked == true) ? "closed" : "resolved";
             updates.closeshortdesc = shortdesc.value;
             updates.closelongdesc = longdesc.value;
