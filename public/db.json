@@ -1,28 +1,11 @@
 {
   "issues": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": 2,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": "666",
       "name": "asdasd",
       "type": "1.3",
-      "description": "asdasda",
-      "importance": "62"
-    },
-    {
-      "id": 4,
-      "name": "asdasd",
-      "type": "1.2",
-      "description": "asdasd",
-      "importance": "62"
+      "description": "ni hao si ma",
+      "importance": "50",
+      "id": 1
     }
   ]
 }
