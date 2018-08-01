@@ -81,7 +81,7 @@
         var reasons = "";
         var index = selector.value;
 
-        if (localStorage.getItem("1") == 1) {
+        if (localStorage.getItem("mode") == 1) {
             var firebaseref = firebase.database().ref("users/" + userId + "/");
             for (var i = 0; i < 4; i++) {
                 if (deletereason[i].checked) {
@@ -105,8 +105,8 @@
                 window.location = 'issuelist.html';
             }
             xhr.send();
+            alert("Successfully delete the issue!");
         }
-        alert("Successfully delete the issue!");
     });
 
 }());
