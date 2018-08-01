@@ -23,7 +23,7 @@
                     read_type = "<h2>Issue Type: " + data.val().type + "</h2>";
                     document.getElementById("issue-type").innerHTML = read_type;
 
-                    read_time = "<h2>Issue occurred date: <time>2018-07-22</time></h2>";
+                    read_time = "<h2>Issue occurred date: <time>" + data.val().datetime + "</time></h2>";
                     document.getElementById("issue-date").innerHTML = read_time;
 
                     read_description = "<h2>Issue Description: </h2> <p>" + data.val().description + "/<p>";
