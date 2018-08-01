@@ -1,24 +1,5 @@
 {
-  "issues": [
-    {
-      "name": "first issue",
-      "type": "Irresponsiveness",
-      "importance": "50",
-      "description": "asdasd",
-      "status": "open",
-      "closeshortdesc": "",
-      "closelongdesc": "",
-      "datetime": "8/1/2018, 4:36:55 PM",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "name": "second issue",
-      "type": "Intended Mechanic not Working",
-      "description": "asdasda",
-      "importance": "50",
-      "datetime": "8/1/2018, 4:36:03 PM",
-      "status": "open"
-    }
-  ]
+    "issues": [
+
+    ]
 }
