@@ -67,8 +67,9 @@
 		</select>
             <hr>
             <ul id="issue-info" style="list-style-type:none;display:none"></ul>
-            <input type="radio" checked="checked" name="radio" class="radioin">Close<br>
-            <input type="radio" name="radio" class="radioin">Resolve
+            <input type="radio" checked="checked" name="radio" class="radioin"> <span id="closespan">Close<br></span>
+            <input type="radio" name="radio" class="radioin"><span id="resolvespan">Resolve<br></span>
+            <input type="radio" name="radio" class="radioin" style="display:none"> <span style="display:none" id="reopenspan">Reopen</span>
             <hr>
             <div class="fileup">
                 <label>Reference file:</label>

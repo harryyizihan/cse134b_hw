@@ -21,9 +21,7 @@
                     var localcount = 1;
                     snapshot.forEach(element => {
                         console.log(element.val().status);
-                        if (element.val().status == "close" || element.val().status == "resolve") {
-
-                        } else {
+                        
                             var node = document.createElement("option");
                             node.setAttribute("value", element.val().id);
                             var content = 'Issue #' + element.val().id + ': ' + element.val().name;
@@ -35,8 +33,9 @@
                             issueInfoTable[localcount].push(element.val().type);
                             issueInfoTable[localcount].push(element.val().importance);
                             issueInfoTable[localcount].push(element.val().description);
+                            issueInfoTable[localcount].push(element.val().status);
                             localcount = localcount + 1;
-                        }
+                        
                     });
                 });
             } else {
@@ -69,6 +68,7 @@
                 issueInfoTable[i].push(data.issues[i].type);
                 issueInfoTable[i].push(data.issues[i].importance);
                 issueInfoTable[i].push(data.issues[i].description);
+                issueInfoTable[i].push(data.issues[i].status);
             }
         }
         xhr.send();
@@ -77,14 +77,44 @@
 
     var selector = document.getElementById("closeselect");
     var list = document.getElementById("issue-info");
+    
     selector.addEventListener('change', function() {
         var current = selector.selectedIndex;
 
         var removables = document.getElementsByClassName('removable');
+        const statusradio = document.getElementsByClassName("radioin");
+        const closespan=document.getElementById('closespan');
+        const resolvespan=document.getElementById('resolvespan');
+        const reopenspan=document.getElementById('reopenspan');
         while (removables[0]) {
             removables[0].parentNode.removeChild(removables[0]);
         }
         if (current !== "") {
+            console.log(issueInfoTable[current][4]);
+            if(issueInfoTable[current][4]=="closed"){
+                statusradio[0].style="display:none";
+                statusradio[1].style="display:inline-block";
+                statusradio[2].style="display:inline-block";
+                closespan.style="display:none";
+                resolvespan.style="display:inline";
+                reopenspan.style="display:inline";
+            }
+            else if(issueInfoTable[current][4]=="resolved"){
+                statusradio[0].style="display:inline-block";
+                statusradio[1].style="display:none";
+                statusradio[2].style="display:inline-block";
+                closespan.style="display:inline";
+                resolvespan.style="display:none";
+                reopenspan.style="display:inline";
+            }
+            else{
+                statusradio[0].style="display:inline-block";
+                statusradio[1].style="display:inline-block";
+                statusradio[2].style="display:none";
+                closespan.style="display:inline";
+                resolvespan.style="display:inline";
+                reopenspan.style="display:none";
+            }
             var svg = document.getElementById('curvedborder2');
             svg.setAttribute('d', 'M100,100 L200,100');
             list.style.display = "block";
@@ -113,7 +143,7 @@
     });
 
     const submitbutton = document.getElementById("submitbutton");
-    const statusradio = document.getElementsByClassName("radioin");
+
     submitbutton.addEventListener('click', function() {
         const shortdesc = document.getElementById("shortdescfield");
         const longdesc = document.getElementById("longdescfield");
@@ -122,11 +152,11 @@
 
         if (localStorage.getItem("mode") == 1) {
             var firebaseref = firebase.database().ref("users/" + userId + "/" + index);
-            var status = (statusradio[0].checked == true) ? "closed" : "resolved";
+            var status = (statusradio[0].checked == true) ? "closed" : ((statusradio[1].checked == true)? "resolved":"open");
             firebaseref.child("status").set(status);
             firebaseref.child("closeshortdesc").set(shortdesc.value);
             firebaseref.child("closelongdesc").set(longdesc.value);
-            alert("Successfully " + status + " the issue!");
+            //alert("Successfully " + status + " the issue!");
             window.location = 'issuelist.html';
         }
 
@@ -154,6 +184,6 @@
             xhr.send(updates);
         }
 
-        alert("Successfully " + (statusradio[0].checked == true) ? "closed" : "resolved" + " the issue!");
+        //alert("Successfully " + (statusradio[0].checked == true) ? "closed" : "resolved" + " the issue!");
     });
 }());
