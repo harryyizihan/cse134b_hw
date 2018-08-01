@@ -94,6 +94,7 @@
                     firebaseRef.child("type").set(type);
                     firebaseRef.child("description").set(description);
                     firebaseRef.child("importance").set(importance);
+                    firebaseRef.child("datetime").set(new Date().toLocaleString());
                     if (typeof fileName === "undefined") {
 
                     } else {
@@ -118,6 +119,7 @@
                     firebaseRef.child("type").set(type);
                     firebaseRef.child("description").set(description);
                     firebaseRef.child("importance").set(importance);
+                    firebaseRef.child("datetime").set(new Date().toLocaleString());
                     if (typeof fileName === "undefined") {
 
                     } else {
@@ -158,7 +160,8 @@
                     name: issueName.value,
                     type: issueType.value,
                     description: issueDescription.value,
-                    importance: issueImportance.value
+                    importance: issueImportance.value,
+                    datetime: new Date().toLocaleString()
                 };
     
                 payload = JSON.stringify(payload);

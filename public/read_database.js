@@ -22,7 +22,7 @@
                         content += '<td>' + data.val().type + '</td>';
                         content += '<td>' + data.val().status + 'd' + '</td>';
                         content += '<td>' + data.val().importance + '</td>';
-                        content += '<td>' + '2018-07-21' + '</td>';
+                        content += '<td>' + data.val().datetime + '</td>';
                         content += '</tr>';
                     });
                     document.getElementById('issue-list-content').innerHTML = content;
@@ -65,7 +65,7 @@
                 content += '<td>' + data.issues[i].type + '</td>';
                 content += '<td>' + 'open' + '</td>';
                 content += '<td>' + data.issues[i].importance + '</td>';
-                content += '<td>' + '2018-07-21' + '</td>';
+                content += '<td>' + data.issues[i].datetime + '</td>';
                 content += '</tr>';
     
             }

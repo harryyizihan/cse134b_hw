@@ -144,6 +144,7 @@
             updates['type'] = typeChange.value;
             updates['description'] = descriptiponChange.value;
             updates['importance'] = importanceChange.value;
+            updates['datetime'] = new Date().toLocaleString();
             if (typeof fileName === "undefined") {
 
             } else {
@@ -163,6 +164,7 @@
             updates.description = descriptiponChange.value;
             updates.importance = importanceChange.value;
             updates.id = index;
+            updates.datetime = new Date().toLocaleString();
             updates = JSON.stringify(updates);
 
             const url = 'http://localhost:3000/issues/' + index;
