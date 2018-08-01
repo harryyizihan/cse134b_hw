@@ -1,19 +1,28 @@
 {
-  "count": [2],
   "issues": [
     {
       "id": 1,
-      "name": "issue-1",
-      "type": "1.1",
-      "description": "first json gg",
-      "importance": "66"
-    }, 
+      "title": "json-server",
+      "author": "typicode"
+    },
     {
       "id": 2,
-      "name": "issue-2",
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "666",
+      "name": "asdasd",
+      "type": "1.3",
+      "description": "asdasda",
+      "importance": "62"
+    },
+    {
+      "id": 4,
+      "name": "asdasd",
       "type": "1.2",
-      "description": "second json gg",
-      "importance": "99"
+      "description": "asdasd",
+      "importance": "62"
     }
   ]
 }
