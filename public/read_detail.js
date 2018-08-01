@@ -9,7 +9,8 @@
         };
         firebase.initializeApp(config);
 
-        issueId = "3";
+        // obtain issueID to render from localStorage
+        var issueId = localStorage.getItem("click_id");
 
         //const attachment;
         firebase.auth().onAuthStateChanged(function(user) {
