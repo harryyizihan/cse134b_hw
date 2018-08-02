@@ -55,20 +55,12 @@ workbox.routing.registerRoute(
     "revision": "af73224255fada3f9b619a05a864542f"
   },
   {
-    "url": "add_issue.html",
-    "revision": "d5711ce4853fe418b1351526199fa6b6"
-  },
-  {
     "url": "Avatar.png",
     "revision": "e69d732d1f1ecf354953504dbde5c114"
   },
   {
     "url": "background_img.jpg",
     "revision": "b217dc9e33ac5db56365a35cabab99f3"
-  },
-  {
-    "url": "close_issues.html",
-    "revision": "141ea20421d6fde8b6d9b88be4a530e4"
   },
   {
     "url": "contact.html",
@@ -91,16 +83,8 @@ workbox.routing.registerRoute(
     "revision": "1fed1582694003a6ec0f56749b0903db"
   },
   {
-    "url": "delete_issues.html",
-    "revision": "d9a170f0ecdac98fd7219ac0e8d739be"
-  },
-  {
     "url": "edit_issue_database.js",
     "revision": "5b3cb703563ce871d19e5c11cd2ceeee"
-  },
-  {
-    "url": "edit_issues.html",
-    "revision": "66ca8ee9a15f522b0c1f5efbeb449ace"
   },
   {
     "url": "favicon.png",

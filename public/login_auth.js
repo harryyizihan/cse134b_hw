@@ -19,6 +19,12 @@
     btnLogin.addEventListener('click', e => {
         global_mode = localStorage.getItem("mode");
         if (global_mode == 1) {
+            var condition = navigator.onLine ? "online" : "offline";
+            if (condition == "offline") {
+                alert("There seems to have some newwork connection problems...");
+                return;
+            }
+
             const emailVal = email.value;
             const pass = password.value;
             firebase.auth().signInWithEmailAndPassword(emailVal, pass).catch(function(error) {
